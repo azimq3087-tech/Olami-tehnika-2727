@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <title>Олами Техника 2727</title>
 </head>
 <body>
