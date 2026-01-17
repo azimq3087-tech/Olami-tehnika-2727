@@ -1,80 +1,81 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Олами техника 2727 — Ваш магазин в Джайхуне</title>
+    <title>Олами Техника 2727</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #fdfdfd; color: #333; scroll-behavior: smooth; }
-        
-        /* Меню */
-        nav { background: #1a1a1a; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 24px; font-weight: bold; color: #ff4747; text-decoration: none; }
-        .logo span { color: white; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 14px; }
-
-        /* Блок О НАС */
-        .about-box { padding: 60px 5%; background: white; text-align: center; }
-        .about-box h2 { font-size: 32px; color: #1a1a1a; margin-bottom: 20px; }
-        .about-text { max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.8; color: #444; }
-
-        /* Фотографии магазина */
-        .shop-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; padding: 20px 5%; }
-        .shop-photo { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; border: 3px solid #eee; }
-
-        /* Контакты и Карта */
-        .contact-section { background: #f1f1f1; padding: 50px 5%; display: flex; flex-wrap: wrap; gap: 30px; }
-        .contact-info { flex: 1; min-width: 300px; }
-        .map-box { flex: 1; min-width: 300px; height: 350px; background: #ddd; border-radius: 15px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-
-        .footer { background: #1a1a1a; color: white; padding: 30px; text-align: center; }
-        .badge { display: inline-block; background: #ff4747; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; margin-bottom: 10px; }
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        h1 { margin: 0; font-size: 2rem; }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="#" class="logo">ОЛАМИ <span>2727</span></a>
-    <div class="nav-links">
-        <a href="#about">О магазине</a>
-        <a href="#photos">Фото</a>
-        <a href="#catalog">Каталог</a>
-        <a href="#contact">Где мы?</a>
-    </div>
-</nav>
+<header>
+    <h1>Олами Техника 2727</h1>
+    <p>Добро пожаловать в мир технологий</p>
+</header>
 
-<section class="about-box" id="about">
-    <div class="badge">Работаем с 2006 года</div>
-    <h2>Добро пожаловать в Олами техника 2727</h2>
-    <div class="about-text">
-        Мы находимся в районе <b>Джайхун (Кумсангир)</b> и уже более 20 лет обеспечиваем жителей нашего района надежной бытовой техникой. За эти десятилетия мы заслужили доверие тысяч семей. Наш принцип прост: только проверенное качество от мировых брендов, честная цена и отношение к каждому покупателю как к доброму соседу.
+<div class="container">
+    <div class="card">
+        <h2>О проекте</h2>
+        <p>Это современная площадка, посвященная обзорам, новостям и инновациям в мире техники. Мы собираем самое интересное специально для вас.</p>
     </div>
-</section>
 
-<div class="shop-gallery" id="photos">
-    <img src="https://images.unsplash.com/photo-1556740734-7f95cb93e3e8?w=500" class="shop-photo" alt="Наш магазин">
-    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=500" class="shop-photo" alt="Витрина">
-    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500" class="shop-photo" alt="Интерьер">
+    <div class="card">
+        <h2>Последние новости</h2>
+        <p>Здесь скоро появятся первые статьи о гаджетах и программировании.</p>
+        <a href="#" class="btn">Читать далее</a>
+    </div>
 </div>
 
-<section class="contact-section" id="contact">
-    <div class="contact-info">
-        <h2>Наши контакты</h2>
-        <p><b>📍 Адрес:</b> Хатлонская область, р-н Джайхун (Кумсангир), центральный рынок или ваша улица.</p>
-        <p><b>📞 Телефон:</b> +992559611114</p>935412727
-        <p><b>💬 WhatsApp:</b> Всегда на связи для ваших заказов.</p>
-        <p><b>⏰ График:</b> Работаем без выходных.</p>
-    </div>
-    <div class="map-box">
-        <p style="color: #666; padding: 20px; text-align: center;">
-            Здесь можно разместить карту Яндекс или Google с точкой вашего магазина.
-        </p>
-    </div>
-</section>
-
-<div class="footer">
-    <p>&copy; 2026 Олами техника 2727. Все права защищены.</p>
-</div>
+<footer>
+    &copy; 2026 Олами Техника 2727. Все права защищены.
+</footer>
 
 </body>
 </html>
