@@ -1,79 +1,157 @@
-lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Олами Техника 2727</title>
+    <title>Олами Техника 2727 — Качество и Доверие</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #1e293b;
+            --primary: #1e40af;
+            --accent: #fbbf24;
+            --dark: #0f172a;
             --light: #f8fafc;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
         header {
-            background: var(--dark);
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
             color: white;
-            padding: 2rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
         }
         .container {
-            max-width: 800px;
-            margin: 2rem auto;
+            max-width: 1000px;
+            margin: -3rem auto 2rem;
             padding: 0 1rem;
         }
         .card {
             background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 1rem;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
-        h1 { margin: 0; font-size: 2rem; }
-        .btn {
+        h1 { margin: 0; font-size: 2.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--primary); font-size: 1.8rem; margin-top: 0; }
+        .highlight { color: var(--accent); font-weight: bold; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 10px;
+        }
+        .stat-number { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: block; }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin-bottom: 1rem;
+            padding-left: 35px;
+            position: relative;
+        }
+        .contact-info li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .contact-link {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 1.5rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .contact-link:hover { opacity: 0.9; transform: translateY(-2px); }
+        
+        .photo-section {
+            background: #e2e8f0;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 3px dashed #cbd5e1;
+            color: #64748b;
             margin-top: 1rem;
         }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
+        footer { text-align: center; padding: 3rem; color: #94a3b8; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Олами Техника 2727</h1>
-    <p>Добро пожаловать в мир технологий</p>
+    <p>Ваш надежный партнер в мире технологий с 2005 года</p>
 </header>
 
 <div class="container">
     <div class="card">
-        <h2>О проекте</h2>
-        <p>Это современная площадка, посвященная обзорам, новостям и инновациям в мире техники. Мы собираем самое интересное специально для вас.</p>
+        <h2>Почему выбирают нас?</h2>
+        <p>Мы находимся в самом сердце <b>района Кумсангир (возле Центрального рынка)</b> и уже более <span class="highlight">20 лет</span> обеспечиваем наших клиентов лучшей техникой.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">20+ лет</span>
+                на рынке
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1000+</span>
+                довольных клиентов
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                гарантия качества
+            </div>
+        </div>
+
+        <p>В нашем ассортименте представлены только проверенные товары от ведущих мировых брендов по самым доступным ценам. Мы ценим каждого покупателя и гарантируем индивидуальный подход и профессиональную консультацию.</p>
     </div>
 
     <div class="card">
-        <h2>Последние новости</h2>
-        <p>Здесь скоро появятся первые статьи о гаджетах и программировании.</p>
-        <a href="#" class="btn">Читать далее</a>
+        <h2>Наши товары</h2>
+        <p>Здесь будут представлены фотографии наших последних новинок и популярных товаров.</p>
+        <div class="photo-section">
+            [ Мы добавим сюда ваши фотографии, как только они будут готовы ]
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Свяжитесь с нами прямо сейчас</h2>
+        <ul class="contact-info">
+            <li><strong>Адрес:</strong> р-н Кумсангир, Центральный рынок</li>
+            <li><strong>Телефон 1:</strong> +992 559 61 11 14</li>
+            <li><strong>Телефон 2:</strong> +992 939 20 03 05</li>
+            <li><strong>Email:</strong> azimq3087@gmail.com</li>
+        </ul>
+        <a href="tel:+992559611114" class="contact-link">Позвонить нам</a>
+        <a href="https://t.me/+992559611114" class="contact-link">Написать в Telegram</a>
     </div>
 </div>
 
 <footer>
-    &copy; 2026 Олами Техника 2727. Все права защищены.
+    &copy; 2026 Олами Техника 2727. Надежность, проверенная временем.
 </footer>
 
 </body>
