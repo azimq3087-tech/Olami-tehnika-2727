@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Олами Техника 2727 — Каталог товаров в Кумсангире</title>
+    <title>Олами Техника 2727 — Каталог товаров</title>
     <style>
         :root {
             --primary: #1e40af;
@@ -12,90 +12,106 @@
             --light: #f8fafc;
             --success: #25d366;
         }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
-        header { background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: white; padding: 3rem 1rem; text-align: center; }
-        .container { max-width: 1100px; margin: -2rem auto 2rem; padding: 0 1rem; }
-        .card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: var(--light); color: var(--dark); scroll-behavior: smooth; }
+        header { background: var(--dark); color: white; padding: 2rem 1rem; text-align: center; border-bottom: 4px solid var(--accent); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
         
-        /* КАТЕГОРИИ */
-        .categories { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; justify-content: center; }
-        .cat-btn { background: white; border: 2px solid var(--primary); color: var(--primary); padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        .cat-btn:hover { background: var(--primary); color: white; }
+        .category-nav { 
+            display: flex; overflow-x: auto; gap: 10px; padding: 15px 0;
+            position: sticky; top: 0; background: var(--light); z-index: 100; border-bottom: 1px solid #e2e8f0;
+        }
+        .cat-link { 
+            white-space: nowrap; background: white; border: 1px solid var(--primary); 
+            padding: 8px 18px; border-radius: 25px; text-decoration: none; color: var(--primary); font-weight: 500;
+        }
+        .cat-link:hover { background: var(--primary); color: white; }
 
-        /* СЕТКА ТОВАРОВ */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .product-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; transition: 0.3s; }
+        .section-title { border-left: 6px solid var(--accent); padding-left: 15px; margin: 50px 0 25px; color: var(--primary); }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .product-card { 
+            background: white; border-radius: 12px; border: 1px solid #e2e8f0; 
+            padding: 15px; text-align: center; transition: 0.3s;
+        }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-        .product-img { width: 100%; height: 200px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.8rem; }
-        .product-info { padding: 15px; }
-        .product-title { font-size: 1.2rem; font-weight: bold; margin: 0 0 10px; color: var(--dark); }
-        .product-desc { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; height: 45px; overflow: hidden; }
-        .product-price { font-size: 1.3rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; display: block; }
-        .buy-btn { display: block; text-align: center; background: var(--success); color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: bold; }
-
-        footer { text-align: center; padding: 3rem; color: #94a3b8; }
+        .product-icon { font-size: 3rem; margin-bottom: 10px; display: block; }
+        .buy-btn { 
+            display: block; background: var(--success); color: white; 
+            text-decoration: none; padding: 10px; border-radius: 8px; margin-top: 15px; font-weight: bold;
+        }
+        footer { background: var(--dark); color: white; text-align: center; padding: 3rem 1rem; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>ОЛАМИ ТЕХНИКА 2727</h1>
-    <p>Каталог качественной техники в Кумсангире</p>
+    <p>Кумсангир, Центральный рынок — более 20 лет качества!</p>
 </header>
 
 <div class="container">
-    <div class="card">
-        <h2>Наш ассортимент</h2>
-        <div class="categories">
-            <a href="#phones" class="cat-btn">Смартфоны</a>
-            <a href="#laptops" class="cat-btn">Ноутбуки</a>
-            <a href="#home" class="cat-btn">Бытовая техника</a>
-            <a href="#acc" class="cat-btn">Аксессуары</a>
-        </div>
+    <div class="category-nav">
+        <a href="#large" class="cat-link">Крупная техника</a>
+        <a href="#kitchen" class="cat-link">Кухня</a>
+        <a href="#tv" class="cat-link">ТВ и Аудио</a>
+        <a href="#climate" class="cat-link">Климат и Вода</a>
+        <a href="#home" class="cat-link">Дом и Уход</a>
+        <a href="#power" class="cat-link">Энергооборудование</a>
+    </div>
 
-        <div id="phones" style="margin-top: 40px;">
-            <h3>📱 Смартфоны</h3>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">[ Место для фото смартфона ]</div>
-                    <div class="product-info">
-                        <div class="product-title">Название модели</div>
-                        <div class="product-desc">Краткое описание характеристик (память, камера, батарея).</div>
-                        <span class="product-price">0000 сом.</span>
-                        <a href="https://wa.me/992559611114?text=Здравствуйте! Меня интересует этот товар" class="buy-btn">Купить в WhatsApp</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">[ Место для фото смартфона ]</div>
-                    <div class="product-info">
-                        <div class="product-title">Название модели</div>
-                        <div class="product-desc">Описание ключевых особенностей товара.</div>
-                        <span class="product-price">0000 сом.</span>
-                        <a href="https://wa.me/992559611114?text=Здравствуйте! Меня интересует этот товар" class="buy-btn">Купить в WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <h2 id="large" class="section-title">Крупная бытовая техника</h2>
+    <div class="products-grid">
+        <div class="product-card"><span class="product-icon">❄️</span><h3>Холодильники</h3><a href="https://wa.me/992559611114" class="buy-btn">Выбрать</a></div>
+        <div class="product-card"><span class="product-icon">🧺</span><h3>Стиральные машины</h3><a href="https://wa.me/992559611114" class="buy-btn">Выбрать</a></div>
+        <div class="product-card"><span class="product-icon">🍽️</span><h3>Посудомоечные машины</h3><a href="https://wa.me/992559611114" class="buy-btn">Выбрать</a></div>
+        <div class="product-card"><span class="product-icon">🔥</span><h3>Газовые и электроплиты</h3><a href="https://wa.me/992559611114" class="buy-btn">Выбрать</a></div>
+    </div>
 
-        <div id="home" style="margin-top: 40px;">
-            <h3>🏠 Бытовая техника</h3>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">[ Место для фото техники ]</div>
-                    <div class="product-info">
-                        <div class="product-title">Название товара</div>
-                        <div class="product-desc">Информация о бренде и гарантии качества.</div>
-                        <span class="product-price">0000 сом.</span>
-                        <a href="https://wa.me/992559611114?text=Здравствуйте! Меня интересует этот товар" class="buy-btn">Заказать</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <h2 id="kitchen" class="section-title">Всё для кухни</h2>
+    <div class="products-grid">
+        <div class="product-card"><h3>Микроволновки и Духовки</h3></div>
+        <div class="product-card"><h3>Мясорубки и Миксеры</h3></div>
+        <div class="product-card"><h3>Блендеры и Соковыжималки</h3></div>
+        <div class="product-card"><h3>Мантоварки и Кастрюли</h3></div>
+        <div class="product-card"><h3>Чайники и Термосы</h3></div>
+    </div>
+
+    <h2 id="tv" class="section-title">ТВ, Аудио и Аксессуары</h2>
+    <div class="products-grid">
+        <div class="product-card"><h3>Телевизоры</h3></div>
+        <div class="product-card"><h3>Сабвуферы</h3></div>
+        <div class="product-card"><h3>Антенны и Тарелки</h3></div>
+        <div class="product-card"><h3>ТВ-приставки и Пульты</h3></div>
+        <div class="product-card"><h3>Кронштейны (Подставки)</h3></div>
+    </div>
+
+    <h2 id="climate" class="section-title">Климат и Вода</h2>
+    <div class="products-grid">
+        <div class="product-card"><h3>Кондиционеры (+Фреон)</h3></div>
+        <div class="product-card"><h3>Водонагреватели (Термекс)</h3></div>
+        <div class="product-card"><h3>Кулеры для воды</h3></div>
+        <div class="product-card"><h3>Обогреватели и Печки</h3></div>
+    </div>
+
+    <h2 id="power" class="section-title">Энергооборудование</h2>
+    <div class="products-grid">
+        <div class="product-card"><h3>Стабилизаторы тока</h3></div>
+        <div class="product-card"><h3>Power Inverter</h3></div>
+        <div class="product-card"><h3>Фонарики и Лампочки</h3></div>
+    </div>
+
+    <h2 id="home" class="section-title">Дом и Личный уход</h2>
+    <div class="products-grid">
+        <div class="product-card"><h3>Пылесосы</h3></div>
+        <div class="product-card"><h3>Утюги и Гладильные столы</h3></div>
+        <div class="product-card"><h3>Фены и Машинки для стрижки</h3></div>
     </div>
 </div>
 
 <footer>
-    &copy; 2026 Олами Техника 2727. Кумсангир, Центральный рынок.
+    <p><b>Олами Техника 2727</b></p>
+    <p>Адрес: Кумсангир, Центральный рынок</p>
+    <p>Телефоны: +992 559 61 11 14 | +992 939 20 03 05</p>
 </footer>
 
 </body>
