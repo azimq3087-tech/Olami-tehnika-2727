@@ -3,120 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Олами Техника 2727 — Кумсангир (Центральный рынок)</title>
+    <title>Олами Техника 2727 — Кумсангир</title>
     <style>
-        :root {
-            --primary: #1e40af;
-            --accent: #fbbf24;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --success: #25d366;
-        }
+        :root { --primary: #1e40af; --accent: #fbbf24; --dark: #0f172a; --light: #f8fafc; --success: #25d366; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
         header { background: var(--dark); color: white; padding: 2.5rem 1rem; text-align: center; border-bottom: 4px solid var(--accent); }
         .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
-        
-        .nav-categories { display: flex; overflow-x: auto; gap: 10px; padding: 15px 0; position: sticky; top: 0; background: var(--light); z-index: 100; border-bottom: 1px solid #ddd; }
-        .nav-link { white-space: nowrap; background: white; border: 1px solid var(--primary); padding: 8px 15px; border-radius: 20px; text-decoration: none; color: var(--primary); font-size: 0.85rem; font-weight: bold; }
-        
+        .nav-cats { display: flex; overflow-x: auto; gap: 10px; padding: 15px 0; background: var(--light); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #ddd; }
+        .nav-cats a { white-space: nowrap; text-decoration: none; color: var(--primary); font-weight: bold; border: 1px solid var(--primary); padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; }
         .section-title { border-left: 6px solid var(--accent); padding-left: 15px; margin: 40px 0 20px; color: var(--primary); font-size: 1.5rem; text-transform: uppercase; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
-        
-        .item-card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
-        .item-card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
-        .item-info { padding: 12px; flex-grow: 1; }
-        .item-title { font-size: 1rem; font-weight: bold; margin-bottom: 8px; color: var(--dark); height: 40px; overflow: hidden; }
-        .item-price { font-size: 1.3rem; font-weight: bold; color: var(--primary); display: block; margin-bottom: 10px; }
-        .item-desc { font-size: 0.8rem; color: #64748b; margin-bottom: 10px; line-height: 1.2; }
-        
-        .btn-buy { display: block; text-align: center; background: var(--success); color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: bold; font-size: 0.9rem; }
-        
-        .contact-box { background: var(--dark); color: white; padding: 2.5rem; border-radius: 15px; margin-top: 40px; text-align: center; }
-        .contact-btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; margin: 5px; font-weight: bold; }
-        
-        footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .item-card { background: white; border-radius: 12px; border: 1px solid #ddd; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; }
+        .item-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        .item-img { width: 100%; height: 280px; object-fit: cover; background: #eee; border-bottom: 1px solid #eee; }
+        .item-info { padding: 15px; flex-grow: 1; }
+        .item-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 10px; height: 2.4em; overflow: hidden; }
+        .item-price { font-size: 1.4rem; font-weight: bold; color: var(--primary); display: block; margin-bottom: 15px; }
+        .btn-buy { display: block; text-align: center; background: var(--success); color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; }
+        .contact-box { background: var(--dark); color: white; padding: 40px; border-radius: 20px; margin: 50px 0; text-align: center; }
+        footer { text-align: center; padding: 20px; color: #888; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>ОЛАМИ ТЕХНИКА 2727</h1>
-    <p>Ваш надежный магазин в Кумсангире — Качество, проверенное временем!</p>
+    <p>Кумсангир, Центральный рынок — Ваш надежный магазин!</p>
 </header>
 
 <div class="container">
-    <div class="nav-categories">
-        <a href="#tv" class="nav-link">Телевизоры</a>
-        <a href="#vacuums" class="nav-link">Пылесосы</a>
-        <a href="#kitchen" class="nav-link">Техника для кухни</a>
-        <a href="#beauty" class="nav-link">Бритвы и Уход</a>
-        <a href="#kettles" class="nav-link">Чайники и Термосы</a>
-        <a href="#energy" class="nav-link">Энергия и Сейфы</a>
-    </div>
+    <nav class="nav-cats">
+        <a href="#tv">📺 Телевизоры</a>
+        <a href="#vacuums">🧹 Пылесосы</a>
+        <a href="#kitchen">🍳 Кухня</a>
+        <a href="#beauty">✂️ Бритвы</a>
+        <a href="#kettles">☕ Чайники</a>
+        <a href="#safe">🛡️ Сейфы и Энергия</a>
+    </nav>
 
     <h2 id="tv" class="section-title">Телевизоры</h2>
     <div class="grid">
-        <div class="item-card"><div class="item-info"><div class="item-title">LG 4K UHD Smart TV</div><span class="item-price">1850 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Samsung MSUNG HD LED 36"</div><span class="item-price">1550 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Smart TV 46" Full HD</div><div class="item-desc">Wi-Fi, YouTube, Netflix.</div><a href="https://wa.me/992559611114" class="btn-buy">Узнать цену</a></div></div>
+        <div class="item-card">
+            <img src="photo1.jpg" class="item-img" alt="LG TV">
+            <div class="item-info"><div class="item-title">LG 4K UHD Smart TV</div><span class="item-price">1850 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div>
+        </div>
+        <div class="item-card">
+            <img src="photo2.jpg" class="item-img" alt="Skyworth">
+            <div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div>
+        </div>
+        <div class="item-card">
+            <img src="photo3.jpg" class="item-img" alt="Samsung">
+            <div class="item-info"><div class="item-title">Samsung HD LED 36"</div><span class="item-price">1550 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div>
+        </div>
     </div>
 
     <h2 id="vacuums" class="section-title">Пылесосы</h2>
     <div class="grid">
-        <div class="item-card"><div class="item-info"><div class="item-title">Samsung SC20M25 (3000W)</div><div class="item-desc">Циклонный фильтр EZClean.</div><span class="item-price">1250 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">LG Ellipse Cyclone</div><div class="item-desc">Безмешковая система фильтрации.</div><span class="item-price">1230 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Hitachi CV-950F (2100W)</div><div class="item-desc">Бак 18L, функция выдува.</div><span class="item-price">1030 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Samsung Air Track (Blue)</div><span class="item-price">860 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Avangard Supra Power</div><div class="item-desc">2000W, HEPA-фильтр.</div><span class="item-price">850 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Starlux SL-3025 (Drum)</div><span class="item-price">550 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
+        <div class="item-card">
+            <img src="photo5.jpg" class="item-img" alt="Samsung 3000W">
+            <div class="item-info"><div class="item-title">Samsung SC20M25 (3000W)</div><span class="item-price">1250 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div>
+        </div>
+        <div class="item-card">
+            <img src="photo6.jpg" class="item-img" alt="LG">
+            <div class="item-info"><div class="item-title">LG Ellipse Cyclone</div><span class="item-price">1230 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div>
+        </div>
+        <div class="item-card">
+            <img src="photo7.jpg" class="item-img" alt="Hitachi">
+            <div class="item-info"><div class="item-title">Hitachi CV-950F (2100W)</div><span class="item-price">1030 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div>
+        </div>
+        <div class="item-card">
+            <img src="photo8.jpg" class="item-img" alt="Samsung Blue">
+            <div class="item-info"><div class="item-title">Samsung Air Track (Blue)</div><span class="item-price">860 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div>
+        </div>
     </div>
 
     <h2 id="kitchen" class="section-title">Техника для кухни</h2>
     <div class="grid">
-        <div class="item-card"><div class="item-info"><div class="item-title">Блендер Starlux SL-21032</div><div class="item-desc">2500W, мощный медный мотор.</div><span class="item-price">860 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Миксер Sonifer Stand SF-8064</div><div class="item-desc">1400W, чаша 5.5L.</div><span class="item-price">800 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Миксер Smurfett SE-7115</div><div class="item-desc">1500W, объемная чаша 8.0L.</div><span class="item-price">780 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Мясорубка ручная (ГОСТ)</div><span class="item-price">160 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
+        <div class="item-card">
+            <img src="photo15.jpg" class="item-img" alt="Blender">
+            <div class="item-info"><div class="item-title">Блендер Starlux SL-21032</div><span class="item-price">860 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div>
+        </div>
+        <div class="item-card">
+            <img src="photo16.jpg" class="item-img" alt="Mixer">
+            <div class="item-info"><div class="item-title">Миксер Sonifer SF-8064</div><span class="item-price">800 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div>
+        </div>
     </div>
 
     <h2 id="beauty" class="section-title">Бритвы и Уход</h2>
     <div class="grid">
-        <div class="item-card"><div class="item-info"><div class="item-title">Машинка VGR V-260 Metal</div><div class="item-desc">9000 RPM, профессиональная.</div><span class="item-price">300 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Триммер VGR V-906 Salon</div><span class="item-price">250 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Бритва VGR V-305 3-в-1</div><span class="item-price">175 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Cronier CR-9014 (3-in-1)</div><span class="item-price">65 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
+        <div class="item-card">
+            <img src="photo21.jpg" class="item-img" alt="VGR Metal">
+            <div class="item-info"><div class="item-title">VGR V-260 Metal Housing</div><span class="item-price">300 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div>
+        </div>
+        <div class="item-card">
+            <img src="photo22.jpg" class="item-img" alt="VGR Trimmer">
+            <div class="item-info"><div class="item-title">VGR V-906 Professional</div><span class="item-price">250 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div>
+        </div>
     </div>
 
-    <h2 id="kettles" class="section-title">Чайники и Термосы</h2>
+    <h2 id="safe" class="section-title">Безопасность и Энергия</h2>
     <div class="grid">
-        <div class="item-card"><div class="item-info"><div class="item-title">Термос Romantic Home</div><div class="item-desc">Премиальный люкс дизайн.</div><span class="item-price">310 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Термос Feenik (2L) Гулдор</div><span class="item-price">220 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Чайник Haley 8871 (2.0L)</div><span class="item-price">180 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Чайник BSIOCH (Glass LED)</div><span class="item-price">100 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Чайник Dessus A20</div><span class="item-price">75 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Купить</a></div></div>
-    </div>
-
-    <h2 id="energy" class="section-title">Энергия и Сейфы</h2>
-    <div class="grid">
-        <div class="item-card"><div class="item-info"><div class="item-title">Сейф Электронный (Gold)</div><div class="item-desc">Надежный кодовый замок.</div><span class="item-price">2200 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Power Inverter (2000W)</div><span class="item-price">450 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div></div>
-        <div class="item-card"><div class="item-info"><div class="item-title">Фреон R134a / R22</div><span class="item-price">от 38 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Выбрать</a></div></div>
+        <div class="item-card">
+            <img src="photo33.jpg" class="item-img" alt="Safe">
+            <div class="item-info"><div class="item-title">Сейф Электронный (Gold)</div><span class="item-price">2200 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div>
+        </div>
+        <div class="item-card">
+            <img src="photo34.jpg" class="item-img" alt="Inverter">
+            <div class="item-info"><div class="item-title">Power Inverter 2000W</div><span class="item-price">450 смн</span><a href="https://wa.me/992559611114" class="btn-buy">Заказать</a></div>
+        </div>
     </div>
 
     <div class="contact-box">
         <h2>Магазин "Олами Техника 2727"</h2>
-        <p>📍 Адрес: <b>Кумсангир, возле Центрального рынка</b></p>
-        <p>Работаем более 20 лет! Мы гарантируем качество каждого товара.</p>
-        <div style="margin-top: 20px;">
-            <a href="tel:+992559611114" class="contact-btn">📞 +992 55 961 11 14</a>
-            <a href="https://wa.me/992559611114" class="contact-btn" style="background:var(--success)">💬 WhatsApp Заказ</a>
-        </div>
+        <p>📍 Кумсангир, возле Центрального рынка</p>
+        <p>Для заказа пишите или звоните:</p>
+        <a href="tel:+992559611114" style="color: var(--accent); font-size: 1.8rem; text-decoration: none; font-weight: bold;">+992 55 961 11 14</a>
+        <br><br>
+        <a href="https://wa.me/992559611114" class="btn-buy" style="display:inline-block; padding: 15px 40px;">💬 WhatsApp Заказ</a>
     </div>
 </div>
 
 <footer>
-    &copy; 2026 Олами Техника 2727. Кумсангир. Все права защищены.
+    &copy; 2026 Олами Техника 2727. Все права защищены.
 </footer>
 
 </body>
