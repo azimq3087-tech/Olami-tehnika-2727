@@ -1,157 +1,102 @@
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Олами Техника 2727 — Качество и Доверие</title>
+    <title>Олами Техника 2727 — Каталог товаров в Кумсангире</title>
     <style>
         :root {
             --primary: #1e40af;
             --accent: #fbbf24;
             --dark: #0f172a;
             --light: #f8fafc;
+            --success: #25d366;
         }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), 
-                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            color: white;
-            padding: 4rem 1rem;
-            text-align: center;
-        }
-        .container {
-            max-width: 1000px;
-            margin: -3rem auto 2rem;
-            padding: 0 1rem;
-        }
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        h1 { margin: 0; font-size: 2.8rem; text-transform: uppercase; letter-spacing: 2px; }
-        h2 { color: var(--primary); font-size: 1.8rem; margin-top: 0; }
-        .highlight { color: var(--accent); font-weight: bold; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: white; padding: 3rem 1rem; text-align: center; }
+        .container { max-width: 1100px; margin: -2rem auto 2rem; padding: 0 1rem; }
+        .card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-bottom: 2rem; }
         
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--light);
-            border-radius: 10px;
-        }
-        .stat-number { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: block; }
+        /* КАТЕГОРИИ */
+        .categories { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; justify-content: center; }
+        .cat-btn { background: white; border: 2px solid var(--primary); color: var(--primary); padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        .cat-btn:hover { background: var(--primary); color: white; }
 
-        .contact-info {
-            list-style: none;
-            padding: 0;
-        }
-        .contact-info li {
-            margin-bottom: 1rem;
-            padding-left: 35px;
-            position: relative;
-        }
-        .contact-info li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        .contact-link {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-right: 10px;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-        .contact-link:hover { opacity: 0.9; transform: translateY(-2px); }
-        
-        .photo-section {
-            background: #e2e8f0;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            border: 3px dashed #cbd5e1;
-            color: #64748b;
-            margin-top: 1rem;
-        }
+        /* СЕТКА ТОВАРОВ */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .product-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; transition: 0.3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .product-img { width: 100%; height: 200px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.8rem; }
+        .product-info { padding: 15px; }
+        .product-title { font-size: 1.2rem; font-weight: bold; margin: 0 0 10px; color: var(--dark); }
+        .product-desc { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; height: 45px; overflow: hidden; }
+        .product-price { font-size: 1.3rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; display: block; }
+        .buy-btn { display: block; text-align: center; background: var(--success); color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: bold; }
+
         footer { text-align: center; padding: 3rem; color: #94a3b8; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Олами Техника 2727</h1>
-    <p>Ваш надежный партнер в мире технологий с 2005 года</p>
+    <h1>ОЛАМИ ТЕХНИКА 2727</h1>
+    <p>Каталог качественной техники в Кумсангире</p>
 </header>
 
 <div class="container">
     <div class="card">
-        <h2>Почему выбирают нас?</h2>
-        <p>Мы находимся в самом сердце <b>района Кумсангир (возле Центрального рынка)</b> и уже более <span class="highlight">20 лет</span> обеспечиваем наших клиентов лучшей техникой.</p>
-        
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number">20+ лет</span>
-                на рынке
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">1000+</span>
-                довольных клиентов
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">100%</span>
-                гарантия качества
+        <h2>Наш ассортимент</h2>
+        <div class="categories">
+            <a href="#phones" class="cat-btn">Смартфоны</a>
+            <a href="#laptops" class="cat-btn">Ноутбуки</a>
+            <a href="#home" class="cat-btn">Бытовая техника</a>
+            <a href="#acc" class="cat-btn">Аксессуары</a>
+        </div>
+
+        <div id="phones" style="margin-top: 40px;">
+            <h3>📱 Смартфоны</h3>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">[ Место для фото смартфона ]</div>
+                    <div class="product-info">
+                        <div class="product-title">Название модели</div>
+                        <div class="product-desc">Краткое описание характеристик (память, камера, батарея).</div>
+                        <span class="product-price">0000 сом.</span>
+                        <a href="https://wa.me/992559611114?text=Здравствуйте! Меня интересует этот товар" class="buy-btn">Купить в WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">[ Место для фото смартфона ]</div>
+                    <div class="product-info">
+                        <div class="product-title">Название модели</div>
+                        <div class="product-desc">Описание ключевых особенностей товара.</div>
+                        <span class="product-price">0000 сом.</span>
+                        <a href="https://wa.me/992559611114?text=Здравствуйте! Меня интересует этот товар" class="buy-btn">Купить в WhatsApp</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <p>В нашем ассортименте представлены только проверенные товары от ведущих мировых брендов по самым доступным ценам. Мы ценим каждого покупателя и гарантируем индивидуальный подход и профессиональную консультацию.</p>
-    </div>
-
-    <div class="card">
-        <h2>Наши товары</h2>
-        <p>Здесь будут представлены фотографии наших последних новинок и популярных товаров.</p>
-        <div class="photo-section">
-            [ Мы добавим сюда ваши фотографии, как только они будут готовы ]
+        <div id="home" style="margin-top: 40px;">
+            <h3>🏠 Бытовая техника</h3>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">[ Место для фото техники ]</div>
+                    <div class="product-info">
+                        <div class="product-title">Название товара</div>
+                        <div class="product-desc">Информация о бренде и гарантии качества.</div>
+                        <span class="product-price">0000 сом.</span>
+                        <a href="https://wa.me/992559611114?text=Здравствуйте! Меня интересует этот товар" class="buy-btn">Заказать</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <h2>Свяжитесь с нами прямо сейчас</h2>
-        <ul class="contact-info">
-            <li><strong>Адрес:</strong> р-н Кумсангир, Центральный рынок</li>
-            <li><strong>Телефон 1:</strong> +992 559 61 11 14</li>
-            <li><strong>Телефон 2:</strong> +992 939 20 03 05</li>
-            <li><strong>Email:</strong> azimq3087@gmail.com</li>
-        </ul>
-        <a href="tel:+992559611114" class="contact-link">Позвонить нам</a>
-        <a href="https://t.me/+992559611114" class="contact-link">Написать в Telegram</a>
     </div>
 </div>
 
 <footer>
-    &copy; 2026 Олами Техника 2727. Надежность, проверенная временем.
+    &copy; 2026 Олами Техника 2727. Кумсангир, Центральный рынок.
 </footer>
 
-</body
+</body>
+</html>
