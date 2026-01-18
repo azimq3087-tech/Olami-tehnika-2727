@@ -10,219 +10,77 @@
         
         header { background: var(--dark); color: white; padding: 20px 10px; text-align: center; border-bottom: 4px solid var(--accent); }
         
-        /* Главное фото 100.jpg */
+        /* Навигация по категориям */
+        .nav-cats { display: flex; overflow-x: auto; gap: 10px; padding: 15px 10px; background: white; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #ddd; justify-content: start; }
+        .nav-cats a { white-space: nowrap; text-decoration: none; color: var(--primary); font-weight: bold; border: 2px solid var(--primary); padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; transition: 0.3s; }
+        .nav-cats a:hover { background: var(--primary); color: white; }
+
         .hero-image { width: 100%; max-width: 1000px; display: block; margin: 10px auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
-        /* Лента новостей */
-        .news-ticker { background: var(--accent); color: var(--dark); padding: 12px 0; font-weight: bold; overflow: hidden; position: relative; }
+        .news-ticker { background: var(--accent); color: var(--dark); padding: 12px 0; font-weight: bold; overflow: hidden; }
         .ticker-content { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; font-size: 1.1rem; }
         @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
-        .section-title { border-left: 6px solid var(--accent); padding-left: 15px; margin: 40px 0 20px; color: var(--primary); font-size: 1.6rem; text-transform: uppercase; background: #e2e8f0; padding: 10px; }
+        .section-title { border-left: 6px solid var(--accent); padding-left: 15px; margin: 40px 0 20px; color: var(--primary); font-size: 1.6rem; text-transform: uppercase; background: #e2e8f0; padding: 10px; border-radius: 0 10px 10px 0; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .item-card { background: white; border-radius: 15px; border: 1px solid #ddd; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
-        .item-card:hover { transform: translateY(-8px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
+        .item-card:hover { transform: translateY(-5px); }
         
-        .item-img { width: 100%; height: 280px; object-fit: cover; border-bottom: 1px solid #eee; }
-        .item-info { padding: 20px; flex-grow: 1; text-align: center; }
-        .item-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; color: var(--dark); }
-        .item-price { font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; display: block; }
+        .item-img { width: 100%; height: 280px; object-fit: cover; }
+        .item-info { padding: 15px; flex-grow: 1; text-align: center; }
+        .item-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 10px; height: 2.5em; overflow: hidden; }
+        .item-price { font-size: 1.3rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; display: block; }
 
-        /* Кнопка характеристик */
-        .btn-details { background: #f1f5f9; border: 2px solid var(--primary); color: var(--primary); padding: 8px 15px; border-radius: 10px; cursor: pointer; margin-bottom: 15px; font-weight: bold; width: 100%; transition: 0.2s; }
-        .btn-details:hover { background: var(--primary); color: white; }
+        .btn-details { background: #f1f5f9; border: 1px solid var(--primary); color: var(--primary); padding: 8px; border-radius: 8px; cursor: pointer; margin-bottom: 10px; font-weight: bold; width: 100%; }
+        .details-content { display: none; text-align: left; font-size: 0.9rem; color: #334155; background: #f8fafc; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px dashed var(--primary); }
+
+        .btn-add { background: var(--success); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; }
         
-        /* Скрытый блок описания */
-        .details-content { display: none; text-align: left; font-size: 0.95rem; color: #334155; background: #f8fafc; padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1px dashed var(--primary); line-height: 1.5; }
+        .cart-panel { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 500px; background: var(--dark); color: white; padding: 15px; border-radius: 15px; display: none; z-index: 1000; text-align: center; }
+        .cart-btn-send { background: var(--success); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; width: 100%; margin-top: 10px; cursor: pointer; }
 
-        .btn-add { background: var(--success); color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; width: 100%; cursor: pointer; font-size: 1.1rem; box-shadow: 0 4px 6px rgba(37, 211, 102, 0.3); }
-        .btn-add:active { transform: scale(0.95); }
-        
-        .cart-panel { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 95%; max-width: 500px; background: var(--dark); color: white; padding: 20px; border-radius: 20px; display: none; z-index: 1000; text-align: center; box-shadow: 0 -5px 25px rgba(0,0,0,0.5); }
-        .cart-btn-send { background: var(--success); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; width: 100%; margin-top: 10px; cursor: pointer; font-size: 1.1rem; }
-
-        .contact-box { background: var(--dark); color: white; padding: 40px; border-radius: 20px; margin: 60px 0; text-align: center; }
-        footer { text-align: center; padding: 30px; color: #64748b; font-size: 0.9rem; }
+        .contact-box { background: var(--dark); color: white; padding: 30px; border-radius: 20px; margin: 40px 0; text-align: center; }
+        footer { text-align: center; padding: 20px; color: #64748b; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>ОЛАМИ ТЕХНИКА 2727</h1>
-    <p>Магазин качественной бытовой техники в Кумсангире</p>
+    <p>Кумсангир, Центральный рынок</p>
 </header>
 
-<img src="100.jpg" class="hero-image" alt="Олами Техника Главная">
+<nav class="nav-cats">
+    <a href="#tv">📺 Телевизоры</a>
+    <a href="#vacuums">🧹 Пылесосы</a>
+    <a href="#kitchen">🍳 Кухня и Быт</a>
+    <a href="#contacts">📞 Контакты</a>
+</nav>
+
+<img src="100.jpg" class="hero-image" alt="Главная">
 
 <div class="news-ticker">
     <div class="ticker-content">
-        🚚 Бесплатная доставка по Кумсангиру! 🎁 Подарки каждому покупателю телевизора! 📱 Наш телефон: +992 55 961 11 14 — Звоните прямо сейчас! ⭐ Самые низкие цены на пылесосы и плиты!
+        🚚 Доставка по Кумсангиру бесплатно! 🎁 Скидки на технику Samsung! 📱 Тел: +992 55 961 11 14 
     </div>
 </div>
 
 <div class="container">
     
-    <h2 class="section-title">📺 Телевизоры Smart TV</h2>
+    <h2 id="tv" class="section-title">📺 Телевизоры</h2>
     <div class="grid">
-        <div class="item-card">
-            <img src="1.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">LG 43LP50 (43")</div>
-                <span class="item-price">1850 смн</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">
-                    • Разрешение: Full HD<br>• Технология: Dynamic Color<br>• Звук: Dolby Audio<br>• Разъемы: HDMI, USB Movie<br>• Resolution Upscaler для четкости.
-                </div>
-                <button class="btn-add" onclick="addToCart('LG 43LP50', 1850)">В корзину</button>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <img src="2.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Skyworth 4K UHD</div>
-                <span class="item-price">1600 смн</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">
-                    • Система: Android TV<br>• Качество: Ultra HD 4K<br>• Дизайн: Тонкие рамки<br>• Функции: Встроенный Wi-Fi, YouTube.
-                </div>
-                <button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">В корзину</button>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <img src="3.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Samsung 46" Smart TV</div>
-                <span class="item-price">1300 смн</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">
-                    • Система: Android 14<br>• Экран: Full HD<br>• Связь: Bluetooth, Miracast<br>• Звук: Dolby Sound<br>• Приложения: Netflix, YouTube.
-                </div>
-                <button class="btn-add" onclick="addToCart('Samsung 46 Smart', 1300)">В корзину</button>
-            </div>
-        </div>
+        <div class="item-card"><img src="1.jpg" class="item-img"><div class="item-info"><div class="item-title">LG 43LP50 (43")</div><span class="item-price">1850 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Full HD<br>• Dolby Audio<br>• HDMI/USB</div><button class="btn-add" onclick="addToCart('LG 43LP50', 1850)">В корзину</button></div></div>
+        <div class="item-card"><img src="2.jpg" class="item-img"><div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android TV<br>• 4K Ultra HD<br>• Wi-Fi</div><button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">В корзину</button></div></div>
+        <div class="item-card"><img src="3.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 46" Smart</div><span class="item-price">1300 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android 14<br>• Bluetooth/Miracast<br>• YouTube/Netflix</div><button class="btn-add" onclick="addToCart('Samsung 46 Smart', 1300)">В корзину</button></div></div>
+        <div class="item-card"><img src="4.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 36" SS-36T2</div><span class="item-price">1100 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Double Glass<br>• HD Ready<br>• Edgeless Design</div><button class="btn-add" onclick="addToCart('Samsung 36 SS-36T2', 1100)">В корзину</button></div></div>
+        <div class="item-card"><img src="5.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 35" LED</div><span class="item-price">1100 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• LED Backlight<br>• Тюнер DVB-T2/S2<br>• HDMI/USB</div><button class="btn-add" onclick="addToCart('Samsung 35 LED', 1100)">В корзину</button></div></div>
+        <div class="item-card"><img src="6.jpg" class="item-img"><div class="item-info"><div class="item-title">Smart TV 45" Green</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Tempered Glass<br>• Android 14.0<br>• 4K UHD</div><button class="btn-add" onclick="addToCart('Smart TV 45', 0)">В корзину</button></div></div>
     </div>
 
-    <h2 class="section-title">🧹 Пылесосы высокой мощности</h2>
+    <h2 id="vacuums" class="section-title">🧹 Пылесосы</h2>
     <div class="grid">
-        <div class="item-card">
-            <img src="7.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Hitachi CV-950F</div>
-                <span class="item-price">1030 смн</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">
-                    • Мощность: 2100W<br>• Объем: 18 литров<br>• Корпус: Прочный металл<br>• Функция выдува воздуха (Blower).
-                </div>
-                <button class="btn-add" onclick="addToCart('Hitachi 2100W', 1030)">В корзину</button>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <img src="8.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Luxnew 5800W</div>
-                <span class="item-price">550 смн</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">
-                    • Мощность: 5800W<br>• Тип: Профессиональный контейнерный<br>• Насадки: 3 шт в комплекте<br>• Идеально для ковров и мебели.
-                </div>
-                <button class="btn-add" onclick="addToCart('Luxnew 5800W', 550)">В корзину</button>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <img src="10.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Starlux SL-3065</div>
-                <span class="item-price">680 смн</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">
-                    • Мощность: 2200W<br>• Технология: Airflow Max<br>• Очистка: Гигиенический сброс пыли<br>• Гарантия: 25 месяцев.
-                </div>
-                <button class="btn-add" onclick="addToCart('Starlux 2200W', 680)">В корзину</button>
-            </div>
-        </div>
-    </div>
-
-    <h2 class="section-title">🍳 Бытовая техника и Кухня</h2>
-    <div class="grid">
-        <div class="item-card">
-            <img src="20.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Холодильник Eastcool</div>
-                <span class="item-price">1680 смн</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">
-                    • Класс энергии: A+<br>• Цвет: Матовый черный<br>• Тип: Компактный двухкамерный<br>• Надежный компрессор.
-                </div>
-                <button class="btn-add" onclick="addToCart('Eastcool Black', 1680)">В корзину</button>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <img src="21.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Плита Evro Lux</div>
-                <span class="item-price">Цена уточняется</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">
-                    • Тип: Керамическая инфракрасная<br>• Мощность: 3500W<br>• Функции: Таймер, сенсорное управление<br>• Гарантия: 2 года.
-                </div>
-                <button class="btn-add" onclick="addToCart('Evro Lux Плита', 0)">В корзину</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="contact-box">
-        <h2>Магазин "Олами Техника 2727"</h2>
-        <p>📍 Кумсангир, Центральный рынок</p>
-        <p>Свяжитесь с нами напрямую:</p>
-        <a href="tel:+992559611114" style="color: var(--accent); font-size: 1.8rem; text-decoration: none; font-weight: bold;">+992 55 961 11 14</a>
-    </div>
-</div>
-
-<div id="cart-panel" class="cart-panel">
-    <div>🛒 Выбрано: <span id="cart-count">0</span> товаров | Сумма: <span id="cart-total">0</span> смн</div>
-    <button class="cart-btn-send" onclick="sendToWhatsApp()">✅ Оформить через WhatsApp</button>
-</div>
-
-<script>
-    // Функция исправления кнопки Характеристики
-    function showDetails(btn) {
-        const content = btn.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-            btn.innerText = "Характеристики ↓";
-        } else {
-            content.style.display = "block";
-            btn.innerText = "Скрыть ↑";
-        }
-    }
-
-    let cart = [];
-    let total = 0;
-
-    function addToCart(name, price) {
-        cart.push(name);
-        total += price;
-        document.getElementById('cart-panel').style.display = 'block';
-        document.getElementById('cart-count').innerText = cart.length;
-        document.getElementById('cart-total').innerText = total;
-    }
-
-    function sendToWhatsApp() {
-        let text = "Здравствуйте! Хочу заказать в Олами Техника 2727:%0A%0A";
-        cart.forEach((item, i) => text += (i+1) + ". " + item + "%0A");
-        text += "%0A💰 Итого: " + total + " смн";
-        window.location.href = "https://wa.me/992559611114?text=" + text;
-    }
-</script>
-
-<footer>&copy; 2026 Олами Техника 2727. Все права защищены.</footer>
-
-</body>
-</html>
+        <div class="item-card"><img src="7.jpg" class="item-img"><div class="item-info"><div class="item-title">Hitachi CV-950F</div><span class="item-price">1030 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2100W<br>• 18 литров<br>• Металл</div><button class="btn-add" onclick="addToCart('Hitachi CV-950F', 1030)">В корзину</button></div></div>
+        <div class="item-card"><img src="8.jpg" class="item-img"><div class="item-info"><div class="item-title">Luxnew 5800W</div><span class="item-price">550 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 5800W Max<br>• 3 насадки<br>• Контейнер</div><button class="btn-add" onclick="addToCart('Luxnew 5800W', 550)">В корзину</button></div></div>
+        <div class="item-card"><img src="9.jpg" class="item-img"><div class="item-info"><div class="item-title">Starlux SL-3025</div><span class="item-price">550 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Вертикальный<br>• Компактный<br>• Мощный</div><button class="btn-add" onclick="addToCart('
