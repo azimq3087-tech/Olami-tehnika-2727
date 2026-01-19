@@ -8,37 +8,27 @@
         :root { --primary: #1e40af; --accent: #fbbf24; --dark: #0f172a; --light: #f8fafc; --success: #25d366; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
         header { background: var(--dark); color: white; padding: 20px 10px; text-align: center; border-bottom: 4px solid var(--accent); }
-        
         .nav-cats { display: flex; overflow-x: auto; gap: 10px; padding: 15px 10px; background: white; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #ddd; justify-content: start; }
         .nav-cats a { white-space: nowrap; text-decoration: none; color: var(--primary); font-weight: bold; border: 2px solid var(--primary); padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; transition: 0.3s; }
         .nav-cats a:hover { background: var(--primary); color: white; }
-
         .hero-image { width: 100%; max-width: 1000px; display: block; margin: 10px auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-
         .news-ticker { background: var(--accent); color: var(--dark); padding: 12px 0; font-weight: bold; overflow: hidden; }
         .ticker-content { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; font-size: 1.1rem; }
         @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
         .section-title { border-left: 6px solid var(--accent); padding-left: 15px; margin: 40px 0 20px; color: var(--primary); font-size: 1.6rem; text-transform: uppercase; background: #e2e8f0; padding: 10px; border-radius: 0 10px 10px 0; }
-        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .item-card { background: white; border-radius: 15px; border: 1px solid #ddd; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; box-shadow: 0 5px 10px rgba(0,0,0,0.05); height: 100%; }
+        .item-card { background: white; border-radius: 15px; border: 1px solid #ddd; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
         .item-card:hover { transform: translateY(-5px); }
-        
         .item-img { width: 100%; height: 280px; object-fit: cover; }
-        .item-info { padding: 15px; flex-grow: 1; text-align: center; display: flex; flex-direction: column; }
+        .item-info { padding: 15px; flex-grow: 1; text-align: center; }
         .item-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 10px; height: 2.5em; overflow: hidden; }
         .item-price { font-size: 1.3rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; display: block; }
-
         .btn-details { background: #f1f5f9; border: 1px solid var(--primary); color: var(--primary); padding: 8px; border-radius: 8px; cursor: pointer; margin-bottom: 10px; font-weight: bold; width: 100%; }
         .details-content { display: none; text-align: left; font-size: 0.9rem; color: #334155; background: #f8fafc; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px dashed var(--primary); }
-
-        .btn-add { background: var(--success); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; margin-top: auto; }
-        
+        .btn-add { background: var(--success); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; }
         .cart-panel { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 500px; background: var(--dark); color: white; padding: 15px; border-radius: 15px; display: none; z-index: 1000; text-align: center; }
         .cart-btn-send { background: var(--success); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; width: 100%; margin-top: 10px; cursor: pointer; }
-
         .contact-box { background: var(--dark); color: white; padding: 30px; border-radius: 20px; margin: 40px 0; text-align: center; }
         footer { text-align: center; padding: 20px; color: #64748b; }
     </style>
@@ -52,8 +42,8 @@
 
 <nav class="nav-cats">
     <a href="#tv">📺 Телевизоры</a>
-    <a href="#vacuums">🧹 Пылесосы</a>
     <a href="#stoves">🔥 Плиты</a>
+    <a href="#vacuums">🧹 Пылесосы</a>
     <a href="#contacts">📞 Контакты</a>
 </nav>
 
@@ -69,9 +59,51 @@
     
     <h2 id="tv" class="section-title">📺 Телевизоры</h2>
     <div class="grid">
-        <div class="item-card"><img src="1.jpg" class="item-img"><div class="item-info"><div class="item-title">LG 43LP50 (43")</div><span class="item-price">1850 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Full HD<br>• Dolby Audio</div><button class="btn-add" onclick="addToCart('LG 43LP50', 1850)">В корзину</button></div></div>
-        <div class="item-card"><img src="2.jpg" class="item-img"><div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android TV<br>• Wi-Fi</div><button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">В корзину</button></div></div>
-        <div class="item-card"><img src="3.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 46" Smart</div><span class="item-price">1300 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android 14<br>• Smart TV</div><button class="btn-add" onclick="addToCart('Samsung 46 Smart', 1300)">В корзину</button></div></div>
+        <div class="item-card">
+            <img src="1.jpg" class="item-img">
+            <div class="item-info">
+                <div class="item-title">LG 43LP50 (43")</div>
+                <span class="item-price">1850 смн</span>
+                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                <div class="details-content">
+                    • **Экран:** 43 дюйма, Full HD разрешение.<br>
+                    • **Звук:** Dolby Audio, эффект объемного звучания.<br>
+                    • **Тюнер:** Встроенный DVB-T2 для цифровых каналов.<br>
+                    • **Разъемы:** 2x HDMI, 1x USB для флешек.
+                </div>
+                <button class="btn-add" onclick="addToCart('LG 43LP50', 1850)">В корзину</button>
+            </div>
+        </div>
+        <div class="item-card">
+            <img src="2.jpg" class="item-img">
+            <div class="item-info">
+                <div class="item-title">Skyworth 4K UHD</div>
+                <span class="item-price">1600 смн</span>
+                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                <div class="details-content">
+                    • **Система:** Android TV с доступом в Play Market.<br>
+                    • **Качество:** 4K Ultra HD, поддержка HDR10.<br>
+                    • **Сеть:** Wi-Fi, Bluetooth, Ethernet.<br>
+                    • **Управление:** Голосовой поиск на пульте.
+                </div>
+                <button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">В корзину</button>
+            </div>
+        </div>
+        <div class="item-card">
+            <img src="3.jpg" class="item-img">
+            <div class="item-info">
+                <div class="item-title">Samsung 46" Smart TV</div>
+                <span class="item-price">1300 смн</span>
+                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                <div class="details-content">
+                    • **Smart:** Прямой доступ к YouTube, Netflix, IVI.<br>
+                    • **Технология:** PurColor для реалистичных цветов.<br>
+                    • **Связь:** Screen Mirroring (экран телефона на ТВ).<br>
+                    • **Звук:** 20 Вт, чистый стереозвук.
+                </div>
+                <button class="btn-add" onclick="addToCart('Samsung 46 Smart', 1300)">В корзину</button>
+            </div>
+        </div>
     </div>
 
     <h2 id="stoves" class="section-title">🔥 Кухонные плиты</h2>
@@ -79,89 +111,97 @@
         <div class="item-card">
             <img src="20.jpg" class="item-img">
             <div class="item-info">
-                <div class="item-title">Kumtel Inox (20)</div>
+                <div class="item-title">Газовая плита Kumtel Inox (20)</div>
                 <span class="item-price">Уточняйте</span>
                 <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Нержавеющая сталь<br>• Турция</div>
+                <div class="details-content">
+                    • **Корпус:** Нержавеющая сталь Inox.<br>
+                    • **Духовка:** Электрическая с конвекцией (обдув).<br>
+                    • **Комплект:** 2 противня + решетка.<br>
+                    • **Страна:** Турция.
+                </div>
                 <button class="btn-add" onclick="addToCart('Kumtel 20', 0)">В корзину</button>
             </div>
         </div>
         <div class="item-card">
             <img src="21.jpg" class="item-img">
             <div class="item-info">
-                <div class="item-title">Avangard Black (21)</div>
+                <div class="item-title">Плита Avangard Black (21)</div>
                 <span class="item-price">2350 смн</span>
                 <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Комбинированная<br>• Гриль</div>
+                <div class="details-content">
+                    • **Тип:** Комбинированная (газ + электро).<br>
+                    • **Функции:** Гриль, вертел, электроподжиг.<br>
+                    • **Духовка:** 65 литров, двойное стекло.<br>
+                    • **Таймер:** Механический со звонком.
+                </div>
                 <button class="btn-add" onclick="addToCart('Avangard 21', 2350)">В корзину</button>
             </div>
         </div>
         <div class="item-card">
             <img src="22.jpg" class="item-img">
             <div class="item-info">
-                <div class="item-title">Shivaki Black (22)</div>
+                <div class="item-title">Shivaki Bio Ceramic Black (22)</div>
                 <span class="item-price">Уточняйте</span>
                 <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Bio Ceramic<br>• 4 конфорки</div>
+                <div class="details-content">
+                    • **Эмаль:** Bio Ceramic (легко чистится).<br>
+                    • **Управление:** Плавные ручки Soft Touch.<br>
+                    • **Особенность:** Газ-контроль и термостат.<br>
+                    • **Гарантия:** 3 года от производителя.
+                </div>
                 <button class="btn-add" onclick="addToCart('Shivaki 22', 0)">В корзину</button>
-            </div>
-        </div>
-        <div class="item-card">
-            <img src="23.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Avangard Glass (23)</div>
-                <span class="item-price">Уточняйте</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Стеклянная крышка<br>• Подсветка</div>
-                <button class="btn-add" onclick="addToCart('Avangard 23', 0)">В корзину</button>
-            </div>
-        </div>
-        <div class="item-card">
-            <img src="24.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Classic Stove (24)</div>
-                <span class="item-price">Уточняйте</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Эмаль легкой очистки</div>
-                <button class="btn-add" onclick="addToCart('Classic 24', 0)">В корзину</button>
             </div>
         </div>
         <div class="item-card">
             <img src="25.jpeg" class="item-img">
             <div class="item-info">
-                <div class="item-title">Deluxe Edition (25)</div>
+                <div class="item-title">Плита Deluxe Edition (25)</div>
                 <span class="item-price">Уточняйте</span>
                 <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Конвекция<br>• Таймер</div>
+                <div class="details-content">
+                    • **Духовка:** Равномерный нагрев со всех сторон.<br>
+                    • **Опции:** Подсветка, электроподжиг в ручке.<br>
+                    • **Крышка:** Закаленное стекло.<br>
+                    • **Дизайн:** Премиальная серия 2025.
+                </div>
                 <button class="btn-add" onclick="addToCart('Deluxe 25', 0)">В корзину</button>
-            </div>
-        </div>
-        <div class="item-card">
-            <img src="26.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Shivaki Brown (26)</div>
-                <span class="item-price">Уточняйте</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Цвет Шоколад<br>• Биокерамика</div>
-                <button class="btn-add" onclick="addToCart('Shivaki 26', 0)">В корзину</button>
-            </div>
-        </div>
-        <div class="item-card">
-            <img src="27.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Profi 60cm (27)</div>
-                <span class="item-price">Уточняйте</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Ширина 60см<br>• Большая духовка</div>
-                <button class="btn-add" onclick="addToCart('Stove 27', 0)">В корзину</button>
             </div>
         </div>
     </div>
 
     <h2 id="vacuums" class="section-title">🧹 Пылесосы</h2>
     <div class="grid">
-        <div class="item-card"><img src="7.jpg" class="item-img"><div class="item-info"><div class="item-title">Hitachi CV-950F</div><span class="item-price">1030 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2100W</div><button class="btn-add" onclick="addToCart('Hitachi 950', 1030)">В корзину</button></div></div>
-        <div class="item-card"><img src="11.jpg" class="item-img"><div class="item-info"><div class="item-title">Haley HY-906</div><span class="item-price">680 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2800W</div><button class="btn-add" onclick="addToCart('Haley 906', 680)">В корзину</button></div></div>
+        <div class="item-card">
+            <img src="7.jpg" class="item-img">
+            <div class="item-info">
+                <div class="item-title">Hitachi CV-950F</div>
+                <span class="item-price">1030 смн</span>
+                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                <div class="details-content">
+                    • **Мощность:** 2100 Вт, супер-всасывание.<br>
+                    • **Корпус:** Прочный металл, объем 18 литров.<br>
+                    • **Фильтр:** Тканевый многоразовый фильтр.<br>
+                    • **Функция:** Выдув воздуха (Blower).
+                </div>
+                <button class="btn-add" onclick="addToCart('Hitachi 950', 1030)">В корзину</button>
+            </div>
+        </div>
+        <div class="item-card">
+            <img src="11.jpg" class="item-img">
+            <div class="item-info">
+                <div class="item-title">Haley HY-906</div>
+                <span class="item-price">680 смн</span>
+                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                <div class="details-content">
+                    • **Мощность:** 2800 Вт Max.<br>
+                    • **Фильтрация:** HEPA-фильтр против аллергенов.<br>
+                    • **Трубка:** Телескопическая стальная.<br>
+                    • **Насадки:** Для ковров и узких мест.
+                </div>
+                <button class="btn-add" onclick="addToCart('Haley 906', 680)">В корзину</button>
+            </div>
+        </div>
     </div>
 
     <div id="contacts" class="contact-box">
