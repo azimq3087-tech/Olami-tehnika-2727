@@ -14,7 +14,7 @@
         .nav-cats a:hover { background: var(--primary); color: white; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
-        .section-block { margin-bottom: 50px; scroll-margin-top: 80px; } /* Отступы для категорий */
+        .section-block { margin-bottom: 50px; scroll-margin-top: 80px; }
         .section-title { border-left: 6px solid var(--accent); padding: 10px 15px; margin: 20px 0; color: var(--primary); font-size: 1.6rem; text-transform: uppercase; background: #e2e8f0; border-radius: 0 10px 10px 0; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -31,7 +31,6 @@
         .btn-add { background: var(--success); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; }
         
         .cart-panel { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 500px; background: var(--dark); color: white; padding: 15px; border-radius: 15px; display: none; z-index: 2000; text-align: center; }
-        .contact-box { background: var(--dark); color: white; padding: 30px; border-radius: 20px; margin: 40px 0; text-align: center; }
         footer { text-align: center; padding: 20px; color: #64748b; }
     </style>
 </head>
@@ -43,11 +42,11 @@
 </header>
 
 <nav class="nav-cats">
-    <a href="#tv">📺 Телевизоры</a>
+    <a href="#tv">📺 ТВ</a>
     <a href="#stoves">🔥 Плиты</a>
     <a href="#vacuums">🧹 Пылесосы</a>
     <a href="#general">📦 Общее</a>
-    <a href="#accs">🔋 Аксессуары</a>
+    <a href="#accs">🔋 Мелочи</a>
     <a href="#contacts">📞 Контакты</a>
 </nav>
 
@@ -56,26 +55,54 @@
     <div id="tv" class="section-block">
         <h2 class="section-title">📺 Телевизоры</h2>
         <div class="grid">
-            <div class="item-card"><img src="1.jpg" class="item-img"><div class="item-info"><div class="item-title">LG 43LP50 (43")</div><span class="item-price">1850 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Full HD<br>• Dolby Audio</div><button class="btn-add" onclick="addToCart('LG 43LP50', 1850)">В корзину</button></div></div>
-            <div class="item-card"><img src="2.jpg" class="item-img"><div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android TV<br>• Wi-Fi</div><button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">В корзину</button></div></div>
-            <div class="item-card"><img src="3.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 46" Smart TV</div><span class="item-price">1300 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• YouTube/Netflix</div><button class="btn-add" onclick="addToCart('Samsung 46 Smart', 1300)">В корзину</button></div></div>
+            <div class="item-card">
+                <img src="1.jpg" class="item-img">
+                <div class="item-info">
+                    <div class="item-title">LG 43LP50 (43")</div>
+                    <span class="item-price">1850 смн</span>
+                    <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                    <div class="details-content">
+                        • Качественная IPS матрица с широким углом обзора.<br>
+                        • Технология Dynamic Color для насыщенных цветов.<br>
+                        • Поддержка цифрового ТВ (DVB-T2/C/S2).
+                    </div>
+                    <button class="btn-add" onclick="addToCart('LG 43LP50', 1850)">В корзину</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="stoves" class="section-block">
         <h2 class="section-title">🔥 Кухонные плиты</h2>
         <div class="grid">
-            <div class="item-card"><img src="20.jpg" class="item-img"><div class="item-info"><div class="item-title">Kumtel Inox (20)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Нержавейка<br>• Турция</div><button class="btn-add" onclick="addToCart('Kumtel 20', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="21.jpg" class="item-img"><div class="item-info"><div class="item-title">Avangard Black (21)</div><span class="item-price">2350 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Гриль/Вертел</div><button class="btn-add" onclick="addToCart('Avangard 21', 2350)">В корзину</button></div></div>
-            <div class="item-card"><img src="26.jpg" class="item-img"><div class="item-info"><div class="item-title">Shivaki Bio Ceramic (26)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Цвет Шоколад</div><button class="btn-add" onclick="addToCart('Shivaki 26', 0)">В корзину</button></div></div>
-        </div>
-    </div>
-
-    <div id="vacuums" class="section-block">
-        <h2 class="section-title">🧹 Пылесосы</h2>
-        <div class="grid">
-            <div class="item-card"><img src="7.jpg" class="item-img"><div class="item-info"><div class="item-title">Hitachi CV-950F</div><span class="item-price">1030 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2100W/18L</div><button class="btn-add" onclick="addToCart('Hitachi 950', 1030)">В корзину</button></div></div>
-            <div class="item-card"><img src="11.jpg" class="item-img"><div class="item-info"><div class="item-title">Haley HY-906</div><span class="item-price">680 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2800W Max</div><button class="btn-add" onclick="addToCart('Haley 906', 680)">В корзину</button></div></div>
+            <div class="item-card">
+                <img src="20.jpg" class="item-img">
+                <div class="item-info">
+                    <div class="item-title">Kumtel Inox (20)</div>
+                    <span class="item-price">Уточняйте</span>
+                    <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                    <div class="details-content">
+                        • Электрическая духовка с 3 режимами нагрева.<br>
+                        • Нержавеющая сталь, устойчивая к коррозии.<br>
+                        • В комплекте два противня и одна решетка.
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Kumtel 20', 0)">В корзину</button>
+                </div>
+            </div>
+            <div class="item-card">
+                <img src="21.jpg" class="item-img">
+                <div class="item-info">
+                    <div class="item-title">Avangard Black (21)</div>
+                    <span class="item-price">2350 смн</span>
+                    <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                    <div class="details-content">
+                        • Мощный гриль и встроенный вертел.<br>
+                        • Газ-контроль конфорок для безопасности.<br>
+                        • Стеклянная крышка рабочего стола.
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Avangard 21', 2350)">В корзину</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -83,11 +110,15 @@
         <h2 class="section-title">📦 Общая техника</h2>
         <div class="grid">
             <div class="item-card">
-                <img src="20.jpg" class="item-img"> <div class="item-info">
+                <img src="22.jpg" class="item-img"> <div class="item-info">
                     <div class="item-title">Холодильник Eastcool</div>
                     <span class="item-price">1680 смн</span>
                     <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                    <div class="details-content">• Экономный A+<br>• Тихий компрессор</div>
+                    <div class="details-content">
+                        • Система No Frost (не требует разморозки).<br>
+                        • Энергопотребление класса A+.<br>
+                        • Современный дизайн и тихая работа.
+                    </div>
                     <button class="btn-add" onclick="addToCart('Холодильник Eastcool', 1680)">В корзину</button>
                 </div>
             </div>
@@ -99,29 +130,26 @@
         <div class="grid">
             <div class="item-card">
                 <div class="item-info">
-                    <div class="item-title">Фонарь аккумуляторный</div>
+                    <div class="item-title">Универсальный пульт для ТВ</div>
                     <span class="item-price">Уточняйте</span>
                     <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                    <div class="details-content">• Яркий LED<br>• Зарядка от сети</div>
-                    <button class="btn-add" onclick="addToCart('Фонарь LED', 0)">В корзину</button>
-                </div>
-            </div>
-            <div class="item-card">
-                <div class="item-info">
-                    <div class="item-title">Пульт для ТВ (универсальный)</div>
-                    <span class="item-price">Уточняйте</span>
-                    <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                    <div class="details-content">• Для всех моделей ТВ</div>
+                    <div class="details-content">
+                        • Подходит к Samsung, LG, Sony и др.<br>
+                        • Простая настройка за 1 минуту.
+                    </div>
                     <button class="btn-add" onclick="addToCart('Пульт Универсал', 0)">В корзину</button>
                 </div>
             </div>
             <div class="item-card">
                 <div class="item-info">
-                    <div class="item-title">Удлинитель (5 метров)</div>
+                    <div class="item-title">Фонарик LED аккумуляторный</div>
                     <span class="item-price">Уточняйте</span>
                     <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                    <div class="details-content">• 3-5 розеток<br>• Защита от детей</div>
-                    <button class="btn-add" onclick="addToCart('Удлинитель 5м', 0)">В корзину</button>
+                    <div class="details-content">
+                        • Высокая яркость и дальность луча.<br>
+                        • Зарядка от USB или розетки.
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Фонарь LED', 0)">В корзину</button>
                 </div>
             </div>
         </div>
@@ -159,6 +187,5 @@
         window.location.href = "https://wa.me/992559611114?text=" + msg;
     }
 </script>
-<footer>&copy; 2026 Олами Техника 2727.</footer>
 </body>
 </html>
