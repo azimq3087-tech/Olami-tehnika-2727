@@ -1,3 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Олами Техника 2727 — Кумсангир</title>
+    <style>
+        :root { --primary: #1e40af; --accent: #fbbf24; --dark: #0f172a; --light: #f8fafc; --success: #25d366; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
+        header { background: var(--dark); color: white; padding: 20px 10px; text-align: center; border-bottom: 4px solid var(--accent); }
+        .nav-cats { display: flex; overflow-x: auto; gap: 10px; padding: 15px 10px; background: white; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #ddd; justify-content: start; }
+        .nav-cats a { white-space: nowrap; text-decoration: none; color: var(--primary); font-weight: bold; border: 2px solid var(--primary); padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; transition: 0.3s; }
+        .nav-cats a:hover { background: var(--primary); color: white; }
+        .hero-image { width: 100%; max-width: 1000px; display: block; margin: 10px auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .news-ticker { background: var(--accent); color: var(--dark); padding: 12px 0; font-weight: bold; overflow: hidden; }
+        .ticker-content { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; font-size: 1.1rem; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+        .section-title { border-left: 6px solid var(--accent); padding-left: 15px; margin: 40px 0 20px; color: var(--primary); font-size: 1.6rem; text-transform: uppercase; background: #e2e8f0; padding: 10px; border-radius: 0 10px 10px 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .item-card { background: white; border-radius: 15px; border: 1px solid #ddd; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
+        .item-card:hover { transform: translateY(-5px); }
+        .item-img { width: 100%; height: 280px; object-fit: cover; }
+        .item-info { padding: 15px; flex-grow: 1; text-align: center; }
+        .item-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 10px; height: 2.5em; overflow: hidden; }
+        .item-price { font-size: 1.3rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; display: block; }
+        .btn-details { background: #f1f5f9; border: 1px solid var(--primary); color: var(--primary); padding: 8px; border-radius: 8px; cursor: pointer; margin-bottom: 10px; font-weight: bold; width: 100%; }
+        .details-content { display: none; text-align: left; font-size: 0.9rem; color: #334155; background: #f8fafc; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px dashed var(--primary); }
+        .btn-add { background: var(--success); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; }
+        .cart-panel { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 500px; background: var(--dark); color: white; padding: 15px; border-radius: 15px; display: none; z-index: 1000; text-align: center; }
+        .cart-btn-send { background: var(--success); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; width: 100%; margin-top: 10px; cursor: pointer; }
+        .contact-box { background: var(--dark); color: white; padding: 30px; border-radius: 20px; margin: 40px 0; text-align: center; }
+        footer { text-align: center; padding: 20px; color: #64748b; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ОЛАМИ ТЕХНИКА 2727</h1>
+    <p>Кумсангир, Центральный рынок</p>
+</header>
+
+<nav class="nav-cats">
+    <a href="#tv">📺 Телевизоры</a>
+    <a href="#vacuums">🧹 Пылесосы</a>
+    <a href="#stoves">🔥 Плиты</a>
+    <a href="#contacts">📞 Контакты</a>
+</nav>
+
+<img src="100.jpg" class="hero-image" alt="Главная">
+
+<div class="news-ticker">
+    <div class="ticker-content">
+        🚚 Доставка по Кумсангиру бесплатно! 🎁 Скидки на технику Samsung! 📱 Тел: +992 55 961 11 14 
+    </div>
+</div>
+
+<div class="container">
+    
+    <h2 id="tv" class="section-title">📺 Телевизоры</h2>
+    <div class="grid">
+        <div class="item-card"><img src="1.jpg" class="item-img"><div class="item-info"><div class="item-title">LG 43LP50 (43")</div><span class="item-price">1850 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Full HD<br>• Dolby Audio</div><button class="btn-add" onclick="addToCart('LG 43LP50', 1850)">В корзину</button></div></div>
+        <div class="item-card"><img src="2.jpg" class="item-img"><div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android TV<br>• Wi-Fi</div><button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">В корзину</button></div></div>
+        <div class="item-card"><img src="3.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 46" Smart</div><span class="item-price">1300 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android 14<br>• YouTube/Netflix</div><button class="btn-add" onclick="addToCart('Samsung 46 Smart', 1300)">В корзину</button></div></div>
+    </div>
+
     <h2 id="stoves" class="section-title">🔥 Кухонные плиты</h2>
     <div class="grid">
         <div class="item-card">
@@ -6,68 +72,42 @@
                 <div class="item-title">Газовая плита Kumtel Inox</div>
                 <span class="item-price">Уточняйте</span>
                 <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Нержавеющая сталь<br>• Производство Турция<br>• Электроподжиг</div>
+                <div class="details-content">• Нержавеющая сталь<br>• Турция</div>
                 <button class="btn-add" onclick="addToCart('Kumtel 20', 0)">В корзину</button>
             </div>
         </div>
-
         <div class="item-card">
             <img src="21.jpg" class="item-img">
             <div class="item-info">
                 <div class="item-title">Плита Avangard Black</div>
                 <span class="item-price">2350 смн</span>
                 <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Комбинированная духовка<br>• Гриль и вертел<br>• Таймер</div>
+                <div class="details-content">• Комбинированная<br>• Гриль</div>
                 <button class="btn-add" onclick="addToCart('Avangard 21', 2350)">В корзину</button>
             </div>
         </div>
-
-        <div class="item-card">
-            <img src="22.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Shivaki Bio Ceramic Black</div>
-                <span class="item-price">Уточняйте</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Покрытие Bio Ceramic<br>• Легкая очистка эмали<br>• Газ-контроль</div>
-                <button class="btn-add" onclick="addToCart('Shivaki Black 22', 0)">В корзину</button>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <img src="23.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Плита Avangard Glass</div>
-                <span class="item-price">Уточняйте</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Стеклянная верхняя крышка<br>• Электроподжиг конфорок<br>• Подсветка духовки</div>
-                <button class="btn-add" onclick="addToCart('Avangard Glass 23', 0)">В корзину</button>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <img src="24.jpg" class="item-img">
-            <div class="item-info">
-                <div class="item-title">Плита Газовая Classic</div>
-                <span class="item-price">Уточняйте</span>
-                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Эмалированные решетки<br>• Хозяйственный отсек<br>• Надежные краны</div>
-                <button class="btn-add" onclick="addToCart('Classic 24', 0)">В корзину</button>
-            </div>
-        </div>
-
         <div class="item-card">
             <img src="25.jpeg" class="item-img">
             <div class="item-info">
-                <div class="item-title">Плита Deluxe Edition</div>
+                <div class="item-title">Плита Deluxe 25</div>
                 <span class="item-price">Уточняйте</span>
                 <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
-                <div class="details-content">• Улучшенная термоизоляция<br>• Конвекция в духовке<br>• Дизайн 2025</div>
+                <div class="details-content">• Конвекция<br>• Дизайн 2025</div>
                 <button class="btn-add" onclick="addToCart('Deluxe 25', 0)">В корзину</button>
             </div>
         </div>
-
         <div class="item-card">
             <img src="26.jpg" class="item-img">
             <div class="item-info">
                 <div class="item-title">Shivaki Bio Ceramic Brown</div>
                 <span class="item-price">Уточняйте</span>
+                <button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button>
+                <div class="details-content">• Биокерамика<br>• Цвет Шоколад</div>
+                <button class="btn-add" onclick="addToCart('Shivaki 26', 0)">В корзину</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 id="vacuums" class="section-title">🧹 Пылесосы</h2>
+    <div class="grid">
+        <div class="item
