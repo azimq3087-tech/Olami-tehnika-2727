@@ -6,7 +6,7 @@
     <title>Олами Техника 2727 — Кумсангир</title>
     <style>
         :root { --primary: #1e40af; --accent: #fbbf24; --dark: #0f172a; --light: #f8fafc; --success: #25d366; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); scroll-behavior: smooth; padding-bottom: 80px; }
         header { background: var(--dark); color: white; padding: 20px 10px; text-align: center; border-bottom: 4px solid var(--accent); }
         .nav-cats { display: flex; overflow-x: auto; gap: 10px; padding: 15px 10px; background: white; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #ddd; }
         .nav-cats a { white-space: nowrap; text-decoration: none; color: var(--primary); font-weight: bold; border: 2px solid var(--primary); padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; }
@@ -20,11 +20,17 @@
         .item-info { padding: 15px; flex-grow: 1; text-align: center; }
         .item-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 10px; height: 2.5em; overflow: hidden; }
         .item-price { font-size: 1.3rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; display: block; }
-        .btn-details { background: #f1f5f9; border: 1px solid var(--primary); color: var(--primary); padding: 8px; border-radius: 8px; cursor: pointer; margin-bottom: 10px; font-weight: bold; width: 100%; }
+        .btn-call { background: #059669; color: white; border: none; padding: 10px; border-radius: 8px; width: 100%; cursor: pointer; margin-bottom: 8px; font-weight: bold; text-decoration: none; display: block; }
+        .btn-add { background: var(--success); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; }
+        
+        /* Нижняя фиксированная панель */
+        .fixed-bottom-menu { position: fixed; bottom: 0; left: 0; right: 0; background: white; display: flex; gap: 10px; padding: 10px; box-shadow: 0 -2px 15px rgba(0,0,0,0.2); z-index: 3000; }
+        .btn-call-fixed { flex: 1; background: #059669; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-cart-fixed { flex: 1; background: var(--dark); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        
         .details-content { display: none; text-align: left; font-size: 0.9rem; color: #334155; background: #f8fafc; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px dashed var(--primary); }
-        .btn-add { background: var(--success); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; }
-        .cart-panel { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 500px; background: var(--dark); color: white; padding: 15px; border-radius: 15px; display: none; z-index: 2000; text-align: center; }
-        footer { text-align: center; padding: 20px; color: #64748b; }
+        .btn-details { background: #f1f5f9; border: 1px solid var(--primary); color: var(--primary); padding: 6px; border-radius: 8px; cursor: pointer; margin-bottom: 8px; font-size: 0.8rem; width: 100%; }
+        footer { text-align: center; padding: 20px; color: #64748b; margin-bottom: 80px; }
     </style>
 </head>
 <body>
@@ -35,11 +41,10 @@
 </header>
 
 <nav class="nav-cats">
-    <a href="#tv">📺 Телевизоры</a>
-    <a href="#stoves">🔥 Плиты</a>
-    <a href="#heaters">☀️ Обогреватели</a>
-    <a href="#vacuums">🧹 Пылесосы</a>
-    <a href="#accs">🔋 Аксессуары</a>
+    <a href="#tv">📺 Телевизоры / Телевизорҳо</a>
+    <a href="#heaters">☀️ Обогреватели / Гармкунакҳо</a>
+    <a href="#stoves">🔥 Плиты / Плитаҳо</a>
+    <a href="#vacuums">🧹 Пылесосы / Чангкашакҳо</a>
 </nav>
 
 <img src="100.jpg" class="hero-image">
@@ -48,92 +53,51 @@
     <div id="tv" class="section-block">
         <h2 class="section-title">📺 Телевизоры</h2>
         <div class="grid">
-            <div class="item-card"><img src="1.jpg" class="item-img"><div class="item-info"><div class="item-title">LG 43LP50 (43")</div><span class="item-price">1850 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Full HD, Dolby Audio<br>• Тюнер DVB-T2</div><button class="btn-add" onclick="addToCart('LG 43', 1850)">В корзину</button></div></div>
-            <div class="item-card"><img src="2.jpg" class="item-img"><div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android TV + Wi-Fi<br>• Голосовой поиск</div><button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">В корзину</button></div></div>
-            <div class="item-card"><img src="3.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 46" Smart</div><span class="item-price">1300 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• YouTube/Netflix<br>• Тонкий корпус</div><button class="btn-add" onclick="addToCart('Samsung 46', 1300)">В корзину</button></div></div>
-            <div class="item-card"><img src="4.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 36" HD</div><span class="item-price">1100 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Защитное стекло<br>• Безрамочный экран</div><button class="btn-add" onclick="addToCart('Samsung 36', 1100)">В корзину</button></div></div>
-            <div class="item-card"><img src="5.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung 35" LED</div><span class="item-price">1100 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Яркий LED дисплей</div><button class="btn-add" onclick="addToCart('Samsung 35', 1100)">В корзину</button></div></div>
-            <div class="item-card"><img src="6.jpg" class="item-img"><div class="item-info"><div class="item-title">Smart TV 45" 4K</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Android 14.0<br>• Ultra HD качество</div><button class="btn-add" onclick="addToCart('Smart 45', 0)">В корзину</button></div></div>
-        </div>
-    </div>
-
-    <div id="stoves" class="section-block">
-        <h2 class="section-title">🔥 Кухонные плиты</h2>
-        <div class="grid">
-            <div class="item-card"><img src="20.jpg" class="item-img"><div class="item-info"><div class="item-title">Kumtel Inox (20)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Нержавейка<br>• Турция, 3 режима</div><button class="btn-add" onclick="addToCart('Kumtel 20', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="21.jpg" class="item-img"><div class="item-info"><div class="item-title">Avangard Black (21)</div><span class="item-price">2350 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Гриль, вертел, таймер</div><button class="btn-add" onclick="addToCart('Avangard 21', 2350)">В корзину</button></div></div>
-            <div class="item-card"><img src="22.jpg" class="item-img"><div class="item-info"><div class="item-title">Shivaki Black (22)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Биокерамика<br>• Легкая мойка</div><button class="btn-add" onclick="addToCart('Shivaki 22', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="23.jpg" class="item-img"><div class="item-info"><div class="item-title">Avangard Glass (23)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Крышка из стекла</div><button class="btn-add" onclick="addToCart('Avangard 23', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="24.jpg" class="item-img"><div class="item-info"><div class="item-title">Classic Stove (24)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Прочные конфорки</div><button class="btn-add" onclick="addToCart('Classic 24', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="25.jpeg" class="item-img"><div class="item-info"><div class="item-title">Deluxe Edition (25)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Обдув духовки (конвекция)</div><button class="btn-add" onclick="addToCart('Deluxe 25', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="26.jpg" class="item-img"><div class="item-info"><div class="item-title">Shivaki Brown (26)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Коричневый цвет</div><button class="btn-add" onclick="addToCart('Shivaki 26', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="27.jpg" class="item-img"><div class="item-info"><div class="item-title">Profi 60cm (27)</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Большая рабочая зона</div><button class="btn-add" onclick="addToCart('Stove 27', 0)">В корзину</button></div></div>
-        </div>
-    </div>
-
-    <div id="vacuums" class="section-block">
-        <h2 class="section-title">🧹 Пылесосы</h2>
-        <div class="grid">
-            <div class="item-card"><img src="7.jpg" class="item-img"><div class="item-info"><div class="item-title">Hitachi CV-950F</div><span class="item-price">1030 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2100W, 18 литров</div><button class="btn-add" onclick="addToCart('Hitachi 950', 1030)">В корзину</button></div></div>
-            <div class="item-card"><img src="8.jpg" class="item-img"><div class="item-info"><div class="item-title">Luxnew 5800W</div><span class="item-price">550 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Высокая мощность<br>• Компактный</div><button class="btn-add" onclick="addToCart('Luxnew 8', 550)">В корзину</button></div></div>
-            <div class="item-card"><img src="9.jpg" class="item-img"><div class="item-info"><div class="item-title">Пылесос Модель 9</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Мощное всасывание</div><button class="btn-add" onclick="addToCart('Vacuum 9', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="11.jpg" class="item-img"><div class="item-info"><div class="item-title">Haley HY-906</div><span class="item-price">680 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2800W, HEPA фильтр</div><button class="btn-add" onclick="addToCart('Haley 906', 680)">В корзину</button></div></div>
-            <div class="item-card"><img src="13.jpg" class="item-img"><div class="item-info"><div class="item-title">Пылесос Модель 13</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Для сухой чистки</div><button class="btn-add" onclick="addToCart('Vacuum 13', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="15.jpg" class="item-img"><div class="item-info"><div class="item-title">LG Ellipse Cyclone</div><span class="item-price">1230 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Технология Циклон<br>• Без мешка</div><button class="btn-add" onclick="addToCart('LG 15', 1230)">В корзину</button></div></div>
-            <div class="item-card"><img src="17.jpg" class="item-img"><div class="item-info"><div class="item-title">Samsung Vitality Red</div><span class="item-price">1250 смн</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2000W, стильный дизайн</div><button class="btn-add" onclick="addToCart('Samsung 17', 1250)">В корзину</button></div></div>
+            <div class="item-card"><img src="1.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">LG 43LP50 (43")</div><span class="item-price">1850 смн</span><button class="btn-add" onclick="addToCart('LG 43', 1850)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="2.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="3.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Samsung 46" Smart</div><span class="item-price">1300 смн</span><button class="btn-add" onclick="addToCart('Samsung 46', 1300)">🛒 В корзину</button></div></div>
         </div>
     </div>
 
     <div id="heaters" class="section-block">
-        <h2 class="section-title">☀️ Обогреватели</h2>
+        <h2 class="section-title">☀️ Обогреватели / Гармкунакҳо</h2>
         <div class="grid">
-            <div class="item-card"><img src="37.jpg" class="item-img"><div class="item-info"><div class="item-title">Масляный радиатор</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 9-11 секций<br>• Колесики для перемещения</div><button class="btn-add" onclick="addToCart('Радиатор 37', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="38.jpg" class="item-img"><div class="item-info"><div class="item-title">Керамический Gold</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Быстрый нагрев<br>• Премиум дизайн</div><button class="btn-add" onclick="addToCart('Обогрев 38', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="39.jpg" class="item-img"><div class="item-info"><div class="item-title">RAF Tower Black</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Вертикальный обдув<br>• 2000W</div><button class="btn-add" onclick="addToCart('RAF 39', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="40.jpg" class="item-img"><div class="item-info"><div class="item-title">RAF Turbo Yellow</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Мощный вентилятор<br>• Компактный</div><button class="btn-add" onclick="addToCart('RAF 40', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="41.jpg" class="item-img"><div class="item-info"><div class="item-title">RAF Glass White</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Защитное стекло<br>• Бесшумный</div><button class="btn-add" onclick="addToCart('RAF 41', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="42.jpg" class="item-img"><div class="item-info"><div class="item-title">Мини-сфера Orange</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Настольный вариант<br>• Эконом энергия</div><button class="btn-add" onclick="addToCart('Мини 42', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="43.jpg" class="item-img"><div class="item-info"><div class="item-title">Классический Тепловентилятор</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 2 режима нагрева<br>• Режим холодного обдува</div><button class="btn-add" onclick="addToCart('Обогрев 43', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="45.jpg" class="item-img"><div class="item-info"><div class="item-title">Kereston Quartz</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 3 лампы нагрева<br>• Высокая теплоотдача</div><button class="btn-add" onclick="addToCart('Kereston 45', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="46.jpg" class="item-img"><div class="item-info"><div class="item-title">Arshia Double</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Двухпанельный<br>• Регулятор мощности</div><button class="btn-add" onclick="addToCart('Arshia 46', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="47.jpg" class="item-img"><div class="item-info"><div class="item-title">Комбинированный камин</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Газ + Электро<br>• Для больших комнат</div><button class="btn-add" onclick="addToCart('Камин 47', 0)">В корзину</button></div></div>
-            <div class="item-card"><img src="48.jpg" class="item-img"><div class="item-info"><div class="item-title">Электропанель Black</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Тонкий корпус<br>• Настенный/напольный</div><button class="btn-add" onclick="addToCart('Панель 48', 0)">В корзину</button></div></div>
+            <div class="item-card"><img src="37.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Масляный радиатор</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Радиатор 37', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="38.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Керамический Gold</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Обогрев 38', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="39.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">RAF Tower Black</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('RAF 39', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="40.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">RAF Turbo Yellow</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('RAF 40', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="41.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">RAF Glass White</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('RAF 41', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="42.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Мини-сфера Orange</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Мини 42', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="43.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Классический тепловентилятор</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Обогрев 43', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="45.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Kereston Quartz</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Kereston 45', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="46.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Arshia Double</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Arshia 46', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="47.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Газовый камин</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Камин 47', 0)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="48.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Электропанель Black</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Панель 48', 0)">🛒 В корзину</button></div></div>
         </div>
     </div>
 
-    <div id="accs" class="section-block">
-        <h2 class="section-title">🔋 Аксессуары</h2>
+    <div id="stoves" class="section-block">
+        <h2 class="section-title">🔥 Плиты / Плитаҳо</h2>
         <div class="grid">
-            <div class="item-card"><div class="item-info"><div class="item-title">Универсальный пульт</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Для всех типов ТВ</div><button class="btn-add" onclick="addToCart('Пульт', 0)">В корзину</button></div></div>
-            <div class="item-card"><div class="item-info"><div class="item-title">Удлинитель 5 метров</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• 3-5 розеток, защита</div><button class="btn-add" onclick="addToCart('Удлинитель', 0)">В корзину</button></div></div>
-            <div class="item-card"><div class="item-info"><div class="item-title">Фонарь аккумуляторный</div><span class="item-price">Уточняйте</span><button class="btn-details" onclick="showDetails(this)">Характеристики ↓</button><div class="details-content">• Яркий свет, зарядка</div><button class="btn-add" onclick="addToCart('Фонарь', 0)">В корзину</button></div></div>
+            <div class="item-card"><img src="21.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Avangard Black</div><span class="item-price">2350 смн</span><button class="btn-add" onclick="addToCart('Avangard 21', 2350)">🛒 В корзину</button></div></div>
+            <div class="item-card"><img src="20.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Kumtel Inox</div><span class="item-price">Уточняйте</span><button class="btn-add" onclick="addToCart('Kumtel 20', 0)">🛒 В корзину</button></div></div>
         </div>
-    </div>
-
-    <div id="contacts" class="contact-box" style="text-align:center; padding: 20px; background: #e2e8f0; border-radius: 10px;">
-        <h2>Олами Техника 2727</h2>
-        <p>📍 Кумсангир, Центральный рынок<br>📞 +992 55 961 11 14</p>
     </div>
 </div>
 
-<div id="cart-panel" class="cart-panel">
-    <div id="cart-info">🛒 Корзина: 0 | 0 смн</div>
-    <button style="background:var(--success); color:white; border:none; padding:10px; border-radius:8px; width:100%; cursor:pointer; margin-top:10px;" onclick="sendToWhatsApp()">✅ Заказать в WhatsApp</button>
+<div class="fixed-bottom-menu">
+    <a href="tel:+992559611114" class="btn-call-fixed">📞 Позвонить</a>
+    <button class="btn-cart-fixed" onclick="sendToWhatsApp()">🛒 Корзина (<span id="count">0</span>)</button>
 </div>
 
 <script>
-    function showDetails(btn) {
-        const content = btn.nextElementSibling;
-        content.style.display = (content.style.display === "block") ? "none" : "block";
-        btn.innerText = (content.style.display === "block") ? "Скрыть ↑" : "Характеристики ↓";
-    }
     let cart = []; let total = 0;
     function addToCart(name, price) {
         cart.push(name); total += price;
-        document.getElementById('cart-panel').style.display = 'block';
-        document.getElementById('cart-info').innerText = `🛒 Корзина: ${cart.length} | ${total} смн`;
+        document.getElementById('count').innerText = cart.length;
     }
     function sendToWhatsApp() {
+        if (cart.length === 0) { alert("Корзина пуста!"); return; }
         let msg = "Заказ из Олами Техника 2727:%0A" + cart.join("%0A") + "%0A💰 Итого: " + total + " смн";
         window.location.href = "https://wa.me/992559611114?text=" + msg;
     }
