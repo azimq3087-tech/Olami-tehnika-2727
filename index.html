@@ -1,107 +1,16 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Олами Техника 2727 — Кумсангир</title>
-    <style>
-        :root { --primary: #1e40af; --accent: #fbbf24; --dark: #0f172a; --light: #f8fafc; --success: #25d366; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); scroll-behavior: smooth; padding-bottom: 80px; }
-        header { background: var(--dark); color: white; padding: 20px 10px; text-align: center; border-bottom: 4px solid var(--accent); }
-        .nav-cats { display: flex; overflow-x: auto; gap: 10px; padding: 15px 10px; background: white; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #ddd; }
-        .nav-cats a { white-space: nowrap; text-decoration: none; color: var(--primary); font-weight: bold; border: 2px solid var(--primary); padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; }
-        .hero-image { width: 100%; max-width: 1000px; display: block; margin: 10px auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
-        .section-block { margin-bottom: 60px; scroll-margin-top: 90px; }
-        .section-title { border-left: 6px solid var(--accent); padding: 10px 15px; margin: 20px 0; color: var(--primary); font-size: 1.6rem; text-transform: uppercase; background: #e2e8f0; border-radius: 0 10px 10px 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .item-card { background: white; border-radius: 15px; border: 1px solid #ddd; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
-        .item-img { width: 100%; height: 280px; object-fit: cover; background: #eee; }
-        .item-info { padding: 15px; flex-grow: 1; text-align: center; }
-        .item-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 10px; height: 2.5em; overflow: hidden; }
-        .item-price { font-size: 1.3rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; display: block; }
-        .btn-call { background: #059669; color: white; border: none; padding: 10px; border-radius: 8px; width: 100%; cursor: pointer; margin-bottom: 8px; font-weight: bold; text-decoration: none; display: block; }
-        .btn-add { background: var(--success); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; }
-        
-        /* Нижняя фиксированная панель */
-        .fixed-bottom-menu { position: fixed; bottom: 0; left: 0; right: 0; background: white; display: flex; gap: 10px; padding: 10px; box-shadow: 0 -2px 15px rgba(0,0,0,0.2); z-index: 3000; }
-        .btn-call-fixed { flex: 1; background: #059669; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .btn-cart-fixed { flex: 1; background: var(--dark); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        
-        .details-content { display: none; text-align: left; font-size: 0.9rem; color: #334155; background: #f8fafc; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px dashed var(--primary); }
-        .btn-details { background: #f1f5f9; border: 1px solid var(--primary); color: var(--primary); padding: 6px; border-radius: 8px; cursor: pointer; margin-bottom: 8px; font-size: 0.8rem; width: 100%; }
-        footer { text-align: center; padding: 20px; color: #64748b; margin-bottom: 80px; }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>ОЛАМИ ТЕХНИКА 2727</h1>
-    <p>Кумсангир, Центральный рынок</p>
-</header>
-
-<nav class="nav-cats">
-    <a href="#tv">📺 Телевизоры / Телевизорҳо</a>
-    <a href="#heaters">☀️ Обогреватели / Гармкунакҳо</a>
-    <a href="#stoves">🔥 Плиты / Плитаҳо</a>
-    <a href="#vacuums">🧹 Пылесосы / Чангкашакҳо</a>
-</nav>
-
-<img src="100.jpg" class="hero-image">
-
-<div class="container">
-    <div id="tv" class="section-block">
-        <h2 class="section-title">📺 Телевизоры</h2>
-        <div class="grid">
-            <div class="item-card"><img src="1.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">LG 43LP50 (43")</div><span class="item-price">1850 смн</span><button class="btn-add" onclick="addToCart('LG 43', 1850)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="2.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Skyworth 4K UHD</div><span class="item-price">1600 смн</span><button class="btn-add" onclick="addToCart('Skyworth 4K', 1600)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="3.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Samsung 46" Smart</div><span class="item-price">1300 смн</span><button class="btn-add" onclick="addToCart('Samsung 46', 1300)">🛒 В корзину</button></div></div>
-        </div>
+<div class="product-card">
+    <div class="product-images">
+        <img src="lg1.jpg" alt="LG 43LP50 вид спереди" id="main-lg">
+        <img src="lg2.jpg" alt="LG 43LP50 детали" style="margin-top: 10px;">
     </div>
-
-    <div id="heaters" class="section-block">
-        <h2 class="section-title">☀️ Обогреватели / Гармкунакҳо</h2>
-        <div class="grid">
-            <div class="item-card"><img src="37.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Масляный радиатор</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Радиатор 37', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="38.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Керамический Gold</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Обогрев 38', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="39.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">RAF Tower Black</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('RAF 39', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="40.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">RAF Turbo Yellow</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('RAF 40', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="41.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">RAF Glass White</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('RAF 41', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="42.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Мини-сфера Orange</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Мини 42', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="43.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Классический тепловентилятор</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Обогрев 43', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="45.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Kereston Quartz</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Kereston 45', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="46.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Arshia Double</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Arshia 46', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="47.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Газовый камин</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Камин 47', 0)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="48.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Электропанель Black</div><span class="item-price">Уточняйте</span><a href="tel:+992559611114" class="btn-call">📞 Позвонить</a><button class="btn-add" onclick="addToCart('Панель 48', 0)">🛒 В корзину</button></div></div>
-        </div>
-    </div>
-
-    <div id="stoves" class="section-block">
-        <h2 class="section-title">🔥 Плиты / Плитаҳо</h2>
-        <div class="grid">
-            <div class="item-card"><img src="21.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Avangard Black</div><span class="item-price">2350 смн</span><button class="btn-add" onclick="addToCart('Avangard 21', 2350)">🛒 В корзину</button></div></div>
-            <div class="item-card"><img src="20.jpg" loading="lazy" class="item-img"><div class="item-info"><div class="item-title">Kumtel Inox</div><span class="item-price">Уточняйте</span><button class="btn-add" onclick="addToCart('Kumtel 20', 0)">🛒 В корзину</button></div></div>
-        </div>
-    </div>
+    
+    <h3>LG 43LP50 (43")</h3>
+    <ul class="specs">
+        <li>✅ Full HD Resolution</li>
+        <li>✅ Dolby Audio™</li>
+        <li>✅ USB Movie / HDMI</li>
+        <li>✅ Resolution Upscaler</li>
+    </ul>
+    
+    <a href="https://wa.me/992XXXXXXXXX" class="btn-whatsapp">Заказать через WhatsApp</a>
 </div>
-
-<div class="fixed-bottom-menu">
-    <a href="tel:+992559611114" class="btn-call-fixed">📞 Позвонить</a>
-    <button class="btn-cart-fixed" onclick="sendToWhatsApp()">🛒 Корзина (<span id="count">0</span>)</button>
-</div>
-
-<script>
-    let cart = []; let total = 0;
-    function addToCart(name, price) {
-        cart.push(name); total += price;
-        document.getElementById('count').innerText = cart.length;
-    }
-    function sendToWhatsApp() {
-        if (cart.length === 0) { alert("Корзина пуста!"); return; }
-        let msg = "Заказ из Олами Техника 2727:%0A" + cart.join("%0A") + "%0A💰 Итого: " + total + " смн";
-        window.location.href = "https://wa.me/992559611114?text=" + msg;
-    }
-</script>
-<footer>&copy; 2026 Олами Техника 2727.</footer>
-</body>
-</html>
