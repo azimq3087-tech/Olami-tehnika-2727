@@ -2,28 +2,128 @@
     <div class="product-grid">
 
         <div class="product-card">
-            <img src="lg1.jpg" id="main-img-lg" alt="LG TV">
-            <h3>LG 43LP50 (43")</h3>
-            <p class="price">1850 смн</p>
-            <div class="thumbnails">
-                <img src="lg1.jpg" onclick="document.getElementById('main-img-lg').src='lg1.jpg'" alt="Перед">
-                <img src="lg2..jpg" onclick="document.getElementById('main-img-lg').src='lg2..jpg'" alt="Бок">
-                <img src="lg3.jpg" onclick="document.getElementById('main-img-lg').src='lg3.jpg'" alt="Зад">
+            <div class="image-container">
+                <img src="samsung1.jpg" id="main-samsung" class="main-img" alt="Samsung">
             </div>
-            <button class="buy-btn">Купить</button>
-        </div>
+            
+            <div class="thumbnails">
+                <img src="samsung1.jpg" onclick="document.getElementById('main-samsung').src='samsung1.jpg'">
+                <img src="samsung2.jpg" onclick="document.getElementById('main-samsung').src='samsung2.jpg'">
+                <img src="samsung3.jpg" onclick="document.getElementById('main-samsung').src='samsung3.jpg'">
+            </div>
 
-        <div class="product-card">
-            <img src="samsung1.jpg" id="main-img-samsung" alt="Samsung TV">
-            <h3>Samsung Crystal UHD</h3>
+            <h3>Samsung Crystal UHD 4K</h3>
             <p class="price">2100 смн</p>
-            <div class="thumbnails">
-                <img src="samsung1.jpg" onclick="document.getElementById('main-img-samsung').src='samsung1.jpg'" alt="Перед">
-                <img src="samsung2.jpg" onclick="document.getElementById('main-img-samsung').src='samsung2.jpg'" alt="Бок">
-                <img src="samsung3.jpg" onclick="document.getElementById('main-img-samsung').src='samsung3.jpg'" alt="Зад">
+
+            <div id="details-samsung" class="details">
+                <p><b>Диагональ:</b> 43" (109 см)</p>
+                <p><b>Разрешение:</b> 4K Ultra HD</p>
+                <p><b>Smart TV:</b> Tizen OS</p>
+                <p><b>Гарантия:</b> 12 месяцев</p>
             </div>
-            <button class="buy-btn">Купить</button>
+
+            <div class="button-group">
+                <button class="btn-info" onclick="toggleDetails('details-samsung')">Характеристики</button>
+                <button class="btn-cart">🛒 В корзину</button>
+                <a href="https://wa.me/992XXXXXXXXX" class="btn-contact">📞 Связаться</a>
+            </div>
         </div>
 
-    </div>
+        </div>
 </section>
+
+<style>
+/* Регулировка масштаба и сетки */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-card {
+    width: 100%;
+    max-width: 350px; /* Ограничение ширины для мобильных */
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    transition: 0.3s;
+}
+
+.main-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.thumbnails img {
+    width: 60px;
+    height: 45px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.price {
+    font-size: 24px;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Кнопки */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+button, .btn-contact {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-info { background: #f3f3f3; color: #333; }
+.btn-cart { background: #ff9900; color: white; }
+.btn-contact { background: #25d366; color: white; }
+
+/* Скрытие характеристик */
+.details {
+    display: none;
+    text-align: left;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin: 10px 0;
+}
+</style>
+
+<script>
+function toggleDetails(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
