@@ -1,41 +1,26 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olami Tehnika 2727</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f4; text-align: center; padding: 20px; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .card { background: white; border-radius: 15px; padding: 20px; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .tv-icon { font-size: 80px; color: #333; }
-        .btn { display: block; background: #25d366; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 15px; }
-        h1 { color: #0056b3; }
-    </style>
-</head>
-<body>
-    <h1>Olami Tehnika 2727</h1>
-    <div class="container">
-        <div class="card">
-            <div class="tv-icon">📺</div>
-            <h3>LG 43LP50 (43")</h3>
-            <p>Full HD, Dolby Audio, HDMI, USB</p>
-            <a href="https://wa.me/992XXXXXXXXX" class="btn">Заказать (WhatsApp)</a>
-        </div>
-
-        <div class="card">
-            <div class="tv-icon">🖥️</div>
-            <h3>SAMSING 35"</h3>
-            <p>HD Ready, Slim Design, HDMI</p>
-            <a href="https://wa.me/992XXXXXXXXX" class="btn">Заказать (WhatsApp)</a>
-        </div>
-
-        <div class="card">
-            <div class="tv-icon">📺</div>
-            <h3>SAMSING 36"</h3>
-            <p>HD Ready, Smart View, USB</p>
-            <a href="https://wa.me/992XXXXXXXXX" class="btn">Заказать (WhatsApp)</a>
-        </div>
+<div class="product-card">
+    <img src="img/lg-front.jpg" id="main-image-lg" alt="LG 43LP50">
+    
+    <h3>LG 43LP50 (43")</h3>
+    <p class="price">1850 смн</p>
+    
+    <div class="thumbnails">
+        <img src="img/lg-front.jpg" onclick="changeImg('img/lg-front.jpg')" alt="Front">
+        <img src="img/lg-side.jpg" onclick="changeImg('img/lg-side.jpg')" alt="Side">
+        <img src="img/lg-back.jpg" onclick="changeImg('img/lg-back.jpg')" alt="Back">
     </div>
-</body>
-</html>
+
+    <ul>
+        <li>Разрешение: Full HD</li>
+        <li>Звук: Dolby Audio</li>
+        <li>Функции: HDMI / USB Movie</li>
+    </ul>
+    
+    <button class="buy-btn">Купить</button>
+</div>
+
+<script>
+function changeImg(src) {
+    document.getElementById('main-image-lg').src = src;
+}
+</script>
