@@ -1,129 +1,121 @@
-<section id="products" class="products">
-    <div class="product-grid">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Настройка масштаба для всего сайта */
+        body { margin: 0; font-family: sans-serif; background: #f4f4f4; }
+        
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+        }
 
-        <div class="product-card">
-            <div class="image-container">
-                <img src="samsung1.jpg" id="main-samsung" class="main-img" alt="Samsung">
-            </div>
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            width: 95%; /* На мобильных почти на весь экран */
+            max-width: 400px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
+        .main-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 12px 0;
+        }
+
+        .thumbnails img {
+            width: 60px;
+            height: 45px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .price { color: #27ae60; font-size: 1.5rem; font-weight: bold; margin: 10px 0; text-align: center; }
+
+        /* Кнопки */
+        .btn-box { display: flex; flex-direction: column; gap: 10px; }
+        
+        button, .btn-link {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .btn-info { background: #eee; color: #333; }
+        .btn-cart { background: #ff9900; color: white; }
+        .btn-wa { background: #25d366; color: white; }
+
+        /* Скрытые характеристики */
+        .specs {
+            display: none;
+            background: #f9f9f9;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-grid">
+    <div class="product-card">
+        <img src="samsung1.jpg" id="view-samsung" class="main-img" alt="Samsung">
+        
+        <div class="thumbnails">
+            <img src="samsung1.jpg" onclick="document.getElementById('view-samsung').src='samsung1.jpg'">
+            <img src="samsung2.jpg" onclick="document.getElementById('view-samsung').src='samsung2.jpg'">
+            <img src="samsung3.jpg" onclick="document.getElementById('view-samsung').src='samsung3.jpg'">
+        </div>
+
+        <h3 style="text-align:center;">Samsyng LED TV 35"</h3>
+        <p class="price">2100 смн</p>
+
+        <div class="btn-box">
+            <button class="btn-info" onclick="showSpecs()">Характеристики</button>
             
-            <div class="thumbnails">
-                <img src="samsung1.jpg" onclick="document.getElementById('main-samsung').src='samsung1.jpg'">
-                <img src="samsung2.jpg" onclick="document.getElementById('main-samsung').src='samsung2.jpg'">
-                <img src="samsung3.jpg" onclick="document.getElementById('main-samsung').src='samsung3.jpg'">
+            <div id="specs-list" class="specs">
+                <b>• Диагональ:</b> 35 дюймов<br>
+                <b>• Технология:</b> HD LED TV<br>
+                <b>• Функции:</b> Bluetooth, Miracast<br>
+                <b>• Порты:</b> USB Support (Movie/Photo)<br>
+                <b>• Тюнер:</b> DVB-S2 / T2
             </div>
 
-            <h3>Samsung Crystal UHD 4K</h3>
-            <p class="price">2100 смн</p>
-
-            <div id="details-samsung" class="details">
-                <p><b>Диагональ:</b> 43" (109 см)</p>
-                <p><b>Разрешение:</b> 4K Ultra HD</p>
-                <p><b>Smart TV:</b> Tizen OS</p>
-                <p><b>Гарантия:</b> 12 месяцев</p>
-            </div>
-
-            <div class="button-group">
-                <button class="btn-info" onclick="toggleDetails('details-samsung')">Характеристики</button>
-                <button class="btn-cart">🛒 В корзину</button>
-                <a href="https://wa.me/992559611114" class="btn-contact">📞 Связаться</a>
-            </div>
+            <button class="btn-cart">🛒 В корзину</button>
+            <a href="https://wa.me/992XXXXXXXXX" class="btn-wa">📞 Связаться через WhatsApp</a>
         </div>
-
-        </div>
-</section>
-
-<style>
-/* Регулировка масштаба и сетки */
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
-
-.product-card {
-    width: 100%;
-    max-width: 350px; /* Ограничение ширины для мобильных */
-    border: 1px solid #eee;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    background: #fff;
-    transition: 0.3s;
-}
-
-.main-img {
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-.thumbnails {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 10px 0;
-}
-
-.thumbnails img {
-    width: 60px;
-    height: 45px;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.price {
-    font-size: 24px;
-    color: #27ae60;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-/* Кнопки */
-.button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 15px;
-}
-
-button, .btn-contact {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-}
-
-.btn-info { background: #f3f3f3; color: #333; }
-.btn-cart { background: #ff9900; color: white; }
-.btn-contact { background: #25d366; color: white; }
-
-/* Скрытие характеристик */
-.details {
-    display: none;
-    text-align: left;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    margin: 10px 0;
-}
-</style>
+    </div>
+</div>
 
 <script>
-function toggleDetails(id) {
-    var x = document.getElementById(id);
-    if (x.style.display === "none" || x.style.display === "") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
+    function showSpecs() {
+        var s = document.getElementById('specs-list');
+        s.style.display = (s.style.display === 'block') ? 'none' : 'block';
     }
-}
 </script>
+
+</body>
+</html>
