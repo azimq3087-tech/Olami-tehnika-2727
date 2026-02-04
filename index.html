@@ -1,121 +1,54 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Настройка масштаба для всего сайта */
-        body { margin: 0; font-family: sans-serif; background: #f4f4f4; }
-        
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            padding: 10px;
-        }
+<section id="products" class="products">
+    <div class="product-grid">
 
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            width: 95%; /* На мобильных почти на весь экран */
-            max-width: 400px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-        }
-
-        .main-img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            object-fit: contain;
-        }
-
-        .thumbnails {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            margin: 12px 0;
-        }
-
-        .thumbnails img {
-            width: 60px;
-            height: 45px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .price { color: #27ae60; font-size: 1.5rem; font-weight: bold; margin: 10px 0; text-align: center; }
-
-        /* Кнопки */
-        .btn-box { display: flex; flex-direction: column; gap: 10px; }
-        
-        button, .btn-link {
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .btn-info { background: #eee; color: #333; }
-        .btn-cart { background: #ff9900; color: white; }
-        .btn-wa { background: #25d366; color: white; }
-
-        /* Скрытые характеристики */
-        .specs {
-            display: none;
-            background: #f9f9f9;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-    </style>
-</head>
-<body>
-
-<div class="product-grid">
-    <div class="product-card">
-        <img src="samsung1.jpg" id="view-samsung" class="main-img" alt="Samsung">
-        
-        <div class="thumbnails">
-            <img src="samsung1.jpg" onclick="document.getElementById('view-samsung').src='samsung1.jpg'">
-            <img src="samsung2.jpg" onclick="document.getElementById('view-samsung').src='samsung2.jpg'">
-            <img src="samsung3.jpg" onclick="document.getElementById('view-samsung').src='samsung3.jpg'">
-        </div>
-
-        <h3 style="text-align:center;">Samsyng LED TV 35"</h3>
-        <p class="price">2100 смн</p>
-
-        <div class="btn-box">
-            <button class="btn-info" onclick="showSpecs()">Характеристики</button>
-            
-            <div id="specs-list" class="specs">
-                <b>• Диагональ:</b> 35 дюймов<br>
-                <b>• Технология:</b> HD LED TV<br>
-                <b>• Функции:</b> Bluetooth, Miracast<br>
-                <b>• Порты:</b> USB Support (Movie/Photo)<br>
-                <b>• Тюнер:</b> DVB-S2 / T2
+        <div class="product-card">
+            <img src="samsung1.jpg" id="view-samsung" class="main-img" alt="Samsyng">
+            <div class="thumbnails">
+                <img src="samsung1.jpg" onclick="document.getElementById('view-samsung').src='samsung1.jpg'">
+                <img src="samsung2.jpg" onclick="document.getElementById('view-samsung').src='samsung2.jpg'">
+                <img src="samsung3.jpg" onclick="document.getElementById('view-samsung').src='samsung3.jpg'">
             </div>
-
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992XXXXXXXXX" class="btn-wa">📞 Связаться через WhatsApp</a>
+            <h3>Samsyng LED TV 35"</h3>
+            <p class="price">2100 смн</p>
+            <div class="btn-box">
+                <button class="btn-info" onclick="toggleSpecs('specs-samsung')">Характеристики</button>
+                <div id="specs-samsung" class="specs">
+                    • 35 дюймов, HD LED TV<br>
+                    • Bluetooth, Miracast<br>
+                    • USB Support, DVB-T2/S2
+                </div>
+                <button class="btn-cart">🛒 В корзину</button>
+                <a href="https://wa.me/992XXXXXXXXX" class="btn-wa">📞 Связаться</a>
+            </div>
         </div>
+
+        <div class="product-card">
+            <img src="lg1.jpg" id="view-lg" class="main-img" alt="LG TV">
+            <div class="thumbnails">
+                <img src="lg1.jpg" onclick="document.getElementById('view-lg').src='lg1.jpg'">
+                <img src="lg2..jpg" onclick="document.getElementById('view-lg').src='lg2..jpg'">
+                <img src="lg3.jpg" onclick="document.getElementById('view-lg').src='lg3.jpg'">
+            </div>
+            <h3>LG 43LP50 (43")</h3>
+            <p class="price">1850 смн</p>
+            <div class="btn-box">
+                <button class="btn-info" onclick="toggleSpecs('specs-lg')">Характеристики</button>
+                <div id="specs-lg" class="specs">
+                    • 43 дюйма, Full HD<br>
+                    • Dolby Audio<br>
+                    • HDMI / USB Movie
+                </div>
+                <button class="btn-cart">🛒 В корзину</button>
+                <a href="https://wa.me/992559611114" class="btn-wa">📞 Связаться</a>
+            </div>
+        </div>
+
     </div>
-</div>
+</section>
 
 <script>
-    function showSpecs() {
-        var s = document.getElementById('specs-list');
+    function toggleSpecs(id) {
+        var s = document.getElementById(id);
         s.style.display = (s.style.display === 'block') ? 'none' : 'block';
     }
 </script>
-
-</body>
-</html>
