@@ -5,86 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olami Tehnika 2727</title>
     <style>
-        /* Общие настройки сайта */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f0f2f5; color: #333; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
         header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
-        
-        /* Сетка товаров (адаптивный масштаб) */
-        .product-grid { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 20px; 
-            padding: 20px; 
-        }
-        
-        /* Карточка товара */
-        .product-card { 
-            background: white; 
-            border-radius: 15px; 
-            width: 100%; 
-            max-width: 360px; 
-            padding: 15px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        /* Главное фото товара */
-        .main-img { 
-            width: 100%; 
-            height: 220px; 
-            object-fit: contain; 
-            border-radius: 10px; 
-            background: #fff;
-        }
-        
-        /* Миниатюры (листалка фото) */
-        .thumbnails { 
-            display: flex; 
-            justify-content: center; 
-            gap: 8px; 
-            margin: 15px 0; 
-        }
-        .thumbnails img { 
-            width: 60px; 
-            height: 45px; 
-            cursor: pointer; 
-            border: 2px solid #eee; 
-            border-radius: 6px; 
-            object-fit: cover;
-            transition: 0.3s;
-        }
-        .thumbnails img:hover { border-color: #ff9900; }
-
-        .title { font-size: 19px; font-weight: bold; margin: 10px 0; min-height: 44px; }
-        .price { font-size: 26px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
-
-        /* Кнопки управления */
-        .button-group { display: flex; flex-direction: column; gap: 8px; }
-        
-        button, .btn-link { 
-            padding: 12px; border: none; border-radius: 8px; font-weight: bold; 
-            cursor: pointer; text-decoration: none; font-size: 15px; text-align: center;
-        }
-
+        .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+        .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; }
+        .main-img { width: 100%; height: 200px; object-fit: contain; border-radius: 10px; }
+        .thumbnails { display: flex; justify-content: center; gap: 8px; margin: 15px 0; }
+        .thumbnails img { width: 60px; height: 45px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; }
+        .price { font-size: 24px; color: #b12704; font-weight: bold; margin: 10px 0; }
+        .button-group { display: flex; flex-direction: column; gap: 10px; }
+        button, .btn-wa { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 15px; text-align: center; }
         .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
-        .btn-cart { background: #ffd814; color: #0f1111; }
-        .btn-wa { background: #25d366; color: white; margin-top: 5px; }
-
-        /* Скрытый блок характеристик */
-        .specs { 
-            display: none; 
-            text-align: left; 
-            background: #f7f7f7; 
-            padding: 12px; 
-            border-radius: 8px; 
-            margin: 10px 0; 
-            font-size: 14px; 
-            line-height: 1.5;
-        }
+        .btn-cart { background: #ffd814; color: #111; }
+        .btn-wa { background: #25d366; color: white; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -94,7 +28,80 @@
 <div class="product-grid">
 
     <div class="product-card">
-        <img src="samsung1.jpg" id="view1" class="main-img" alt="Samsyng 35">
+        <img src="samsung1.jpg" id="v1" class="main-img">
         <div class="thumbnails">
-            <img src="samsung1.jpg" onclick="document.getElementById('view1').src='samsung1.jpg'">
-            <img src="samsung2.jpg" onclick="document
+            <img src="samsung1.jpg" onclick="document.getElementById('v1').src='samsung1.jpg'">
+            <img src="samsung2.jpg" onclick="document.getElementById('v1').src='samsung2.jpg'">
+            <img src="samsung3.jpg" onclick="document.getElementById('v1').src='samsung3.jpg'">
+        </div>
+        <h3>Samsyng LED TV 35"</h3>
+        <p class="price">2100 смн</p>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s1')">Характеристики</button>
+            <div id="s1" class="specs">• Bluetooth, Miracast, USB Movie</div>
+            <button class="btn-cart">🛒 В корзину</button>
+            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="lg1.jpg" id="v2" class="main-img">
+        <div class="thumbnails">
+            <img src="lg1.jpg" onclick="document.getElementById('v2').src='lg1.jpg'">
+            <img src="lg2..jpg" onclick="document.getElementById('v2').src='lg2..jpg'">
+        </div>
+        <h3>LG 43LP50 (43")</h3>
+        <p class="price">1850 смн</p>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s2')">Характеристики</button>
+            <div id="s2" class="specs">• Full HD, Dolby Audio, HDMI</div>
+            <button class="btn-cart">🛒 В корзину</button>
+            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="samsung-new1.jpg" id="v3" class="main-img">
+        <div class="thumbnails">
+            <img src="samsung-new1.jpg" onclick="document.getElementById('v3').src='samsung-new1.jpg'">
+            <img src="samsung-new2.jpg" onclick="document.getElementById('v3').src='samsung-new2.jpg'">
+            <img src="samsung-new3.jpg" onclick="document.getElementById('v3').src='samsung-new3.jpg'">
+        </div>
+        <h3>Samsyng 36" SS-36T2</h3>
+        <p class="price">2200 смн</p>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s3')">Характеристики</button>
+            <div id="s3" class="specs">• Wi-Fi, Double Glass, DVB-T2/S2</div>
+            <button class="btn-cart">🛒 В корзину</button>
+            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="android46-1.jpg" id="v4" class="main-img">
+        <div class="thumbnails">
+            <img src="android46-1.jpg" onclick="document.getElementById('v4').src='android46-1.jpg'">
+            <img src="android46-2.jpg" onclick="document.getElementById('v4').src='android46-2.jpg'">
+            <img src="android46-3.jpg" onclick="document.getElementById('v4').src='android46-3.jpg'">
+        </div>
+        <h3>Android TV 46" Smart</h3>
+        <p class="price">2800 смн</p>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s4')">Характеристики</button>
+            <div id="s4" class="specs">• Android 14, YouTube, Netflix, 46" FHD</div>
+            <button class="btn-cart">🛒 В корзину</button>
+            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggle(id) {
+        var el = document.getElementById(id);
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
