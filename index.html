@@ -1,49 +1,19 @@
-<section id="products" class="products">
-    <h2>Наши Товары</h2>
-    <div class="product-grid">
-
-        <div class="product-card">
-            <img src="lg1.jpg" id="main-img-lg" alt="LG TV">
-            <h3>LG 43LP50 (43")</h3>
-            <p class="price">1850 смн</p>
-            <div class="thumbnails">
-                <img src="lg1.jpg" onclick="document.getElementById('main-img-lg').src='lg1.jpg'" alt="Front">
-                <img src="lg2.jpg" onclick="document.getElementById('main-img-lg').src='lg2.jpg'" alt="Side">
-                <img src="lg3.jpg" onclick="document.getElementById('main-img-lg').src='lg3.jpg'" alt="Back">
-            </div>
-            <ul>
-                <li>Full HD / Dolby Audio</li>
-                <li>HDMI / USB Movie</li>
-            </ul>
-            <button class="buy-btn">Купить</button>
-        </div>
-
-        <div class="product-card">
-            <img src="samsung1.jpg" id="main-img-samsung" alt="Samsung TV">
-            <h3>Samsung Crystal UHD</h3>
-            <p class="price">2100 смн</p>
-            <div class="thumbnails">
-                <img src="samsung1.jpg" onclick="document.getElementById('main-img-samsung').src='samsung1.jpg'" alt="Front">
-                <img src="samsung2.jpg" onclick="document.getElementById('main-img-samsung').src='samsung2.jpg'" alt="Side">
-                <img src="samsung3.jpg" onclick="document.getElementById('main-img-samsung').src='samsung3.jpg'" alt="Back">
-            </div>
-            <ul>
-                <li>4K Ultra HD / Smart TV</li>
-                <li>HDR10+ / Wi-Fi</li>
-            </ul>
-            <button class="buy-btn">Купить</button>
-        </div>
-
+<div class="product-card">
+    <img src="lg1.jpg" id="main-img-lg" alt="LG TV">
+    <h3>LG 43LP50 (43")</h3>
+    <p class="price">1850 смн</p>
+    
+    <div class="thumbnails">
+        <img src="lg1.jpg" onclick="document.getElementById('main-img-lg').src='lg1.jpg'" alt="Front">
+        
+        <img src="lg2..jpg" onclick="document.getElementById('main-img-lg').src='lg2..jpg'" alt="Side">
+        
+        <img src="lg3.jpg" onclick="document.getElementById('main-img-lg').src='lg3.jpg'" alt="Back">
     </div>
-</section>
 
-<style>
-    .product-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-    .product-card { border: 1px solid #ddd; padding: 15px; border-radius: 10px; width: 300px; text-align: center; }
-    .product-card img { max-width: 100%; border-radius: 5px; height: auto; }
-    .thumbnails { display: flex; justify-content: center; gap: 5px; margin-top: 10px; }
-    .thumbnails img { width: 50px; height: 40px; cursor: pointer; border: 1px solid #ccc; object-fit: cover; }
-    .thumbnails img:hover { border-color: #ff9900; }
-    .price { font-weight: bold; color: #e67e22; font-size: 1.2em; }
-    .buy-btn { background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
-</style>
+    <ul>
+        <li>Full HD / Dolby Audio</li>
+        <li>HDMI / USB Movie</li>
+    </ul>
+    <button class="buy-btn">Купить</button>
+</div>
