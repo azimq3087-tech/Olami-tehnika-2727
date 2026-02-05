@@ -10,7 +10,7 @@
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
         .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; }
         .main-img { width: 100%; height: 220px; object-fit: contain; border-radius: 10px; background: #fff; }
-        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; overflow-x: auto; }
+        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; overflow-x: auto; padding-bottom: 5px; }
         .thumbnails img { width: 55px; height: 45px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; }
         .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; }
         .price { font-size: 26px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
@@ -33,6 +33,7 @@
         <div class="thumbnails">
             <img src="samsung1.jpg" onclick="document.getElementById('v1').src='samsung1.jpg'">
             <img src="samsung2.jpg" onclick="document.getElementById('v1').src='samsung2.jpg'">
+            <img src="samsung3.jpg" onclick="document.getElementById('v1').src='samsung3.jpg'">
         </div>
         <div class="title">Samsyng Smart LED TV 35"</div>
         <p class="price">2100 смн</p>
@@ -77,10 +78,9 @@
     </div>
 
     <div class="product-card">
-        <img src="android46-1.jpg" id="v4" class="main-img">
+        <img src="android46-3.jpg" id="v4" class="main-img">
         <div class="thumbnails">
-            <img src="android46-1.jpg" onclick="document.getElementById('v4').src='android46-1.jpg'">
-            <img src="android46-2.jpg" onclick="document.getElementById('v4').src='android46-2.jpg'">
+            <img src="android46-3.jpg" onclick="document.getElementById('v4').src='android46-3.jpg'">
         </div>
         <div class="title">Android TV 46" Smart FHD</div>
         <p class="price">2800 смн</p>
@@ -125,9 +125,9 @@
     </div>
 
     <div class="product-card">
-        <img src="stove-brown.jpg" id="v7" class="main-img">
+        <img src="shivaki.jpg" id="v7" class="main-img">
         <div class="thumbnails">
-            <img src="stove-brown.jpg" onclick="document.getElementById('v7').src='stove-brown.jpg'">
+            <img src="shivaki.jpg" onclick="document.getElementById('v7').src='shivaki.jpg'">
         </div>
         <div class="title">Газовая плита Shivaki Rio</div>
         <p class="price">2600 смн</p>
@@ -148,40 +148,4 @@
         <div class="title">Стиральная машина Indesit</div>
         <p class="price">2950 смн</p>
         <div class="button-group">
-            <button class="btn-info" onclick="toggle('s8')">📋 Характеристики</button>
-            <div id="s8" class="specs">• 7 кг / Push & Go<br>• Пар / Класс A+++</div>
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="wash-lg-1.jpg" id="v9" class="main-img">
-        <div class="thumbnails">
-            <img src="wash-lg-1.jpg" onclick="document.getElementById('v9').src='wash-lg-1.jpg'">
-            <img src="wash-lg-2.jpg" onclick="document.getElementById('v9').src='wash-lg-2.jpg'">
-            <img src="wash-lg-4.jpg" onclick="document.getElementById('v9').src='wash-lg-4.jpg'">
-        </div>
-        <div class="title">Стиральная машина LG Black</div>
-        <p class="price">4200 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('s9')">📋 Характеристики</button>
-            <div id="s9" class="specs">• 7 кг / Инверторный мотор<br>• Бесшумная / Функция пара</div>
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    function toggle(id) {
-        var el = document.getElementById(id);
-        var allSpecs = document.querySelectorAll('.specs');
-        allSpecs.forEach(function(s) { if(s.id !== id) s.style.display = 'none'; });
-        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
-</script>
-
-</body>
-</html>
+            <button class="
