@@ -6,21 +6,36 @@
     <title>Olami Tehnika 2727</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
-        header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
+        header { background: #232f3e; color: white; padding: 25px; text-align: center; font-size: 28px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; }
+        
+        .product-card { 
+            background: white; border-radius: 15px; width: 100%; max-width: 350px; 
+            padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            box-sizing: border-box; text-align: center; display: flex; flex-direction: column;
+        }
+
         .main-img { width: 100%; height: 220px; object-fit: contain; border-radius: 10px; background: #fff; }
-        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; }
-        .thumbnails img { width: 55px; height: 45px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; }
-        .thumbnails img:hover { border-color: #ff9900; }
-        .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; }
+        
+        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; overflow-x: auto; padding-bottom: 5px; }
+        .thumbnails img { width: 55px; height: 45px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; transition: 0.3s; }
+        .thumbnails img:hover { border-color: #ff9900; transform: scale(1.05); }
+
+        .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; }
         .price { font-size: 26px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
+
         .button-group { display: flex; flex-direction: column; gap: 10px; }
-        button, .btn-wa { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 15px; text-align: center; }
+        button, .btn-wa { 
+            padding: 14px; border: none; border-radius: 8px; font-weight: bold; 
+            cursor: pointer; text-decoration: none; font-size: 15px; text-align: center; 
+        }
+
         .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
         .btn-cart { background: #ffd814; color: #111; }
-        .btn-wa { background: #25d366; color: white; }
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 14px; line-height: 1.5; }
+        .btn-wa { background: #25d366; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 14px; line-height: 1.5; border-left: 4px solid #ff9900; }
     </style>
 </head>
 <body>
@@ -39,9 +54,9 @@
         <p class="price">2100 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s1')">📋 Характеристики</button>
-            <div id="s1" class="specs">• Smart TV, Bluetooth<br>• Miracast, USB Movie</div>
+            <div id="s1" class="specs">• Smart TV / Bluetooth<br>• Miracast / USB Movie<br>• LED экран высокого качества</div>
             <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 Заказать в WhatsApp</a>
         </div>
     </div>
 
@@ -55,9 +70,9 @@
         <p class="price">1850 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s2')">📋 Характеристики</button>
-            <div id="s2" class="specs">• Full HD, Dolby Audio<br>• HDMI, USB Movie</div>
+            <div id="s2" class="specs">• Разрешение: Full HD<br>• Звук: Dolby Audio<br>• Порты: HDMI, USB Movie</div>
             <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 Заказать в WhatsApp</a>
         </div>
     </div>
 
@@ -71,6 +86,4 @@
         <p class="price">2200 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s3')">📋 Характеристики</button>
-            <div id="s3" class="specs">• Wi-Fi, Double Glass<br>• DVB-T2/S2 Tuner</div>
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.
+            <div id="s3" class="specs">• Экран: Double Glass (прочное стекло)<br>
