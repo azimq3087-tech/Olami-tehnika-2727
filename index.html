@@ -6,20 +6,20 @@
     <title>Olami Tehnika 2727</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
-        header { background: #232f3e; color: white; padding: 25px; text-align: center; font-size: 28px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        header { background: #232f3e; color: white; padding: 25px; text-align: center; font-size: 28px; font-weight: bold; }
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; }
-        .main-img { width: 100%; height: 220px; object-fit: contain; border-radius: 10px; background: #fff; }
-        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; overflow-x: auto; padding-bottom: 5px; }
-        .thumbnails img { width: 55px; height: 45px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; }
-        .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; }
-        .price { font-size: 26px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
+        .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; }
+        .main-img { width: 100%; height: 220px; object-fit: contain; border-radius: 10px; }
+        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; overflow-x: auto; }
+        .thumbnails img { width: 50px; height: 40px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; }
+        .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; }
+        .price { font-size: 24px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
         .button-group { display: flex; flex-direction: column; gap: 10px; }
-        button, .btn-wa { padding: 14px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 15px; text-align: center; }
+        button, .btn-wa { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 14px; }
         .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
         .btn-cart { background: #ffd814; color: #111; }
-        .btn-wa { background: #25d366; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 14px; line-height: 1.5; border-left: 4px solid #ff9900; }
+        .btn-wa { background: #25d366; color: white; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 13px; border-left: 4px solid #ff9900; }
     </style>
 </head>
 <body>
@@ -62,22 +62,6 @@
     </div>
 
     <div class="product-card">
-        <img src="samsung-new1.jpg" id="v3" class="main-img">
-        <div class="thumbnails">
-            <img src="samsung-new1.jpg" onclick="document.getElementById('v3').src='samsung-new1.jpg'">
-            <img src="samsung-new2.jpg" onclick="document.getElementById('v3').src='samsung-new2.jpg'">
-        </div>
-        <div class="title">Samsyng 36" SS-36T2</div>
-        <p class="price">2200 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('s3')">📋 Характеристики</button>
-            <div id="s3" class="specs">• Double Glass / Wi-Fi<br>• DVB-T2/S2 Tuner</div>
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="product-card">
         <img src="android46-3.jpg" id="v4" class="main-img">
         <div class="thumbnails">
             <img src="android46-3.jpg" onclick="document.getElementById('v4').src='android46-3.jpg'">
@@ -96,6 +80,7 @@
         <img src="stove-steel1.jpg" id="v5" class="main-img">
         <div class="thumbnails">
             <img src="stove-steel1.jpg" onclick="document.getElementById('v5').src='stove-steel1.jpg'">
+            <img src="stove-steel2.jpg" onclick="document.getElementById('v5').src='stove-steel2.jpg'">
             <img src="stove-steel3.jpg" onclick="document.getElementById('v5').src='stove-steel3.jpg'">
         </div>
         <div class="title">Газовая плита Kumtel</div>
@@ -109,31 +94,17 @@
     </div>
 
     <div class="product-card">
-        <img src="stove-black1.jpg" id="v6" class="main-img">
+        <img src="stove-black1.jpg" id="v7" class="main-img">
         <div class="thumbnails">
-            <img src="stove-black1.jpg" onclick="document.getElementById('v6').src='stove-black1.jpg'">
-            <img src="stove-black3.jpg" onclick="document.getElementById('v6').src='stove-black3.jpg'">
+            <img src="stove-black1.jpg" onclick="document.getElementById('v7').src='stove-black1.jpg'">
+            <img src="stove-black2.jpg" onclick="document.getElementById('v7').src='stove-black2.jpg'">
+            <img src="stove-black3.jpg" onclick="document.getElementById('v7').src='stove-black3.jpg'">
         </div>
-        <div class="title">Газовая плита Avangard Black</div>
-        <p class="price">2350 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('s6')">📋 Характеристики</button>
-            <div id="s6" class="specs">• Черный глянец / Газ-контроль<br>• Подсветка духовки</div>
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="shivaki.jpg" id="v7" class="main-img">
-        <div class="thumbnails">
-            <img src="shivaki.jpg" onclick="document.getElementById('v7').src='shivaki.jpg'">
-        </div>
-        <div class="title">Газовая плита Shivaki Rio</div>
+        <div class="title">Газовая плита Shivaki Rio (Black)</div>
         <p class="price">2600 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s7')">📋 Характеристики</button>
-            <div id="s7" class="specs">• Коричневый цвет / 4 газ<br>• Электроподжиг</div>
+            <div id="s7" class="specs">• Цвет: Черный / Bio Ceramic<br>• 4 газовые конфорки<br>• Электроподжиг</div>
             <button class="btn-cart">🛒 В корзину</button>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -143,9 +114,46 @@
         <img src="wash-indesit-1.jpg" id="v8" class="main-img">
         <div class="thumbnails">
             <img src="wash-indesit-1.jpg" onclick="document.getElementById('v8').src='wash-indesit-1.jpg'">
+            <img src="wash-indesit-2.jpg" onclick="document.getElementById('v8').src='wash-indesit-2.jpg'">
             <img src="wash-indesit-4.jpg" onclick="document.getElementById('v8').src='wash-indesit-4.jpg'">
         </div>
         <div class="title">Стиральная машина Indesit</div>
         <p class="price">2950 смн</p>
         <div class="button-group">
-            <button class="
+            <button class="btn-info" onclick="toggle('s8')">📋 Характеристики</button>
+            <div id="s8" class="specs">• 7 кг / Push & Go<br>• Пар / Класс A+++</div>
+            <button class="btn-cart">🛒 В корзину</button>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="wash-lg-1.jpg" id="v9" class="main-img">
+        <div class="thumbnails">
+            <img src="wash-lg-1.jpg" onclick="document.getElementById('v9').src='wash-lg-1.jpg'">
+            <img src="wash-lg-2.jpg" onclick="document.getElementById('v9').src='wash-lg-2.jpg'">
+            <img src="wash-lg-4.jpg" onclick="document.getElementById('v9').src='wash-lg-4.jpg'">
+        </div>
+        <div class="title">Стиральная машина LG Black</div>
+        <p class="price">4200 смн</p>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s9')">📋 Характеристики</button>
+            <div id="s9" class="specs">• 7 кг / Инверторный мотор<br>• Бесшумная / Функция пара</div>
+            <button class="btn-cart">🛒 В корзину</button>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggle(id) {
+        var el = document.getElementById(id);
+        var allSpecs = document.querySelectorAll('.specs');
+        allSpecs.forEach(function(s) { if(s.id !== id) s.style.display = 'none'; });
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
