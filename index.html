@@ -7,40 +7,20 @@
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
         header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
-        
-        /* Сетка товаров */
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        
-        /* Карточка товара */
-        .product-card { 
-            background: white; border-radius: 15px; width: 100%; max-width: 350px; 
-            padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-            box-sizing: border-box; text-align: center; display: flex; flex-direction: column;
-        }
-
-        .main-img { width: 100%; height: 200px; object-fit: contain; border-radius: 10px; background: #fff; }
-        
-        /* Миниатюры */
-        .thumbnails { display: flex; justify-content: center; gap: 8px; margin: 15px 0; }
-        .thumbnails img { width: 60px; height: 45px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; }
+        .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; }
+        .main-img { width: 100%; height: 220px; object-fit: contain; border-radius: 10px; background: #fff; }
+        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; }
+        .thumbnails img { width: 55px; height: 45px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; }
         .thumbnails img:hover { border-color: #ff9900; }
-
-        .title { font-size: 18px; font-weight: bold; margin: 10px 0; height: 40px; overflow: hidden; }
-        .price { font-size: 24px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
-
-        /* Кнопки */
+        .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; }
+        .price { font-size: 26px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
         .button-group { display: flex; flex-direction: column; gap: 10px; }
-        button, .btn-wa { 
-            padding: 12px; border: none; border-radius: 8px; font-weight: bold; 
-            cursor: pointer; text-decoration: none; font-size: 15px; text-align: center; 
-        }
-
+        button, .btn-wa { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 15px; text-align: center; }
         .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
         .btn-cart { background: #ffd814; color: #111; }
         .btn-wa { background: #25d366; color: white; }
-
-        /* Характеристики */
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 14px; line-height: 1.4; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 14px; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -54,15 +34,14 @@
         <div class="thumbnails">
             <img src="samsung1.jpg" onclick="document.getElementById('v1').src='samsung1.jpg'">
             <img src="samsung2.jpg" onclick="document.getElementById('v1').src='samsung2.jpg'">
-            <img src="samsung3.jpg" onclick="document.getElementById('v1').src='samsung3.jpg'">
         </div>
-        <div class="title">Samsyng LED TV 35"</div>
+        <div class="title">Samsyng Smart LED TV 35"</div>
         <p class="price">2100 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s1')">📋 Характеристики</button>
             <div id="s1" class="specs">• Smart TV, Bluetooth<br>• Miracast, USB Movie</div>
             <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
     </div>
 
@@ -71,15 +50,14 @@
         <div class="thumbnails">
             <img src="lg1.jpg" onclick="document.getElementById('v2').src='lg1.jpg'">
             <img src="lg2..jpg" onclick="document.getElementById('v2').src='lg2..jpg'">
-            <img src="lg3.jpg" onclick="document.getElementById('v2').src='lg3.jpg'">
         </div>
-        <div class="title">LG 43LP50 (43")</div>
+        <div class="title">LG 43LP50 Full HD 43"</div>
         <p class="price">1850 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s2')">📋 Характеристики</button>
             <div id="s2" class="specs">• Full HD, Dolby Audio<br>• HDMI, USB Movie</div>
             <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
     </div>
 
@@ -88,7 +66,6 @@
         <div class="thumbnails">
             <img src="samsung-new1.jpg" onclick="document.getElementById('v3').src='samsung-new1.jpg'">
             <img src="samsung-new2.jpg" onclick="document.getElementById('v3').src='samsung-new2.jpg'">
-            <img src="samsung-new3.jpg" onclick="document.getElementById('v3').src='samsung-new3.jpg'">
         </div>
         <div class="title">Samsyng 36" SS-36T2</div>
         <p class="price">2200 смн</p>
@@ -96,69 +73,4 @@
             <button class="btn-info" onclick="toggle('s3')">📋 Характеристики</button>
             <div id="s3" class="specs">• Wi-Fi, Double Glass<br>• DVB-T2/S2 Tuner</div>
             <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="android46-1.jpg" id="v4" class="main-img">
-        <div class="thumbnails">
-            <img src="android46-1.jpg" onclick="document.getElementById('v4').src='android46-1.jpg'">
-            <img src="android46-2.jpg" onclick="document.getElementById('v4').src='android46-2.jpg'">
-            <img src="android46-3.jpg" onclick="document.getElementById('v4').src='android46-3.jpg'">
-        </div>
-        <div class="title">Android TV 46" Smart FHD</div>
-        <p class="price">2800 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('s4')">📋 Характеристики</button>
-            <div id="s4" class="specs">• Android 14, Wi-Fi<br>• YouTube, Netflix, Spotify</div>
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="stove-steel1.jpg" id="v5" class="main-img">
-        <div class="thumbnails">
-            <img src="stove-steel1.jpg" onclick="document.getElementById('v5').src='stove-steel1.jpg'">
-            <img src="stove-steel2.jpg" onclick="document.getElementById('v5').src='stove-steel2.jpg'">
-            <img src="stove-steel3.jpg" onclick="document.getElementById('v5').src='stove-steel3.jpg'">
-        </div>
-        <div class="title">Газовая плита Steel Pro</div>
-        <p class="price">3100 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('s5')">📋 Характеристики</button>
-            <div id="s5" class="specs">• 4 конфорки, Электроподжиг<br>• Гриль, Нержавейка</div>
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="stove-black1.jpg" id="v6" class="main-img">
-        <div class="thumbnails">
-            <img src="stove-black1.jpg" onclick="document.getElementById('v6').src='stove-black1.jpg'">
-            <img src="stove-black2.jpg" onclick="document.getElementById('v6').src='stove-black2.jpg'">
-            <img src="stove-black3.jpg" onclick="document.getElementById('v6').src='stove-black3.jpg'">
-        </div>
-        <div class="title">Газовая плита Black Edition</div>
-        <p class="price">2350 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('s6')">📋 Характеристики</button>
-            <div id="s6" class="specs">• 4 конфорки, Газ-контроль<br>• Вместительная духовка</div>
-            <button class="btn-cart">🛒 В корзину</button>
-            <a href="https://wa.me/992935412727" class="btn-wa">📞 Заказать</a>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    function toggle(id) {
-        var el = document.getElementById(id);
-        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
-</script>
-
-</body>
-</html>
+            <a href="https://wa.
