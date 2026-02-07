@@ -6,20 +6,24 @@
     <title>Olami Tehnika 2727</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
-        header { background: #232f3e; color: white; padding: 25px; text-align: center; font-size: 28px; font-weight: bold; }
+        header { background: #232f3e; color: white; padding: 25px; text-align: center; font-size: 28px; font-weight: bold; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; }
-        .main-img { width: 100%; height: 220px; object-fit: contain; border-radius: 10px; }
-        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; overflow-x: auto; }
-        .thumbnails img { width: 50px; height: 40px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; }
-        .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; }
+        .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; }
+        .main-img { width: 100%; height: 220px; object-fit: contain; border-radius: 10px; background: #fff; }
+        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; overflow-x: auto; padding-bottom: 5px; }
+        .thumbnails img { width: 50px; height: 40px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; transition: 0.2s; }
+        .thumbnails img:hover { border-color: #ff9900; }
+        .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; color: #111; }
         .price { font-size: 24px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
-        .button-group { display: flex; flex-direction: column; gap: 10px; }
-        button, .btn-wa { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 14px; }
+        .button-group { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+        button, .btn-wa { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 14px; transition: 0.3s; }
         .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
         .btn-cart { background: #ffd814; color: #111; }
+        .btn-cart:hover { background: #f7ca00; }
         .btn-wa { background: #25d366; color: white; }
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 13px; border-left: 4px solid #ff9900; }
+        .btn-wa:hover { background: #128c7e; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 13px; border-left: 4px solid #ff9900; line-height: 1.5; }
+        .spec-line { border-bottom: 1px dashed #ddd; margin-bottom: 5px; padding-bottom: 2px; }
     </style>
 </head>
 <body>
@@ -35,11 +39,17 @@
             <img src="samsung2.jpg" onclick="document.getElementById('v1').src='samsung2.jpg'">
             <img src="samsung3.jpg" onclick="document.getElementById('v1').src='samsung3.jpg'">
         </div>
-        <div class="title">Samsyng Smart LED TV 35"</div>
+        <div class="title">Samsung Smart LED TV 35"</div>
         <p class="price">2100 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s1')">📋 Характеристики</button>
-            <div id="s1" class="specs">• Smart TV / Bluetooth<br>• Miracast / USB Movie</div>
+            <div id="s1" class="specs">
+                <div class="spec-line"><b>Экран:</b> 35" (89 см), HD Ready</div>
+                <div class="spec-line"><b>Функции:</b> Smart TV, Tizen OS</div>
+                <div class="spec-line"><b>Звук:</b> 20 Вт, Dolby Digital Plus</div>
+                <div class="spec-line"><b>Связь:</b> Wi-Fi, Bluetooth, Miracast</div>
+                <div class="spec-line"><b>Порты:</b> 2xHDMI, 1xUSB Movie</div>
+            </div>
             <button class="btn-cart">🛒 В корзину</button>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -49,28 +59,42 @@
         <img src="lg1.jpg" id="v2" class="main-img">
         <div class="thumbnails">
             <img src="lg1.jpg" onclick="document.getElementById('v2').src='lg1.jpg'">
-            <img src="lg2..jpg" onclick="document.getElementById('v2').src='lg2..jpg'">
+            <img src="lg2.jpg" onclick="document.getElementById('v2').src='lg2.jpg'">
         </div>
         <div class="title">LG 43LP50 Full HD 43"</div>
         <p class="price">1850 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s2')">📋 Характеристики</button>
-            <div id="s2" class="specs">• Full HD / Dolby Audio<br>• HDMI / USB Movie</div>
+            <div id="s2" class="specs">
+                <div class="spec-line"><b>Экран:</b> 43" (109 см), Full HD</div>
+                <div class="spec-line"><b>Матрица:</b> IPS (яркие цвета)</div>
+                <div class="spec-line"><b>Звук:</b> Dolby Audio</div>
+                <div class="spec-line"><b>Тюнер:</b> DVB-T2/C/S2 (цифровое ТВ)</div>
+                <div class="spec-line"><b>Доп:</b> USB Movie, HDMI x2</div>
+            </div>
             <button class="btn-cart">🛒 В корзину</button>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
     </div>
 
     <div class="product-card">
-        <img src="android46-3.jpg" id="v4" class="main-img">
+        <img src="android46-1.jpg" id="v3" class="main-img">
         <div class="thumbnails">
-            <img src="android46-3.jpg" onclick="document.getElementById('v4').src='android46-3.jpg'">
+            <img src="android46-1.jpg" onclick="document.getElementById('v3').src='android46-1.jpg'">
+            <img src="android46-2.jpg" onclick="document.getElementById('v3').src='android46-2.jpg'">
+            <img src="android46-3.jpg" onclick="document.getElementById('v3').src='android46-3.jpg'">
         </div>
-        <div class="title">Android TV 46" Smart FHD</div>
+        <div class="title">Android TV 46" Smart Full HD</div>
         <p class="price">2800 смн</p>
         <div class="button-group">
-            <button class="btn-info" onclick="toggle('s4')">📋 Характеристики</button>
-            <div id="s4" class="specs">• Android 14 / YouTube<br>• FHD / Wi-Fi</div>
+            <button class="btn-info" onclick="toggle('s3')">📋 Характеристики</button>
+            <div id="s3" class="specs">
+                <div class="spec-line"><b>Экран:</b> 46" (117 см), Ultra Slim</div>
+                <div class="spec-line"><b>ОС:</b> Android 14 (последняя)</div>
+                <div class="spec-line"><b>Память:</b> 1.5GB RAM / 8GB ROM</div>
+                <div class="spec-line"><b>Приложения:</b> YouTube, Netflix, PlayMarket</div>
+                <div class="spec-line"><b>Сеть:</b> Wi-Fi 5G, Ethernet RJ45</div>
+            </div>
             <button class="btn-cart">🛒 В корзину</button>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -83,11 +107,17 @@
             <img src="stove-steel2.jpg" onclick="document.getElementById('v5').src='stove-steel2.jpg'">
             <img src="stove-steel3.jpg" onclick="document.getElementById('v5').src='stove-steel3.jpg'">
         </div>
-        <div class="title">Газовая плита Kumtel</div>
+        <div class="title">Газовая плита Kumtel (Inox)</div>
         <p class="price">3100 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s5')">📋 Характеристики</button>
-            <div id="s5" class="specs">• Нержавейка / 4 конфорки<br>• Гриль / Электроподжиг</div>
+            <div id="s5" class="specs">
+                <div class="spec-line"><b>Материал:</b> Нержавеющая сталь</div>
+                <div class="spec-line"><b>Конфорки:</b> 4 газовые (Sabaf)</div>
+                <div class="spec-line"><b>Духовка:</b> Газовая с грилем</div>
+                <div class="spec-line"><b>Функции:</b> Электроподжиг, Газ-контроль</div>
+                <div class="spec-line"><b>Размер:</b> 60x60 см</div>
+            </div>
             <button class="btn-cart">🛒 В корзину</button>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -104,7 +134,13 @@
         <p class="price">2600 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s7')">📋 Характеристики</button>
-            <div id="s7" class="specs">• Цвет: Черный / Bio Ceramic<br>• 4 газовые конфорки<br>• Электроподжиг</div>
+            <div id="s7" class="specs">
+                <div class="spec-line"><b>Цвет:</b> Черный глянец</div>
+                <div class="spec-line"><b>Покрытие:</b> Bio Ceramic (легкая чистка)</div>
+                <div class="spec-line"><b>Конфорки:</b> 4 газовые с чугунными решетками</div>
+                <div class="spec-line"><b>Духовка:</b> 65 литров, подсветка</div>
+                <div class="spec-line"><b>Дополнительно:</b> Электроподжиг одной рукой</div>
+            </div>
             <button class="btn-cart">🛒 В корзину</button>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -121,7 +157,13 @@
         <p class="price">2950 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s8')">📋 Характеристики</button>
-            <div id="s8" class="specs">• 7 кг / Push & Go<br>• Пар / Класс A+++</div>
+            <div id="s8" class="specs">
+                <div class="spec-line"><b>Загрузка:</b> 7 кг, Фронтальная</div>
+                <div class="spec-line"><b>Программы:</b> Push & Go (стирка одной кнопкой)</div>
+                <div class="spec-line"><b>Технологии:</b> Обработка паром, Удаление пятен</div>
+                <div class="spec-line"><b>Класс:</b> A+++ (максимально экономная)</div>
+                <div class="spec-line"><b>Отжим:</b> 1200 об/мин</div>
+            </div>
             <button class="btn-cart">🛒 В корзину</button>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -138,7 +180,13 @@
         <p class="price">4200 смн</p>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s9')">📋 Характеристики</button>
-            <div id="s9" class="specs">• 7 кг / Инверторный мотор<br>• Бесшумная / Функция пара</div>
+            <div id="s9" class="specs">
+                <div class="spec-line"><b>Тип:</b> Инверторный мотор (Direct Drive)</div>
+                <div class="spec-line"><b>Загрузка:</b> 7 кг / 1400 об/мин</div>
+                <div class="spec-line"><b>Особенности:</b> AI DD (умная стирка), Steam</div>
+                <div class="spec-line"><b>Уровень шума:</b> Бесшумная стирка</div>
+                <div class="spec-line"><b>Цвет:</b> Темный графит (Premium)</div>
+            </div>
             <button class="btn-cart">🛒 В корзину</button>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -150,7 +198,9 @@
     function toggle(id) {
         var el = document.getElementById(id);
         var allSpecs = document.querySelectorAll('.specs');
-        allSpecs.forEach(function(s) { if(s.id !== id) s.style.display = 'none'; });
+        allSpecs.forEach(function(s) { 
+            if(s.id !== id) s.style.display = 'none'; 
+        });
         el.style.display = (el.style.display === 'block') ? 'none' : 'block';
     }
 </script>
