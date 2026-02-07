@@ -3,226 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olami Tehnika 2727 — Дӯкони техникаи боэътимод</title>
+    <title>Olami Tehnika 2727</title>
     <style>
         :root { --main-blue: #232f3e; --light-blue: #37475a; --accent: #ff9900; --price-red: #b12704; --wa-green: #25d366; }
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; scroll-behavior: smooth; }
-        
         header { background: var(--main-blue); color: white; padding: 25px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        header h1 { margin: 0; font-size: 24px; }
-
         nav { background: var(--light-blue); padding: 12px; text-align: center; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
         nav a { color: white; text-decoration: none; font-weight: bold; cursor: pointer; font-size: 14px; transition: 0.3s; padding: 5px 10px; border-radius: 5px; }
         nav a:hover { background: rgba(255,255,255,0.1); color: var(--accent); }
-
-        /* Разделы */
         section { background: white; padding: 35px 20px; margin: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .section-title { text-align: center; color: var(--main-blue); margin-bottom: 25px; }
-
-        /* Карточки товаров */
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 10px; }
         .product-card { background: white; border-radius: 15px; width: 100%; max-width: 320px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: 0.3s; border: 1px solid #eee; }
         .product-card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-        
         .main-img { width: 100%; height: 200px; object-fit: contain; border-radius: 10px; background: #fff; }
         .thumbnails { display: flex; justify-content: center; gap: 8px; margin: 12px 0; }
-        .thumbnails img { width: 50px; height: 40px; cursor: pointer; border: 2px solid #eee; border-radius: 5px; object-fit: cover; transition: 0.2s; }
-        .thumbnails img:hover { border-color: var(--accent); }
-        
+        .thumbnails img { width: 50px; height: 40px; cursor: pointer; border: 2px solid #eee; border-radius: 5px; object-fit: cover; }
         .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; color: #111; }
         .price-tag { font-size: 24px; color: var(--price-red); font-weight: bold; margin-bottom: 15px; }
-        
-        /* Кнопки */
-        .button-group { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
         .btn { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 14px; text-align: center; transition: 0.3s; }
         .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
-        .btn-wa { background: var(--wa-green); color: white; }
-        .btn-wa:hover { background: #128c7e; opacity: 0.9; }
-
-        /* Характеристики */
+        .btn-wa { background: var(--wa-green); color: white; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 13px; border-left: 4px solid var(--accent); line-height: 1.6; }
         .spec-line { border-bottom: 1px dashed #ddd; padding: 4px 0; }
-
-        /* Отзывы */
         .review-card { background: #f4f7f6; padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 5px solid var(--wa-green); }
         .stars { color: var(--accent); font-size: 18px; }
-        .review-form { display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: 20px auto; }
-        .review-form input, .review-form textarea { padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
-
         footer { background: var(--main-blue); color: white; padding: 30px; text-align: center; margin-top: 40px; }
         .contact-highlight { font-size: 20px; color: var(--accent); font-weight: bold; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Olami Tehnika 2727</h1>
-</header>
+<header><h1>Olami Tehnika 2727</h1></header>
 
 <nav>
     <a onclick="filterCat('all')">Ҳама маҳсулот</a>
     <a onclick="filterCat('tv')">Телевизорҳо</a>
     <a onclick="filterCat('stove')">Плитаҳо</a>
-    <a onclick="filterCat('wash')">Мошинҳои ҷомашӯӣ</a>
-    <a href="#reviews">Фикру мулоҳизаҳо</a>
+    <a onclick="filterCat('wash')">Мошинҳо</a>
     <a href="#about">Дар бораи мо</a>
 </nav>
 
 <section id="about">
-    <h2 class="section-title">20 сол бо шумо! (с 2006 года)</h2>
-    <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-        Мо аз соли <b>2006</b> инҷониб дар бозори Тоҷикистон фаъолият дорем. Эътимоди шумо — ҳадафи асосии мост. 
-        Техникаи босифат бо нархҳои дастрас ва кафолати дарозмуддат.
-    </p>
-    <div style="text-align: center; margin-top: 20px;">
-        <span class="contact-highlight">📞 Тел: +992 559 611 114</span>
-    </div>
+    <h2 class="section-title">20 сол бо шумо! (аз 2006)</h2>
+    <p style="text-align: center;">Мо аз соли 2006 инҷониб боварии шуморо ба даст овардем.</p>
+    <div style="text-align: center;"><span class="contact-highlight">📞 Тел: +992 559 611 114</span></div>
 </section>
 
-<div class="product-grid" id="grid">
+<div class="product-grid">
     
     <div class="product-card" data-cat="tv">
-        <img src="samsung1.jpg" id="v1" class="main-img">
+        <img src="samsung-new1.jpg" id="v1" class="main-img">
         <div class="thumbnails">
-            <img src="samsung1.jpg" onclick="changeImg('v1', this.src)">
-            <img src="samsung2.jpg" onclick="changeImg('v1', this.src)">
+            <img src="samsung-new1.jpg" onclick="chg('v1',this.src)">
+            <img src="samsung-new2.jpg" onclick="chg('v1',this.src)">
         </div>
-        <div class="title" id="t1">Samsung Smart LED TV 35"</div>
+        <div class="title" id="t1">Samsung Smart TV 35"</div>
         <p class="price-tag"><span id="p1">2100</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="toggle('s1')">📋 Характеристика</button>
-            <div id="s1" class="specs">
-                <div class="spec-line"><b>Экран:</b> 35", HD Ready</div>
-                <div class="spec-line"><b>Система:</b> Tizen OS, Smart TV</div>
-            </div>
-            <button class="btn btn-wa" onclick="sendOrder('t1', 'p1')">🛒 Заказ (WhatsApp)</button>
+            <button class="btn btn-info" onclick="tg('s1')">📋 Характеристика</button>
+            <div id="s1" class="specs"><div class="spec-line">Smart TV, WiFi, Tizen OS</div></div>
+            <button class="btn btn-wa" onclick="order('t1','p1')">🛒 WhatsApp</button>
         </div>
     </div>
 
     <div class="product-card" data-cat="tv">
-        <img src="android46-1.jpg" id="v3" class="main-img">
+        <img src="android46-1.jpg" id="v2" class="main-img">
         <div class="thumbnails">
-            <img src="android46-1.jpg" onclick="changeImg('v3', this.src)">
-            <img src="android46-2.jpg" onclick="changeImg('v3', this.src)">
+            <img src="android46-1.jpg" onclick="chg('v2',this.src)">
+            <img src="android46-2.jpg" onclick="chg('v2',this.src)">
         </div>
-        <div class="title" id="t3">Android TV 46" Smart FHD</div>
-        <p class="price-tag"><span id="p3">2800</span> смн</p>
+        <div class="title" id="t2">Android TV 46" FHD</div>
+        <p class="price-tag"><span id="p2">2800</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="toggle('s3')">📋 Характеристика</button>
-            <div id="s3" class="specs">
-                <div class="spec-line"><b>OS:</b> Android 14, PlayMarket</div>
-                <div class="spec-line"><b>WiFi:</b> 5G, YouTube, Netflix</div>
-            </div>
-            <button class="btn btn-wa" onclick="sendOrder('t3', 'p3')">🛒 Заказ (WhatsApp)</button>
+            <button class="btn btn-info" onclick="tg('s2')">📋 Характеристика</button>
+            <div id="s2" class="specs"><div class="spec-line">Android 14, 5G WiFi, YouTube</div></div>
+            <button class="btn btn-wa" onclick="order('t2','p2')">🛒 WhatsApp</button>
         </div>
     </div>
 
     <div class="product-card" data-cat="wash">
-        <img src="samsung_10kg_1.jpg" id="v9" class="main-img">
-        <div class="title" id="t9">Samsung EcoBubble 10 кг</div>
-        <p class="price-tag"><span id="p9">5200</span> смн</p>
+        <img src="lg_white_1.jpg" id="v3" class="main-img">
+        <div class="title" id="t3">LG Wash (Сафед)</div>
+        <p class="price-tag"><span id="p3">4100</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="toggle('s9')">📋 Характеристика</button>
-            <div id="s9" class="specs">
-                <div class="spec-line"><b>Вазн:</b> 10 кг</div>
-                <div class="spec-line"><b>Технология:</b> EcoBubble, Steam</div>
-            </div>
-            <button class="btn btn-wa" onclick="sendOrder('t9', 'p9')">🛒 Заказ (WhatsApp)</button>
+            <button class="btn btn-info" onclick="tg('s3')">📋 Характеристика</button>
+            <div id="s3" class="specs"><div class="spec-line">Inverter, Steam, 7kg</div></div>
+            <button class="btn btn-wa" onclick="order('t3','p3')">🛒 WhatsApp</button>
         </div>
     </div>
 
     <div class="product-card" data-cat="wash">
-        <img src="lg_white_1.jpg" id="v8" class="main-img">
-        <div class="title" id="t8">LG 7 кг (Сафед / Белая)</div>
-        <p class="price-tag"><span id="p8">4100</span> смн</p>
+        <img src="samsung_10kg_1.jpg" id="v4" class="main-img">
+        <div class="title" id="t4">Samsung EcoBubble 10кг</div>
+        <p class="price-tag"><span id="p4">5200</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="toggle('s8')">📋 Характеристика</button>
-            <div id="s8" class="specs">
-                <div class="spec-line"><b>Мотор:</b> Inverter Direct Drive</div>
-                <div class="spec-line"><b>Функсия:</b> Буғ (Пар), 1400 об/мин</div>
-            </div>
-            <button class="btn btn-wa" onclick="sendOrder('t8', 'p8')">🛒 Заказ (WhatsApp)</button>
+            <button class="btn btn-info" onclick="tg('s4')">📋 Характеристика</button>
+            <div id="s4" class="specs"><div class="spec-line">10kg, EcoBubble, A+++</div></div>
+            <button class="btn btn-wa" onclick="order('t4','p4')">🛒 WhatsApp</button>
         </div>
     </div>
 
-    <div class="product-card" data-cat="stove">
-        <img src="stove-steel1.jpg" id="v4" class="main-img">
-        <div class="title" id="t4">Газовая плита Kumtel (Inox)</div>
-        <p class="price-tag"><span id="p4">3100</span> смн</p>
+    <div class="product-card" data-cat="tv">
+        <img src="lg1.jpg" id="v5" class="main-img">
+        <div class="title" id="t5">LG 43" Full HD</div>
+        <p class="price-tag"><span id="p5">1850</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="toggle('s4')">📋 Характеристика</button>
-            <div id="s4" class="specs">
-                <div class="spec-line"><b>Мавод:</b> Нержавеющая сталь</div>
-                <div class="spec-line"><b>Духовка:</b> Конвекция, Гриль</div>
-            </div>
-            <button class="btn btn-wa" onclick="sendOrder('t4', 'p4')">🛒 Заказ (WhatsApp)</button>
-        </div>
-    </div>
-
-</div>
-
-<section id="reviews">
-    <h2 class="section-title">Фикру мулоҳизаҳо / Отзывы</h2>
-    
-    <div class="review-card">
-        <span style="font-weight:bold;">Алишер</span> <span class="stars">★★★★★</span>
-        <p>"Техникаи олиҷаноб! Аз соли 2010 танҳо аз шумо харид мекунам."</p>
-    </div>
-
-    <div class="review-card">
-        <span style="font-weight:bold;">Марина</span> <span class="stars">★★★★★</span>
-        <p>"Очень довольна покупкой. Быстрая доставка и вежливый персонал."</p>
-    </div>
-
-    <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
-        <h3 style="text-align:center;">Фикри худро нависед (Написать отзыв)</h3>
-        <div class="review-form">
-            <input type="text" id="revName" placeholder="Номи шумо (Ваше имя)">
-            <textarea id="revText" rows="3" placeholder="Матни фикри шумо (Текст отзыва)"></textarea>
-            <button class="btn btn-wa" onclick="sendReview()">Фиристодани фикр (Отправить в WhatsApp)</button>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Olami Tehnika 2727. Ҳамаи ҳуқуқҳо маҳфузанд.</p>
-    <p>Суроға: ш. Душанбе | Тел: +992 559 611 114</p>
-</footer>
-
-<script>
-    const MY_PHONE = "992935412727";
-
-    function toggle(id) {
-        let el = document.getElementById(id);
-        document.querySelectorAll('.specs').forEach(s => { if(s.id !== id) s.style.display = 'none'; });
-        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
-
-    function changeImg(imgId, src) {
-        document.getElementById(imgId).src = src;
-    }
-
-    function filterCat(cat) {
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
-        });
-    }
-
-    function sendOrder(tId, pId) {
-        let title = document.getElementById(tId).innerText;
-        let price = document.getElementById(pId).innerText;
-        let msg = `Салом! Ман мехоҳам фармоиш диҳам:\n📦 Маҳсулот: ${title}\n💰 Нарх: ${price} смн\nОё дар склад ҳаст?`;
-        window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
-    }
-
-    function sendReview() {
-        let name = document.getElementById('revName').value;
-        let text = document.getElementById('revText').value;
-        if(!name || !text) { alert("Лутфан ном ва матнро пур кунед!"); return; }
-        let msg = `🌟 НАВИ ФИКРИ МИЗОҶ:\nМан: ${name}\nФикр: ${text}`;
-        window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
-    }
-</script>
-
-</body>
-</html>
+            <button class="btn btn-info" onclick="tg('s5')">📋 Характеристика</button>
+            <div id="s5" class="specs"><div class="spec-line">
