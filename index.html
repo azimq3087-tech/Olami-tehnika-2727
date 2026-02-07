@@ -12,24 +12,19 @@
         nav a { color: white; text-decoration: none; font-weight: bold; cursor: pointer; font-size: 14px; transition: 0.3s; padding: 5px 10px; border-radius: 5px; }
         nav a:hover { background: rgba(255,255,255,0.1); color: var(--accent); }
         section { background: white; padding: 35px 20px; margin: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .section-title { text-align: center; color: var(--main-blue); margin-bottom: 25px; }
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 10px; }
         .product-card { background: white; border-radius: 15px; width: 100%; max-width: 320px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: 0.3s; border: 1px solid #eee; }
         .product-card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
         .main-img { width: 100%; height: 200px; object-fit: contain; border-radius: 10px; background: #fff; }
         .thumbnails { display: flex; justify-content: center; gap: 8px; margin: 12px 0; }
-        .thumbnails img { width: 50px; height: 40px; cursor: pointer; border: 2px solid #eee; border-radius: 5px; object-fit: cover; }
+        .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 2px solid #eee; border-radius: 5px; object-fit: cover; }
         .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; color: #111; }
         .price-tag { font-size: 24px; color: var(--price-red); font-weight: bold; margin-bottom: 15px; }
         .btn { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 14px; text-align: center; transition: 0.3s; }
         .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
-        .btn-wa { background: var(--wa-green); color: white; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 13px; border-left: 4px solid var(--accent); line-height: 1.6; }
-        .spec-line { border-bottom: 1px dashed #ddd; padding: 4px 0; }
-        .review-card { background: #f4f7f6; padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 5px solid var(--wa-green); }
-        .stars { color: var(--accent); font-size: 18px; }
+        .btn-wa { background: var(--wa-green); color: white; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 13px; border-left: 4px solid var(--accent); }
         footer { background: var(--main-blue); color: white; padding: 30px; text-align: center; margin-top: 40px; }
-        .contact-highlight { font-size: 20px; color: var(--accent); font-weight: bold; }
     </style>
 </head>
 <body>
@@ -44,10 +39,10 @@
     <a href="#about">Дар бораи мо</a>
 </nav>
 
-<section id="about">
-    <h2 class="section-title">20 сол бо шумо! (аз 2006)</h2>
-    <p style="text-align: center;">Мо аз соли 2006 инҷониб боварии шуморо ба даст овардем.</p>
-    <div style="text-align: center;"><span class="contact-highlight">📞 Тел: +992 559 611 114</span></div>
+<section id="about" style="text-align: center;">
+    <h2>20 сол бо шумо! (аз 2006)</h2>
+    <p>Мо аз соли 2006 инҷониб боварии шуморо ба даст овардем. Сифати баланд ва нархи дастрас!</p>
+    <p><b>📞 Тел: +992 559 611 114</b></p>
 </section>
 
 <div class="product-grid">
@@ -61,8 +56,8 @@
         <div class="title" id="t1">Samsung Smart TV 35"</div>
         <p class="price-tag"><span id="p1">2100</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="tg('s1')">📋 Характеристика</button>
-            <div id="s1" class="specs"><div class="spec-line">Smart TV, WiFi, Tizen OS</div></div>
+            <button class="btn btn-info" onclick="tg('s1')">Характеристика</button>
+            <div id="s1" class="specs">Smart TV, WiFi, Tizen OS</div>
             <button class="btn btn-wa" onclick="order('t1','p1')">🛒 WhatsApp</button>
         </div>
     </div>
@@ -76,38 +71,124 @@
         <div class="title" id="t2">Android TV 46" FHD</div>
         <p class="price-tag"><span id="p2">2800</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="tg('s2')">📋 Характеристика</button>
-            <div id="s2" class="specs"><div class="spec-line">Android 14, 5G WiFi, YouTube</div></div>
+            <button class="btn btn-info" onclick="tg('s2')">Характеристика</button>
+            <div id="s2" class="specs">Android 14, 5G WiFi, YouTube</div>
             <button class="btn btn-wa" onclick="order('t2','p2')">🛒 WhatsApp</button>
         </div>
     </div>
 
-    <div class="product-card" data-cat="wash">
-        <img src="lg_white_1.jpg" id="v3" class="main-img">
-        <div class="title" id="t3">LG Wash (Сафед)</div>
-        <p class="price-tag"><span id="p3">4100</span> смн</p>
+    <div class="product-card" data-cat="tv">
+        <img src="lg1.jpg" id="v3" class="main-img">
+        <div class="title" id="t3">LG 43" Full HD</div>
+        <p class="price-tag"><span id="p3">1850</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="tg('s3')">📋 Характеристика</button>
-            <div id="s3" class="specs"><div class="spec-line">Inverter, Steam, 7kg</div></div>
+            <button class="btn btn-info" onclick="tg('s3')">Характеристика</button>
+            <div id="s3" class="specs">IPS Screen, DVB-T2/C/S2</div>
             <button class="btn btn-wa" onclick="order('t3','p3')">🛒 WhatsApp</button>
         </div>
     </div>
 
-    <div class="product-card" data-cat="wash">
-        <img src="samsung_10kg_1.jpg" id="v4" class="main-img">
-        <div class="title" id="t4">Samsung EcoBubble 10кг</div>
-        <p class="price-tag"><span id="p4">5200</span> смн</p>
+    <div class="product-card" data-cat="stove">
+        <img src="stove-steel1.jpg" id="v4" class="main-img">
+        <div class="title" id="t4">Плитаи Kumtel Inox</div>
+        <p class="price-tag"><span id="p4">3100</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="tg('s4')">📋 Характеристика</button>
-            <div id="s4" class="specs"><div class="spec-line">10kg, EcoBubble, A+++</div></div>
+            <button class="btn btn-info" onclick="tg('s4')">Характеристика</button>
+            <div id="s4" class="specs">Нержавейка, Газ + Гриль, 60x60</div>
             <button class="btn btn-wa" onclick="order('t4','p4')">🛒 WhatsApp</button>
         </div>
     </div>
 
-    <div class="product-card" data-cat="tv">
-        <img src="lg1.jpg" id="v5" class="main-img">
-        <div class="title" id="t5">LG 43" Full HD</div>
-        <p class="price-tag"><span id="p5">1850</span> смн</p>
+    <div class="product-card" data-cat="stove">
+        <img src="stove-black1.jpg" id="v5" class="main-img">
+        <div class="title" id="t5">Плитаи газӣ (Сиёҳ)</div>
+        <p class="price-tag"><span id="p5">2600</span> смн</p>
         <div class="button-group">
-            <button class="btn btn-info" onclick="tg('s5')">📋 Характеристика</button>
-            <div id="s5" class="specs"><div class="spec-line">
+            <button class="btn btn-info" onclick="tg('s5')">Характеристика</button>
+            <div id="s5" class="specs">Bio Ceramic, 4 конфорки</div>
+            <button class="btn btn-wa" onclick="order('t5','p5')">🛒 WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card" data-cat="wash">
+        <img src="lg_white_1.jpg" id="v6" class="main-img">
+        <div class="title" id="t6">LG 7кг (Сафед)</div>
+        <p class="price-tag"><span id="p6">4100</span> смн</p>
+        <div class="button-group">
+            <button class="btn btn-info" onclick="tg('s6')">Характеристика</button>
+            <div id="s6" class="specs">Inverter DD, Steam, 7kg</div>
+            <button class="btn btn-wa" onclick="order('t6','p6')">🛒 WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card" data-cat="wash">
+        <img src="samsung_10kg_1.jpg" id="v7" class="main-img">
+        <div class="title" id="t7">Samsung EcoBubble 10кг</div>
+        <p class="price-tag"><span id="p7">5200</span> смн</p>
+        <div class="button-group">
+            <button class="btn btn-info" onclick="tg('s7')">Характеристика</button>
+            <div id="s7" class="specs">10kg, EcoBubble, A+++</div>
+            <button class="btn btn-wa" onclick="order('t7','p7')">🛒 WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card" data-cat="wash">
+        <img src="samsung_7kg_1.jpg" id="v8" class="main-img">
+        <div class="title" id="t8">Samsung Diamond 7кг</div>
+        <p class="price-tag"><span id="p8">3400</span> смн</p>
+        <div class="button-group">
+            <button class="btn btn-info" onclick="tg('s8')">Характеристика</button>
+            <div id="s8" class="specs">7kg, Volt Control, Diamond Drum</div>
+            <button class="btn btn-wa" onclick="order('t8','p8')">🛒 WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card" data-cat="wash">
+        <img src="indesit1.jpg" id="v9" class="main-img">
+        <div class="title" id="t9">Indesit 7кг Push & Go</div>
+        <p class="price-tag"><span id="p9">2950</span> смн</p>
+        <div class="button-group">
+            <button class="btn btn-info" onclick="tg('s9')">Характеристика</button>
+            <div id="s9" class="specs">7kg, Steam, Push & Go</div>
+            <button class="btn btn-wa" onclick="order('t9','p9')">🛒 WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card" data-cat="wash">
+        <img src="lg-wash1.jpg" id="v10" class="main-img">
+        <div class="title" id="t10">LG 7кг (Графит)</div>
+        <p class="price-tag"><span id="p10">4200</span> смн</p>
+        <div class="button-group">
+            <button class="btn btn-info" onclick="tg('s10')">Характеристика</button>
+            <div id="s10" class="specs">AI DD, Inverter, 7kg</div>
+            <button class="btn btn-wa" onclick="order('t10','p10')">🛒 WhatsApp</button>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Olami Tehnika 2727 | Тел: +992 559 611 114</p>
+</footer>
+
+<script>
+    function tg(id) {
+        let el = document.getElementById(id);
+        document.querySelectorAll('.specs').forEach(s => { if(s.id !== id) s.style.display = 'none'; });
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+    function chg(id, src) { document.getElementById(id).src = src; }
+    function filterCat(cat) {
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
+        });
+    }
+    function order(tId, pId) {
+        let t = document.getElementById(tId).innerText;
+        let p = document.getElementById(pId).innerText;
+        let msg = `Салом! Фармоиш: ${t} - ${p} смн. Оё ҳаст?`;
+        window.open(`https://wa.me/992935412727?text=${encodeURIComponent(msg)}`);
+    }
+</script>
+</body>
+</html>
