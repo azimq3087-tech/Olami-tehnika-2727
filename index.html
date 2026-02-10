@@ -1,55 +1,20 @@
-<!DOCTYPE html>
-<html lang="tg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olami Tehnika 2727</title>
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; scroll-behavior: smooth; }
-        header { background: #232f3e; color: white; padding: 25px; text-align: center; font-size: 28px; font-weight: bold; }
-        
-        /* Меню */
-        .nav-menu { 
-            background: #37475a; display: flex; justify-content: center; padding: 12px; gap: 15px; 
-            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .nav-menu a { color: white; text-decoration: none; font-weight: bold; font-size: 13px; text-transform: uppercase; }
-        .nav-menu a:hover { color: #ff9900; }
-
-        .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .product-card { background: white; border-radius: 15px; width: 100%; max-width: 350px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; }
-        
-        .main-img { width: 100%; height: 220px; object-fit: contain; border-radius: 10px; background: #fff; }
-        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 15px 0; overflow-x: auto; padding-bottom: 5px; border-bottom: 1px solid #eee; }
-        .thumbnails img { width: 60px; height: 45px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; object-fit: cover; transition: 0.2s; }
-        .thumbnails img:hover { border-color: #ff9900; }
-        
-        .title { font-size: 18px; font-weight: bold; margin: 10px 0; min-height: 44px; color: #111; }
-        .price { font-size: 24px; color: #b12704; font-weight: bold; margin-bottom: 15px; }
-        
-        .button-group { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
-        button, .btn-wa { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 14px; }
-        .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
-        .btn-wa { background: #25d366; color: white; text-align: center; }
-        
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin-top: 10px; font-size: 13px; border-left: 4px solid #ff9900; line-height: 1.5; }
-        .spec-line { border-bottom: 1px dashed #ddd; margin-bottom: 5px; padding-bottom: 2px; }
-
-        .info-section { max-width: 900px; margin: 30px auto; padding: 25px; background: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .review-card { background: #fdfdfd; padding: 15px; border-radius: 10px; border-top: 3px solid #ff9900; margin-bottom: 10px; }
-        .stars { color: #fbc02d; }
-    </style>
-</head>
-<body>
-
-<header>Olami Tehnika 2727</header>
-
-<nav class="nav-menu">
-    <a href="#products">Маҳсулот</a>
-    <a href="#about">Дар бораи мо</a>
-    <a href="#reviews">Шарҳҳо</a>
-    <a href="#contact">Тамос</a>
-</nav>
+<style>
+    /* Стили нав барои скидка */
+    .discount-tag {
+        color: #28a745;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        display: block;
+        background: #eafff0;
+        padding: 4px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
 
 <div class="product-grid" id="products">
 
@@ -62,12 +27,13 @@
         </div>
         <div class="title">Samsung Smart LED TV 35"</div>
         <p class="price">2100 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка! %</span>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s1')">📋 Характеристика</button>
             <div id="s1" class="specs">
-                <div class="spec-line"><b>Экран:</b> 35" (89 см), HD Ready</div>
-                <div class="spec-line"><b>Система:</b> Smart TV, Wi-Fi, Bluetooth</div>
-                <div class="spec-line"><b>Портҳо:</b> HDMI x2, USB x1</div>
+                <div class="spec-line"><b>Экран:</b> 35" (89 см), HD Ready 1366x768</div>
+                <div class="spec-line"><b>Система:</b> Smart TV (Tizen OS), Wi-Fi, Bluetooth</div>
+                <div class="spec-line"><b>Портҳо:</b> 2x HDMI, 1x USB, LAN (Ethernet)</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -81,12 +47,13 @@
         </div>
         <div class="title">LG 43LP50 Full HD 43"</div>
         <p class="price">1850 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка! %</span>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s2')">📋 Характеристика</button>
             <div id="s2" class="specs">
-                <div class="spec-line"><b>Экран:</b> 43" (109 см), Full HD</div>
-                <div class="spec-line"><b>Звук:</b> Dolby Audio</div>
-                <div class="spec-line"><b>Тюнер:</b> DVB-T2 (Цифровое ТВ)</div>
+                <div class="spec-line"><b>Экран:</b> 43" (109 см), Full HD 1080p</div>
+                <div class="spec-line"><b>Матритса:</b> IPS (кунҷи диди васеъ 178°)</div>
+                <div class="spec-line"><b>Интерфейс:</b> 2x HDMI, 1x USB Movie</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -101,12 +68,13 @@
         </div>
         <div class="title">Android TV 46" Smart FHD</div>
         <p class="price">2800 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка! %</span>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s3')">📋 Характеристика</button>
             <div id="s3" class="specs">
-                <div class="spec-line"><b>Система:</b> Android 14 (YouTube/Netflix)</div>
-                <div class="spec-line"><b>Экран:</b> 46" (117 см), Slim Design</div>
-                <div class="spec-line"><b>Память:</b> 1.5GB RAM / 8GB Flash</div>
+                <div class="spec-line"><b>ОС:</b> Android TV 14 (YouTube, Netflix)</div>
+                <div class="spec-line"><b>Хотира:</b> 1.5GB RAM / 8GB ROM</div>
+                <div class="spec-line"><b>Разоиш:</b> Full HD 1920x1080</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -121,12 +89,13 @@
         </div>
         <div class="title">Газовая плита Kumtel (Inox)</div>
         <p class="price">3100 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка! %</span>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s5')">📋 Характеристика</button>
             <div id="s5" class="specs">
-                <div class="spec-line"><b>Мавод:</b> Нержавеющая сталь</div>
-                <div class="spec-line"><b>Конфорка:</b> 4 газовые</div>
-                <div class="spec-line"><b>Духовка:</b> Гриль, Подсветка</div>
+                <div class="spec-line"><b>Мавод:</b> Пӯлоди зангногир</div>
+                <div class="spec-line"><b>Духовка:</b> 65 литр бо грили барқӣ</div>
+                <div class="spec-line"><b>Андоза:</b> 60x60x85 см</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -141,10 +110,11 @@
         </div>
         <div class="title">Стиральная машина LG Black</div>
         <p class="price">4200 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка! %</span>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('s9')">📋 Характеристика</button>
             <div id="s9" class="specs">
-                <div class="spec-line"><b>Вазн:</b> 7 кг</div>
+                <div class="spec-line"><b>Загрузка:</b> 7 кг</div>
                 <div class="spec-line"><b>Мотор:</b> Inverter Direct Drive</div>
                 <div class="spec-line"><b>Функсия:</b> Steam (Пар), AI DD</div>
             </div>
@@ -153,25 +123,3 @@
     </div>
 
 </div>
-
-<div id="about" class="info-section">
-    <h2>Дар бораи мо</h2>
-    <p><b>Olami Tehnika 2727</b> — аз соли 2006 инҷониб дар бозори Тоҷикистон фаъолият мекунад. Мо тавонистем бо пешниҳоди техникаи босифат боварии ҳазорон мизоҷонро ба даст орем.</p>
-</div>
-
-<div id="reviews" class="info-section">
-    <h2>Шарҳи мизоҷон</h2>
-    <div class="review-card">
-        <p>"Беҳтарин мағоза! Аз соли 2010 инҷониб техникаро танҳо аз ин ҷо мехорам."</p>
-        <b>👤 Парвиз <span class="stars">★★★★★</span></b>
-    </div>
-    <div class="review-card">
-        <p>"Сифати телевизорҳо عالی аст, ташаккур ба Амир барои маслиҳат!"</p>
-        <b>👤 Сабоҳат <span class="stars">★★★★★</span></b>
-    </div>
-</div>
-
-<div id="contact" class="info-section">
-    <h2>Тамос</h2>
-    <p>📞 <b>Телефон:</b> +992 93 541 2727</p>
-    <p>🕒 <b>Вақти корӣ:</b>
