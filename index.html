@@ -5,53 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olami Tehnika 2727</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; scroll-behavior: smooth; }
-        .top-promo { background: #ff9900; color: #232f3e; text-align: center; padding: 7px; font-weight: bold; font-size: 13px; }
-        header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
-        .nav-menu { background: #37475a; display: flex; justify-content: center; padding: 10px; gap: 12px; position: sticky; top: 0; z-index: 1000; }
-        .nav-menu a { color: white; text-decoration: none; font-weight: bold; font-size: 12px; text-transform: uppercase; }
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f7f6; scroll-behavior: smooth; }
+        .top-promo { background: #ff9900; color: #232f3e; text-align: center; padding: 8px; font-weight: bold; font-size: 13px; }
+        header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 24px; }
+        .nav-menu { background: #37475a; display: flex; justify-content: center; padding: 10px; gap: 15px; position: sticky; top: 0; z-index: 1000; }
+        .nav-menu a { color: white; text-decoration: none; font-size: 12px; font-weight: bold; }
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 15px; }
-        .product-card { background: white; border-radius: 12px; width: 100%; max-width: 310px; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center; display: flex; flex-direction: column; }
-        .main-img { width: 100%; height: 180px; object-fit: contain; border-radius: 8px; background: #fff; }
-        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; overflow-x: auto; padding-bottom: 5px; }
-        .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; }
-        .title { font-size: 16px; font-weight: bold; margin: 8px 0; min-height: 38px; color: #111; line-height: 1.2; }
-        .price { font-size: 20px; color: #b12704; font-weight: bold; margin-bottom: 4px; }
-        .discount-tag { color: #28a745; font-size: 12px; font-weight: bold; margin-bottom: 8px; display: inline-block; background: #eafff0; padding: 2px 8px; border-radius: 4px; }
-        .button-group { display: flex; flex-direction: column; gap: 7px; margin-top: auto; }
-        button, .btn-wa { padding: 9px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 13px; }
-        .btn-info { background: #e7e9ec; color: #111; border: 1px solid #adb1b8; }
-        .btn-wa { background: #25d366; color: white; text-align: center; }
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; margin-top: 8px; font-size: 12px; border-left: 4px solid #ff9900; }
-        .spec-line { border-bottom: 1px dashed #ddd; margin-bottom: 4px; padding-bottom: 2px; }
-        .info-section { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 90%; }
-        .review-card { background: #fdfdfd; padding: 10px; border-radius: 8px; border-left: 3px solid #ff9900; margin-bottom: 10px; font-size: 13px; }
-        .stars { color: #fbc02d; font-size: 10px; }
-        .call-fixed { position: fixed; bottom: 15px; right: 15px; background: #007bff; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .wa-fixed { position: fixed; bottom: 75px; right: 15px; background: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .product-card { background: white; border-radius: 10px; width: 100%; max-width: 300px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+        .main-img { width: 100%; height: 180px; object-fit: contain; }
+        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; }
+        .thumbnails img { width: 40px; height: 30px; cursor: pointer; border: 1px solid #ddd; }
+        .title { font-size: 16px; font-weight: bold; margin: 10px 0; min-height: 40px; }
+        .price { font-size: 20px; color: #b12704; font-weight: bold; }
+        .discount-tag { color: #28a745; font-size: 12px; font-weight: bold; display: block; margin: 5px 0; }
+        .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 8px; width: 100%; margin: 5px 0; border-radius: 5px; cursor: pointer; }
+        .btn-wa { background: #25d366; color: white; text-decoration: none; padding: 10px; display: block; border-radius: 5px; font-weight: bold; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; font-size: 12px; border-radius: 5px; margin-top: 5px; }
+        .info-section { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; width: 90%; }
+        .review { border-left: 3px solid #ff9900; padding-left: 10px; margin-bottom: 10px; font-size: 13px; }
+        .call-fixed { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
+
 <div class="top-promo">🚚 Доставкаи РОЙГОН + Тӯҳфа! / Бесплатная доставка + Подарок! 🎁</div>
 <header>Olami Tehnika 2727</header>
+
 <nav class="nav-menu">
     <a href="#products">Товарҳо</a>
     <a href="#about">О нас</a>
-    <a href="#reviews">Шарҳҳо</a>
-    <a href="#contact">Тамос</a>
+    <a href="#reviews">Отзывы</a>
 </nav>
+
 <div class="product-grid" id="products">
+
     <div class="product-card">
         <img src="android46-1.jpg" id="v3" class="main-img">
         <div class="thumbnails">
             <img src="android46-1.jpg" onclick="document.getElementById('v3').src='android46-1.jpg'">
             <img src="android46-2.jpg" onclick="document.getElementById('v3').src='android46-2.jpg'">
-            <img src="android46-3.jpg" onclick="document.getElementById('v3').src='android46-3.jpg'">
         </div>
-        <div class="title">Android TV 46" Smart Full HD (2026)</div>
+        <div class="title">Android TV 46" Smart Full HD</div>
         <p class="price">2800 смн</p>
         <span class="discount-tag">🔥 Ҳаст скидка! / Есть скидка!</span>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('s3')">📋 Характеристика</button>
-            <div id="s3" class="specs">
-                <div class="spec-line"><b>ОС:</b> Android 14 (YouTube, Netflix)
+        <button class="btn-info" onclick="toggle('s3')">📋 Характеристика</button>
+        <div id="s3" class="specs">
+            <b>ОС:</b> Android 14<br><b>Экран:</b> 46" FHD<br><b>Memory:</b> 1.5GB/8GB
+        </div>
+        <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+    </div>
+
+    <div class="product-card">
+        <img src="wash-lg-1.jpg" id="v9" class="main-img">
+        <div class="thumbnails">
+            <img src="wash-lg-1.jpg" onclick="document.getElementById('v9').src='wash-lg-1.jpg'">
+            <img src="wash-lg-2.jpg" onclick="document.getElementById('v9').src='wash-lg-2.jpg'">
+        </div>
+        <div class="title">Стиральная машина LG Black</div>
+        <p class="price">4200 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка!</span>
+        <button class="btn-info" onclick="toggle('s9')">📋 Характеристика</button>
+        <div id="s9" class="specs">
+            <b>Load:</b> 7 кг<br><b>Motor:</b> Inverter DD<br><b>Steam:</b> Функция пара
+        </div>
+        <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+    </div>
+
+    <div class="product-card">
+        <img src="stove-steel1.jpg" id="v5" class="main-img">
+        <div class="thumbnails">
+            <img src="stove-steel1.jpg" onclick="document.getElementById('v5').src='stove-steel1.jpg'">
+            <img src="stove-steel2.jpg" onclick="document.getElementById('v5').src='stove-steel2.jpg'">
+        </div>
+        <div class="title">Газовая плита Kumtel Inox</div>
+        <p class="price">3100 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка!</span>
+        <button class="btn-info" onclick="toggle('s5')">📋 Характеристика</button>
+        <div id="s5" class="specs">
+            <b>Духовка:</b> 65L<br><b>Размер:</b> 60x60<br><b>Материал:</b> Нержавейка
+        </div>
+        <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+    </div>
+
+</div>
+
+<div id="about" class="info-section">
+    <h2>О нас / Дар бораи мо</h2>
+    <p>Olami Tehnika 2727 — работаем с 2006 года в Кумсангире. Качество и гарантия!</p>
+</div>
+
+<div id="reviews" class="info-section">
+    <h2>Отзывы / Шарҳҳо</h2>
+    <div class="review">"Беҳтарин мағоза! Техникаи босифат." - <b>Парвиз ⭐⭐⭐⭐⭐</b></div>
+    <div class="review">"Отличный сервис и быстрая доставка." - <b>Сабохат ⭐⭐⭐⭐⭐</b></div>
+</div>
+
+<a href="tel:+992935412727" class="call-fixed">📞</a>
+
+<script>
+    function toggle(id) {
+        var el = document.getElementById(id);
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
