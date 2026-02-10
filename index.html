@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olami Tehnika 2727</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f4f7f6; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f7f6; color: #333; scroll-behavior: smooth; }
         .top-promo { background: #ff9900; color: #232f3e; text-align: center; padding: 8px; font-weight: bold; font-size: 13px; }
-        header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 24px; }
-        .nav-menu { background: #37475a; display: flex; justify-content: center; padding: 10px; gap: 15px; position: sticky; top: 0; z-index: 1000; }
-        .nav-menu a { color: white; text-decoration: none; font-size: 12px; font-weight: bold; }
+        header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
+        .nav-menu { background: #37475a; display: flex; justify-content: center; padding: 10px; gap: 15px; position: sticky; top: 0; z-index: 1000; overflow-x: auto; }
+        .nav-menu a { color: white; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; white-space: nowrap; }
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 15px; }
-        .product-card { background: white; border-radius: 10px; width: 100%; max-width: 300px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
-        .main-img { width: 100%; height: 180px; object-fit: contain; }
+        .product-card { background: white; border-radius: 12px; width: 100%; max-width: 300px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; display: flex; flex-direction: column; }
+        .main-img { width: 100%; height: 180px; object-fit: contain; border-radius: 8px; }
         .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; }
-        .thumbnails img { width: 40px; height: 30px; cursor: pointer; border: 1px solid #ddd; }
-        .title { font-size: 16px; font-weight: bold; margin: 10px 0; min-height: 40px; }
-        .price { font-size: 20px; color: #b12704; font-weight: bold; }
-        .discount-tag { color: #28a745; font-size: 12px; font-weight: bold; display: block; margin: 5px 0; }
-        .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 8px; width: 100%; margin: 5px 0; border-radius: 5px; cursor: pointer; }
-        .btn-wa { background: #25d366; color: white; text-decoration: none; padding: 10px; display: block; border-radius: 5px; font-weight: bold; }
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; font-size: 12px; border-radius: 5px; margin-top: 5px; }
-        .info-section { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; width: 90%; }
-        .review { border-left: 3px solid #ff9900; padding-left: 10px; margin-bottom: 10px; font-size: 13px; }
-        .call-fixed { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; }
+        .title { font-size: 16px; font-weight: bold; margin: 10px 0; min-height: 40px; line-height: 1.2; }
+        .price { font-size: 20px; color: #b12704; font-weight: bold; margin-bottom: 5px; }
+        .discount-tag { color: #28a745; font-size: 12px; font-weight: bold; background: #eafff0; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+        .button-group { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+        .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        .btn-wa { background: #25d366; color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: bold; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 12px; border-left: 4px solid #ff9900; margin-top: 10px; }
+        .spec-line { border-bottom: 1px dashed #ddd; padding: 3px 0; }
+        .info-section { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 12px; width: 90%; }
+        .review { background: #fdfdfd; padding: 12px; border-radius: 8px; border-left: 4px solid #ff9900; margin-bottom: 10px; }
+        .call-fixed { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 24px; }
     </style>
 </head>
 <body>
@@ -32,43 +34,90 @@
 <header>Olami Tehnika 2727</header>
 
 <nav class="nav-menu">
-    <a href="#products">Товарҳо</a>
-    <a href="#about">О нас</a>
-    <a href="#reviews">Отзывы</a>
+    <a href="#products">Маҳсулотҳо</a>
+    <a href="#about">Дар бораи мо</a>
+    <a href="#reviews">Шарҳҳо</a>
 </nav>
 
 <div class="product-grid" id="products">
 
     <div class="product-card">
-        <img src="android46-1.jpg" id="v3" class="main-img">
+        <img src="android46-1.jpg" id="v1" class="main-img">
         <div class="thumbnails">
-            <img src="android46-1.jpg" onclick="document.getElementById('v3').src='android46-1.jpg'">
-            <img src="android46-2.jpg" onclick="document.getElementById('v3').src='android46-2.jpg'">
+            <img src="android46-1.jpg" onclick="document.getElementById('v1').src='android46-1.jpg'">
+            <img src="android46-2.jpg" onclick="document.getElementById('v1').src='android46-2.jpg'">
         </div>
         <div class="title">Android TV 46" Smart Full HD</div>
         <p class="price">2800 смн</p>
-        <span class="discount-tag">🔥 Ҳаст скидка! / Есть скидка!</span>
-        <button class="btn-info" onclick="toggle('s3')">📋 Характеристика</button>
-        <div id="s3" class="specs">
-            <b>ОС:</b> Android 14<br><b>Экран:</b> 46" FHD<br><b>Memory:</b> 1.5GB/8GB
+        <span class="discount-tag">🔥 Ҳаст скидка!</span>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s1')">📋 Характеристика</button>
+            <div id="s1" class="specs">
+                <div class="spec-line"><b>ОС:</b> Android 14 (Play Market)</div>
+                <div class="spec-line"><b>Экран:</b> 46" (117 см) FHD</div>
+                <div class="spec-line"><b>Хотира:</b> 1.5GB RAM / 8GB ROM</div>
+            </div>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
-        <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
     </div>
 
     <div class="product-card">
-        <img src="wash-lg-1.jpg" id="v9" class="main-img">
+        <img src="samsung1.jpg" id="v2" class="main-img">
         <div class="thumbnails">
-            <img src="wash-lg-1.jpg" onclick="document.getElementById('v9').src='wash-lg-1.jpg'">
-            <img src="wash-lg-2.jpg" onclick="document.getElementById('v9').src='wash-lg-2.jpg'">
+            <img src="samsung1.jpg" onclick="document.getElementById('v2').src='samsung1.jpg'">
+            <img src="samsung2.jpg" onclick="document.getElementById('v2').src='samsung2.jpg'">
         </div>
-        <div class="title">Стиральная машина LG Black</div>
+        <div class="title">Samsung Smart LED TV 35"</div>
+        <p class="price">2100 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка!</span>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s2')">📋 Характеристика</button>
+            <div id="s2" class="specs">
+                <div class="spec-line"><b>Система:</b> Tizen OS (Wi-Fi)</div>
+                <div class="spec-line"><b>Экран:</b> 35" HD Ready</div>
+                <div class="spec-line"><b>Технология:</b> PurColor</div>
+            </div>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="lg1.jpg" id="v3" class="main-img">
+        <div class="thumbnails">
+            <img src="lg1.jpg" onclick="document.getElementById('v3').src='lg1.jpg'">
+            <img src="lg2.jpg" onclick="document.getElementById('v3').src='lg2.jpg'">
+        </div>
+        <div class="title">LG 43LP50 Full HD 43"</div>
+        <p class="price">1850 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка!</span>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s3')">📋 Характеристика</button>
+            <div id="s3" class="specs">
+                <div class="spec-line"><b>Экран:</b> 43" (109 см) Full HD</div>
+                <div class="spec-line"><b>Матритса:</b> IPS (Яркие цвета)</div>
+            </div>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="wash-lg-1.jpg" id="v4" class="main-img">
+        <div class="thumbnails">
+            <img src="wash-lg-1.jpg" onclick="document.getElementById('v4').src='wash-lg-1.jpg'">
+            <img src="wash-lg-2.jpg" onclick="document.getElementById('v4').src='wash-lg-2.jpg'">
+        </div>
+        <div class="title">Стиральная машина LG Black 7кг</div>
         <p class="price">4200 смн</p>
         <span class="discount-tag">🔥 Ҳаст скидка!</span>
-        <button class="btn-info" onclick="toggle('s9')">📋 Характеристика</button>
-        <div id="s9" class="specs">
-            <b>Load:</b> 7 кг<br><b>Motor:</b> Inverter DD<br><b>Steam:</b> Функция пара
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s4')">📋 Характеристика</button>
+            <div id="s4" class="specs">
+                <div class="spec-line"><b>Загрузка:</b> 7 кг</div>
+                <div class="spec-line"><b>Мотор:</b> Inverter Direct Drive</div>
+                <div class="spec-line"><b>Функция:</b> Steam (Пар)</div>
+            </div>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
-        <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
     </div>
 
     <div class="product-card">
@@ -80,24 +129,43 @@
         <div class="title">Газовая плита Kumtel Inox</div>
         <p class="price">3100 смн</p>
         <span class="discount-tag">🔥 Ҳаст скидка!</span>
-        <button class="btn-info" onclick="toggle('s5')">📋 Характеристика</button>
-        <div id="s5" class="specs">
-            <b>Духовка:</b> 65L<br><b>Размер:</b> 60x60<br><b>Материал:</b> Нержавейка
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s5')">📋 Характеристика</button>
+            <div id="s5" class="specs">
+                <div class="spec-line"><b>Духовка:</b> 65 литр</div>
+                <div class="spec-line"><b>Размер:</b> 60x60x85 см</div>
+                <div class="spec-line"><b>Иловагӣ:</b> Авто-поджиг</div>
+            </div>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
-        <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+    </div>
+
+    <div class="product-card">
+        <img src="vacuum1.jpg" id="v6" class="main-img">
+        <div class="title">Пылесос RAF 2200W</div>
+        <p class="price">850 смн</p>
+        <span class="discount-tag">🔥 Ҳаст скидка!</span>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('s6')">📋 Характеристика</button>
+            <div id="s6" class="specs">
+                <div class="spec-line"><b>Мощность:</b> 2200W</div>
+                <div class="spec-line"><b>Тип:</b> Контейнерный</div>
+            </div>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+        </div>
     </div>
 
 </div>
 
 <div id="about" class="info-section">
-    <h2>О нас / Дар бораи мо</h2>
-    <p>Olami Tehnika 2727 — работаем с 2006 года в Кумсангире. Качество и гарантия!</p>
+    <h2>Дар бораи мо / О нас</h2>
+    <p><b>Olami Tehnika 2727</b> — зиёда аз 20 сол аст, ки дар ноҳияи Ҷайҳун (Кумсангир) хизмат мекунад. Мо танҳо техникаи босифатро бо кафолат пешниҳод мекунем!</p>
 </div>
 
 <div id="reviews" class="info-section">
-    <h2>Отзывы / Шарҳҳо</h2>
+    <h2>Шарҳҳо / Отзывы</h2>
     <div class="review">"Беҳтарин мағоза! Техникаи босифат." - <b>Парвиз ⭐⭐⭐⭐⭐</b></div>
-    <div class="review">"Отличный сервис и быстрая доставка." - <b>Сабохат ⭐⭐⭐⭐⭐</b></div>
+    <div class="review">"Быстрая доставка и отличные цены." - <b>Сабохат ⭐⭐⭐⭐⭐</b></div>
 </div>
 
 <a href="tel:+992935412727" class="call-fixed">📞</a>
@@ -105,9 +173,6 @@
 <script>
     function toggle(id) {
         var el = document.getElementById(id);
-        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
-</script>
-
-</body>
-</html>
+        var allSpecs = document.querySelectorAll('.specs');
+        allSpecs.forEach(s => { if(s.id !== id) s.style.display = 'none'; });
+        el.style.display =
