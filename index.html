@@ -50,7 +50,7 @@
 <div class="product-grid" id="products">
 
     <div class="product-card" id="conditioners">
-        <img src="gre1.jpg" id="vGree" class="main-img">
+        <img src="gre1.jpg" id="vGree" class="main-img" alt="Gree Conditioner">
         <div class="thumbnails">
             <img src="gre1.jpg" onclick="changeImg('vGree', this.src)">
             <img src="gree2.jpg" onclick="changeImg('vGree', this.src)">
@@ -74,9 +74,12 @@
     </div>
 
     <div class="product-card" id="washing">
-        <img src="indesit1.jpg" id="vInd" class="main-img">
+        <img src="wash-indesit-1.jpg" id="vInd" class="main-img" alt="Indesit Washing Machine">
         <div class="thumbnails">
-            <img src="indesit1.jpg" onclick="changeImg('vInd', this.src)">
+            <img src="wash-indesit-1.jpg" onclick="changeImg('vInd', this.src)">
+            <img src="wash-indesit-2.jpg" onclick="changeImg('vInd', this.src)">
+            <img src="wash-indesit-3.jpg" onclick="changeImg('vInd', this.src)">
+            <img src="wash-indesit-4.jpg" onclick="changeImg('vInd', this.src)">
         </div>
         <div class="title">Стиральная машина Indesit</div>
         <p class="price">2950 смн</p>
@@ -85,7 +88,7 @@
             <div id="sInd" class="specs">
                 <div class="spec-line"><b>Загрузка:</b> 7 кг, Фронтальная</div>
                 <div class="spec-line"><b>Технология:</b> Push & Go, Пар</div>
-                <div class="spec-line"><b>Класс:</b> A+++ (Экономная)</div>
+                <div class="spec-line"><b>Класс:</b> A++ (Экономная)</div>
                 <div class="spec-line"><b>Отжим:</b> 1200 об/мин</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
@@ -93,7 +96,7 @@
     </div>
 
     <div class="product-card" id="tvs">
-        <img src="lg1.jpg" id="vLG" class="main-img">
+        <img src="lg1.jpg" id="vLG" class="main-img" alt="LG TV">
         <div class="thumbnails">
             <img src="lg1.jpg" onclick="changeImg('vLG', this.src)">
             <img src="lg2.jpg" onclick="changeImg('vLG', this.src)">
@@ -104,8 +107,29 @@
             <button class="btn-info" onclick="toggle('sLG')">📋 Характеристика</button>
             <div id="sLG" class="specs">
                 <div class="spec-line"><b>Экран:</b> 43" (109 см), Full HD</div>
-                <div class="spec-line"><b>Матритса:</b> IPS (Яркие цвета)</div>
+                <div class="spec-line"><b>Матрица:</b> IPS (яркие цвета)</div>
                 <div class="spec-line"><b>Звук:</b> Dolby Audio</div>
+            </div>
+            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="wash-lg-1.jpg" id="vLGWash" class="main-img" alt="LG Washing Machine">
+        <div class="thumbnails">
+            <img src="wash-lg-1.jpg" onclick="changeImg('vLGWash', this.src)">
+            <img src="wash-lg-2.jpg" onclick="changeImg('vLGWash', this.src)">
+            <img src="wash-lg-3.jpg" onclick="changeImg('vLGWash', this.src)">
+            <img src="wash-lg-4.jpg" onclick="changeImg('vLGWash', this.src)">
+        </div>
+        <div class="title">Стиральная машина LG Black 7кг</div>
+        <p class="price">4200 смн</p>
+        <div class="button-group">
+            <button class="btn-info" onclick="toggle('sLGWash')">📋 Характеристика</button>
+            <div id="sLGWash" class="specs">
+                <div class="spec-line"><b>Загрузка:</b> 7 кг</div>
+                <div class="spec-line"><b>Мотор:</b> Inverter Direct Drive</div>
+                <div class="spec-line"><b>Функция:</b> Steam (Пар)</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -141,25 +165,7 @@
             <button class="btn-info" onclick="toggle('sSam')">📋 Характеристика</button>
             <div id="sSam" class="specs">
                 <div class="spec-line"><b>Система:</b> Tizen OS</div>
-                <div class="spec-line"><b>Экран:</b> HD Ready</div>
-            </div>
-            <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="wash-lg-1.jpg" id="vLGWash" class="main-img">
-        <div class="thumbnails">
-            <img src="wash-lg-1.jpg" onclick="changeImg('vLGWash', this.src)">
-            <img src="wash-lg-2.jpg" onclick="changeImg('vLGWash', this.src)">
-        </div>
-        <div class="title">Стиральная машина LG Black 7кг</div>
-        <p class="price">4200 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sLGWash')">📋 Характеристика</button>
-            <div id="sLGWash" class="specs">
-                <div class="spec-line"><b>Мотор:</b> Inverter Direct Drive</div>
-                <div class="spec-line"><b>Функция:</b> Steam (Пар)</div>
+                <div class="spec-line"><b>Технология:</b> PurColor</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -170,6 +176,7 @@
         <div class="thumbnails">
             <img src="stove-steel1.jpg" onclick="changeImg('vStove', this.src)">
             <img src="stove-steel2.jpg" onclick="changeImg('vStove', this.src)">
+            <img src="stove-steel3.jpg" onclick="changeImg('vStove', this.src)">
         </div>
         <div class="title">Газовая плита Kumtel Inox</div>
         <p class="price">3100 смн</p>
@@ -177,7 +184,7 @@
             <button class="btn-info" onclick="toggle('sStove')">📋 Характеристика</button>
             <div id="sStove" class="specs">
                 <div class="spec-line"><b>Духовка:</b> 65 литр</div>
-                <div class="spec-line"><b>Авто-поджиг:</b> Ҳа</div>
+                <div class="spec-line"><b>Мавод:</b> Нержавеющая сталь</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -197,11 +204,6 @@
         </div>
     </div>
 
-</div>
-
-<div id="about" class="info-section">
-    <h2>Дар бораи мо</h2>
-    <p><b>Olami Tehnika 2727</b> — зиёда аз 20 сол дар хизмати шумо! Ноҳияи Ҷайҳун (Кумсангир).</p>
 </div>
 
 <a href="tel:+992935412727" class="call-fixed">📞</a>
