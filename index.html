@@ -18,11 +18,9 @@
         .main-img { width: 100%; height: 180px; object-fit: contain; border-radius: 8px; }
         .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; overflow-x: auto; padding-bottom: 5px; }
         .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; }
-        .thumbnails img:hover { border-color: #ff9900; }
 
         .title { font-size: 16px; font-weight: bold; margin: 10px 0; min-height: 40px; line-height: 1.2; color: #111; }
         .price { font-size: 20px; color: #b12704; font-weight: bold; margin-bottom: 5px; }
-        .discount-tag { color: #28a745; font-size: 12px; font-weight: bold; background: #eafff0; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
         
         .button-group { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
         .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: bold; }
@@ -32,7 +30,6 @@
         .spec-line { border-bottom: 1px dashed #ddd; padding: 4px 0; }
 
         .cart-panel { position: fixed; bottom: 85px; right: 20px; background: white; width: 280px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 2000; padding: 15px; display: none; border: 2px solid #232f3e; }
-        .cart-items { max-height: 200px; overflow-y: auto; }
         .cart-total { font-weight: bold; font-size: 16px; border-top: 2px solid #eee; padding-top: 10px; color: #b12704; margin-top: 10px; }
         .btn-checkout { background: #ff9900; color: #232f3e; width: 100%; border: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 10px; cursor: pointer; }
         .call-fixed { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; font-size: 24px; }
@@ -47,171 +44,48 @@
     <a href="#conditioners">Кондисионерҳо</a>
     <a href="#tvs">Телевизорҳо</a>
     <a href="#washing">Мошинҳо</a>
-    <a href="#kitchen">Ошхона</a>
 </nav>
 
 <div class="product-grid" id="products">
 
     <div class="product-card" id="conditioners">
-        <img src="gre1.jpg" id="vGree" class="main-img">
-        <div class="thumbnails">
-            <img src="gre1.jpg" onclick="changeImg('vGree', this.src)">
-            <img src="gree2.jpg" onclick="changeImg('vGree', this.src)">
-            <img src="gree3.jpg" onclick="changeImg('vGree', this.src)">
-        </div>
-        <div class="title">Кондиционер Gree Pular Inverter</div>
+        <img src="gre1.jpg" class="main-img">
+        <div class="title">Gree Pular Inverter</div>
         <p class="price">4600 смн</p>
-        <span class="discount-tag">🔥 Хит-фурӯш!</span>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sGree')">📋 Характеристика</button>
-            <div id="sGree" class="specs">
-                <div class="spec-line"><b>Технология:</b> Inverter (Сарфаи барқ)</div>
-                <div class="spec-line"><b>Масоҳат:</b> то 35-40 м²</div>
-                <div class="spec-line"><b>Режим:</b> Сардӣ / Гармӣ / Хушккунӣ</div>
-                <div class="spec-line"><b>Филтр:</b> Катехинӣ ва зидди чанг</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('Gree Pular Inverter', 4600)">🛒 Ба сабад</button>
+        <button class="btn-info" onclick="toggle('sGree')">📋 Характеристика</button>
+        <div id="sGree" class="specs">
+            <div class="spec-line"><b>Масоҳат:</b> то 35-40 м²</div>
+            <div class="spec-line"><b>Режим:</b> Сардӣ / Гармӣ</div>
         </div>
+        <button class="btn-cart" onclick="addToCart('Gree Pular', 4600)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" id="washing">
-        <img src="wash-indesit-1.jpg" id="vInd" class="main-img">
-        <div class="thumbnails">
-            <img src="wash-indesit-1.jpg" onclick="changeImg('vInd', this.src)">
-            <img src="wash-indesit-2.jpg" onclick="changeImg('vInd', this.src)">
-        </div>
-        <div class="title">Стиральная машина Indesit</div>
+        <img src="wash-indesit-1.jpg" class="main-img">
+        <div class="title">Indesit Washing Machine</div>
         <p class="price">2950 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sInd')">📋 Характеристика</button>
-            <div id="sInd" class="specs">
-                <div class="spec-line"><b>Загрузка:</b> 7 кг</div>
-                <div class="spec-line"><b>Суръати чархиш:</b> 1200 чарх/дақ</div>
-                <div class="spec-line"><b>Функсия:</b> Push & Go, Шустани бо буғ (Steam)</div>
-                <div class="spec-line"><b>Сарфаи барқ:</b> Синфи A+++</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('Indesit 7kg', 2950)">🛒 Ба сабад</button>
+        <button class="btn-info" onclick="toggle('sInd')">📋 Характеристика</button>
+        <div id="sInd" class="specs">
+            <div class="spec-line"><b>Загрузка:</b> 7 кг</div>
         </div>
+        <button class="btn-cart" onclick="addToCart('Indesit 7kg', 2950)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" id="tvs">
-        <img src="lg1.jpg" id="vLG" class="main-img">
-        <div class="thumbnails">
-            <img src="lg1.jpg" onclick="changeImg('vLG', this.src)">
-            <img src="lg2.jpg" onclick="changeImg('vLG', this.src)">
-        </div>
-        <div class="title">LG 43LP50 Full HD 43"</div>
+        <img src="lg1.jpg" class="main-img">
+        <div class="title">LG 43LP50 Full HD</div>
         <p class="price">1850 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sLG')">📋 Характеристика</button>
-            <div id="sLG" class="specs">
-                <div class="spec-line"><b>Экран:</b> 43 дюйм (109 см), IPS</div>
-                <div class="spec-line"><b>Сифат:</b> Full HD (1920x1080)</div>
-                <div class="spec-line"><b>Овоз:</b> Dolby Audio, 20 Вт</div>
-                <div class="spec-line"><b>Портҳо:</b> 2x HDMI, 1x USB</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('LG 43LP50 TV', 1850)">🛒 Ба сабад</button>
-        </div>
-    </div>
-
-    <div class="product-card" id="kitchen">
-        <img src="stove-black1.jpg" id="vStoveB" class="main-img">
-        <div class="thumbnails">
-            <img src="stove-black1.jpg" onclick="changeImg('vStoveB', this.src)">
-            <img src="stove-black2.jpg" onclick="changeImg('vStoveB', this.src)">
-        </div>
-        <div class="title">Газовая плита Kumtel Black Gloss</div>
-        <p class="price">3200 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sStoveB')">📋 Характеристика</button>
-            <div id="sStoveB" class="specs">
-                <div class="spec-line"><b>Ранг:</b> Чёрный глянец</div>
-                <div class="spec-line"><b>Духовка:</b> 65 литр, Конвекция</div>
-                <div class="spec-line"><b>Хусусият:</b> Таймер, Гриль, Авто-оташзанӣ</div>
-                <div class="spec-line"><b>Мавод:</b> Шишаи тобовар ва пӯлод</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('Kumtel Black Gloss', 3200)">🛒 Ба сабад</button>
-        </div>
+        <button class="btn-cart" onclick="addToCart('LG 43LP50', 1850)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card">
-        <img src="android46-1.jpg" id="vAnd" class="main-img">
-        <div class="title">Android TV 46" Smart Full HD</div>
-        <p class="price">2800 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sAnd')">📋 Характеристика</button>
-            <div id="sAnd" class="specs">
-                <div class="spec-line"><b>Система:</b> Android 14 (Google Play)</div>
-                <div class="spec-line"><b>Хотира:</b> 8 GB RAM / 32 GB Flash</div>
-                <div class="spec-line"><b>Интернет:</b> Wi-Fi, LAN, Bluetooth</div>
-                <div class="spec-line"><b>Барномаҳо:</b> YouTube, Netflix, IFTTT</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('Android TV 46', 2800)">🛒 Ба сабад</button>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="wash-lg-1.jpg" id="vLGW" class="main-img">
-        <div class="title">Стиральная машина LG Black 7кг</div>
-        <p class="price">4200 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sLGW')">📋 Характеристика</button>
-            <div id="sLGW" class="specs">
-                <div class="spec-line"><b>Мотор:</b> Inverter Direct Drive (Хомӯш)</div>
-                <div class="spec-line"><b>Технология:</b> 6 Motion (6 намуди шустан)</div>
-                <div class="spec-line"><b>Смарт:</b> ThinQ (Идора бо телефон)</div>
-                <div class="spec-line"><b>Дизайн:</b> Ранги сиёҳи премиум</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('LG Washing Black 7kg', 4200)">🛒 Ба сабад</button>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="stove-steel1.jpg" id="vStoveS" class="main-img">
-        <div class="title">Газовая плита Kumtel Steel</div>
-        <p class="price">3100 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sStoveS')">📋 Характеристика</button>
-            <div id="sStoveS" class="specs">
-                <div class="spec-line"><b>Мавод:</b> Пӯлоди зангногир (Stainless Steel)</div>
-                <div class="spec-line"><b>Шуълаҳо:</b> 4 адад бо назорати газ</div>
-                <div class="spec-line"><b>Духовка:</b> Электрикӣ, бо рӯшноӣ</div>
-                <div class="spec-line"><b>Андоза:</b> 60x60 см</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('Kumtel Steel', 3100)">🛒 Ба сабад</button>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="samsung1.jpg" id="vSam" class="main-img">
-        <div class="title">Samsung Smart LED TV 35"</div>
-        <p class="price">2100 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sSam')">📋 Характеристика</button>
-            <div id="sSam" class="specs">
-                <div class="spec-line"><b>Экран:</b> 35 дюйм, Crystal UHD</div>
-                <div class="spec-line"><b>Система:</b> Tizen Smart TV</div>
-                <div class="spec-line"><b>Хусусият:</b> PurColor, HDR10+</div>
-                <div class="spec-line"><b>Пайваст:</b> Screen Mirroring, HDMI x3</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('Samsung TV 35', 2100)">🛒 Ба сабад</button>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="vacuum1.jpg" id="vRaf" class="main-img">
-        <div class="title">Пылесос RAF 2200W</div>
+        <img src="vacuum1.jpg" class="main-img">
+        <div class="title">Vacuum Cleaner RAF 2200W</div>
         <p class="price">850 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sRaf')">📋 Характеристика</button>
-            <div id="sRaf" class="specs">
-                <div class="spec-line"><b>Қувваи ҷаббиш:</b> 2200W (Пурқувват)</div>
-                <div class="spec-line"><b>Намуд:</b> Бе халта (Контейнерӣ)</div>
-                <div class="spec-line"><b>Филтр:</b> HEPA (Тозакунии ҳаво)</div>
-                <div class="spec-line"><b>Иловагӣ:</b> Трубаи телескопӣ, насадкаҳо</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('Pilesos RAF', 850)">🛒 Ба сабад</button>
-        </div>    <div class="product-card" id="hisense">
+        <button class="btn-cart" onclick="addToCart('Pilesos RAF', 850)">🛒 Ба сабад</button>
+    </div>
+
+    <div class="product-card">
         <img src="hisense1.png" id="vHisense" class="main-img">
         <div class="thumbnails">
             <img src="hisense1.png" onclick="changeImg('vHisense', this.src)">
@@ -226,26 +100,18 @@
             <img src="hisense10.png" onclick="changeImg('vHisense', this.src)">
             <img src="hisense11.png" onclick="changeImg('vHisense', this.src)">
         </div>
-        <div class="title">Кондиционер Hisense Smart Air</div>
+        <div class="title">Hisense Smart Air Inverter</div>
         <p class="price">4800 смн</p>
-        <div class="button-group">
-            <button class="btn-info" onclick="toggle('sHisense')">📋 Характеристика</button>
-            <div id="sHisense" class="specs">
-                <div class="spec-line"><b>Модел:</b> Hisense AS-UR Series</div>
-                <div class="spec-line"><b>Технология:</b> Smart Air Flow (Бури ҳавои ҳушманд)</div>
-                <div class="spec-line"><b>Хусусият:</b> Self-cleaning (Худтозакунӣ), 4D Auto Swing</div>
-                <div class="spec-line"><b>Режим:</b> Супер-хунуккунӣ ва гармидиҳии зуд</div>
-                <div class="spec-line"><b>Сарфаи барқ:</b> Синфи А+ (Inverter технология)</div>
-            </div>
-            <button class="btn-cart" onclick="addToCart('Hisense Smart Air', 4800)">🛒 Ба сабад</button>
+        <button class="btn-info" onclick="toggle('sHisense')">📋 Характеристика</button>
+        <div id="sHisense" class="specs">
+            <div class="spec-line"><b>Модел:</b> Hisense AS-UR Inverter</div>
+            <div class="spec-line"><b>Хусусият:</b> Self-cleaning, Smart Flow</div>
+            <div class="spec-line"><b>Сарфаи барқ:</b> Синфи А+</div>
         </div>
+        <button class="btn-cart" onclick="addToCart('Hisense Smart Air', 4800)">🛒 Ба сабад</button>
     </div>
 
-    </div>
-
-</div>
-
-<div id="cartPanel" class="cart-panel">
+</div> <div id="cartPanel" class="cart-panel">
     <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
         <b>Сабади харид 🛒</b>
         <span onclick="document.getElementById('cartPanel').style.display='none'" style="cursor:pointer">✖</span>
@@ -258,7 +124,7 @@
 <a href="tel:+992935412727" class="call-fixed">📞</a>
 
 <script>
-    let cart = [];
+    let cart = []; // Начало скрипта со скриншота
     function addToCart(name, price) {
         cart.push({ name: name, price: price });
         updateCartUI();
