@@ -18,6 +18,7 @@
         .main-img { width: 100%; height: 180px; object-fit: contain; border-radius: 8px; }
         .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; overflow-x: auto; padding-bottom: 5px; }
         .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; }
+        .thumbnails img:hover { border-color: #ff9900; }
 
         .title { font-size: 16px; font-weight: bold; margin: 10px 0; min-height: 40px; line-height: 1.2; color: #111; }
         .price { font-size: 20px; color: #b12704; font-weight: bold; margin-bottom: 5px; }
@@ -25,17 +26,18 @@
         
         .button-group { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
         .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: bold; }
-        .btn-cart { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .btn-cart { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
 
         .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 12px; border-left: 4px solid #ff9900; margin-top: 10px; }
         .spec-line { border-bottom: 1px dashed #ddd; padding: 3px 0; }
 
         /* Стили Корзины */
         .cart-panel { position: fixed; bottom: 85px; right: 20px; background: white; width: 280px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 2000; padding: 15px; display: none; border: 2px solid #232f3e; }
+        .cart-items { max-height: 200px; overflow-y: auto; }
         .cart-total { font-weight: bold; font-size: 16px; border-top: 2px solid #eee; padding-top: 10px; color: #b12704; margin-top: 10px; }
         .btn-checkout { background: #ff9900; color: #232f3e; width: 100%; border: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 10px; cursor: pointer; }
 
-        .call-fixed { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 24px; }
+        .call-fixed { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; font-size: 24px; }
     </style>
 </head>
 <body>
@@ -58,6 +60,9 @@
             <img src="gre1.jpg" onclick="changeImg('vGree', this.src)">
             <img src="gree2.jpg" onclick="changeImg('vGree', this.src)">
             <img src="gree3.jpg" onclick="changeImg('vGree', this.src)">
+            <img src="gree4.jpg" onclick="changeImg('vGree', this.src)">
+            <img src="gree5.jpg" onclick="changeImg('vGree', this.src)">
+            <img src="gree6.jpg" onclick="changeImg('vGree', this.src)">
         </div>
         <div class="title">Кондиционер Gree Pular Inverter</div>
         <p class="price">4600 смн</p>
@@ -77,6 +82,8 @@
         <div class="thumbnails">
             <img src="wash-indesit-1.jpg" onclick="changeImg('vInd', this.src)">
             <img src="wash-indesit-2.jpg" onclick="changeImg('vInd', this.src)">
+            <img src="wash-indesit-3.jpg" onclick="changeImg('vInd', this.src)">
+            <img src="wash-indesit-4.jpg" onclick="changeImg('vInd', this.src)">
         </div>
         <div class="title">Стиральная машина Indesit</div>
         <p class="price">2950 смн</p>
@@ -84,8 +91,9 @@
             <button class="btn-info" onclick="toggle('sInd')">📋 Характеристика</button>
             <div id="sInd" class="specs">
                 <div class="spec-line"><b>Загрузка:</b> 7 кг</div>
+                <div class="spec-line"><b>Функсия:</b> Push & Go, Пар</div>
             </div>
-            <button class="btn-cart" onclick="addToCart('Stira. Mashina Indesit', 2950)">🛒 Ба сабад</button>
+            <button class="btn-cart" onclick="addToCart('Indesit 7kg', 2950)">🛒 Ба сабад</button>
         </div>
     </div>
 
@@ -98,6 +106,11 @@
         <div class="title">LG 43LP50 Full HD 43"</div>
         <p class="price">1850 смн</p>
         <div class="button-group">
+            <button class="btn-info" onclick="toggle('sLG')">📋 Характеристика</button>
+            <div id="sLG" class="specs">
+                <div class="spec-line"><b>Экран:</b> Full HD, IPS</div>
+                <div class="spec-line"><b>Звук:</b> Dolby Audio</div>
+            </div>
             <button class="btn-cart" onclick="addToCart('LG 43LP50 TV', 1850)">🛒 Ба сабад</button>
         </div>
     </div>
@@ -107,38 +120,69 @@
         <div class="thumbnails">
             <img src="stove-black1.jpg" onclick="changeImg('vStoveB', this.src)">
             <img src="stove-black2.jpg" onclick="changeImg('vStoveB', this.src)">
+            <img src="stove-black3.jpg" onclick="changeImg('vStoveB', this.src)">
         </div>
         <div class="title">Газовая плита Kumtel Black Gloss</div>
         <p class="price">3200 смн</p>
         <div class="button-group">
+            <button class="btn-info" onclick="toggle('sStoveB')">📋 Характеристика</button>
+            <div id="sStoveB" class="specs">
+                <div class="spec-line"><b>Ранг:</b> Чёрный глянец</div>
+                <div class="spec-line"><b>Духовка:</b> Конвекция</div>
+            </div>
             <button class="btn-cart" onclick="addToCart('Kumtel Black Gloss', 3200)">🛒 Ба сабад</button>
         </div>
     </div>
 
     <div class="product-card">
         <img src="android46-1.jpg" id="vAnd" class="main-img">
+        <div class="thumbnails">
+            <img src="android46-1.jpg" onclick="changeImg('vAnd', this.src)">
+            <img src="android46-2.jpg" onclick="changeImg('vAnd', this.src)">
+            <img src="android46-3.jpg" onclick="changeImg('vAnd', this.src)">
+        </div>
         <div class="title">Android TV 46" Smart Full HD</div>
         <p class="price">2800 смн</p>
         <div class="button-group">
-            <button class="btn-cart" onclick="addToCart('Android TV 46 Smart', 2800)">🛒 Ба сабад</button>
+            <button class="btn-info" onclick="toggle('sAnd')">📋 Характеристика</button>
+            <div id="sAnd" class="specs">
+                <div class="spec-line"><b>ОС:</b> Android 14</div>
+                <div class="spec-line"><b>Хотира:</b> 8 GB</div>
+            </div>
+            <button class="btn-cart" onclick="addToCart('Android TV 46', 2800)">🛒 Ба сабад</button>
         </div>
     </div>
 
     <div class="product-card">
         <img src="wash-lg-1.jpg" id="vLGW" class="main-img">
+        <div class="thumbnails">
+            <img src="wash-lg-1.jpg" onclick="changeImg('vLGW', this.src)">
+            <img src="wash-lg-2.jpg" onclick="changeImg('vLGW', this.src)">
+            <img src="wash-lg-3.jpg" onclick="changeImg('vLGW', this.src)">
+            <img src="wash-lg-4.jpg" onclick="changeImg('vLGW', this.src)">
+        </div>
         <div class="title">Стиральная машина LG Black 7кг</div>
         <p class="price">4200 смн</p>
         <div class="button-group">
-            <button class="btn-cart" onclick="addToCart('LG Washing Black 7kg', 4200)">🛒 Ба сабад</button>
+            <button class="btn-info" onclick="toggle('sLGW')">📋 Характеристика</button>
+            <div id="sLGW" class="specs">
+                <div class="spec-line"><b>Мотор:</b> Inverter Direct Drive</div>
+            </div>
+            <button class="btn-cart" onclick="addToCart('LG Washing 7kg', 4200)">🛒 Ба сабад</button>
         </div>
     </div>
 
     <div class="product-card">
         <img src="stove-steel1.jpg" id="vStoveS" class="main-img">
+        <div class="thumbnails">
+            <img src="stove-steel1.jpg" onclick="changeImg('vStoveS', this.src)">
+            <img src="stove-steel2.jpg" onclick="changeImg('vStoveS', this.src)">
+            <img src="stove-steel3.jpg" onclick="changeImg('vStoveS', this.src)">
+        </div>
         <div class="title">Газовая плита Kumtel Steel</div>
         <p class="price">3100 смн</p>
         <div class="button-group">
-            <button class="btn-cart" onclick="addToCart('Kumtel Steel Plita', 3100)">🛒 Ба сабад</button>
+            <button class="btn-cart" onclick="addToCart('Kumtel Steel', 3100)">🛒 Ба сабад</button>
         </div>
     </div>
 
@@ -147,7 +191,7 @@
         <div class="title">Samsung Smart LED TV 35"</div>
         <p class="price">2100 смн</p>
         <div class="button-group">
-            <button class="btn-cart" onclick="addToCart('Samsung Smart TV 35', 2100)">🛒 Ба сабад</button>
+            <button class="btn-cart" onclick="addToCart('Samsung TV 35', 2100)">🛒 Ба сабад</button>
         </div>
     </div>
 
@@ -159,8 +203,10 @@
             <button class="btn-info" onclick="toggle('sRaf')">📋 Характеристика</button>
             <div id="sRaf" class="specs">
                 <div class="spec-line"><b>Қувва:</b> 2200W</div>
+                <div class="spec-line"><b>Намуд:</b> Контейнерӣ</div>
+                <div class="spec-line"><b>Филтр:</b> HEPA</div>
             </div>
-            <button class="btn-cart" onclick="addToCart('Pilesos RAF 2200W', 850)">🛒 Ба сабад</button>
+            <button class="btn-cart" onclick="addToCart('Pilesos RAF', 850)">🛒 Ба сабад</button>
         </div>
     </div>
 
@@ -171,7 +217,7 @@
         <b>Сабади харид 🛒</b>
         <span onclick="document.getElementById('cartPanel').style.display='none'" style="cursor:pointer">✖</span>
     </div>
-    <div id="cartItems"></div>
+    <div id="cartItems" class="cart-items"></div>
     <div class="cart-total">Ҷамъ: <span id="totalPrice">0</span> смн</div>
     <button class="btn-checkout" onclick="checkout()">📲 Фармоиш дар WhatsApp</button>
 </div>
@@ -194,7 +240,7 @@
         let total = 0;
         cart.forEach((item) => {
             total += item.price;
-            itemsDiv.innerHTML += `<div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:5px;">
+            itemsDiv.innerHTML += `<div style="display:flex; justify-content:space-between; font-size:13px; border-bottom:1px solid #eee; padding:5px 0;">
                 <span>${item.name}</span>
                 <b>${item.price} с.</b>
             </div>`;
@@ -213,6 +259,8 @@
 
     function toggle(id) {
         var el = document.getElementById(id);
+        var allSpecs = document.querySelectorAll('.specs');
+        allSpecs.forEach(s => { if(s.id !== id) s.style.display = 'none'; });
         el.style.display = (el.style.display === 'block') ? 'none' : 'block';
     }
 
