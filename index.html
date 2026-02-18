@@ -30,13 +30,12 @@
 
         .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 12px; border-left: 4px solid #ff9900; margin-top: 10px; }
         .spec-line { border-bottom: 1px dashed #ddd; padding: 3px 0; }
-
         .call-fixed { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 24px; }
     </style>
 </head>
 <body>
 
-<div class="top-promo">🚚 Доставкаи РОЙГОН + Тӯҳфа! 🎁</div>
+<div class="top-promo">🚚 Доставкаи РОЙГОН дар дохили ноҳия! 🎁</div>
 <header>Olami Tehnika 2727</header>
 
 <nav class="nav-menu">
@@ -84,9 +83,8 @@
         <div class="button-group">
             <button class="btn-info" onclick="toggle('sInd')">📋 Характеристика</button>
             <div id="sInd" class="specs">
-                <div class="spec-line"><b>Загрузка:</b> 7 кг, Фронтальная</div>
-                <div class="spec-line"><b>Технология:</b> Push & Go, Пар</div>
-                <div class="spec-line"><b>Класс:</b> A++ (Экономная)</div>
+                <div class="spec-line"><b>Загрузка:</b> 7 кг</div>
+                <div class="spec-line"><b>Функсия:</b> Push & Go, Пар</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
@@ -103,8 +101,7 @@
         <div class="button-group">
             <button class="btn-info" onclick="toggle('sLG')">📋 Характеристика</button>
             <div id="sLG" class="specs">
-                <div class="spec-line"><b>Экран:</b> 43" (109 см), Full HD</div>
-                <div class="spec-line"><b>Матрица:</b> IPS (яркие цвета)</div>
+                <div class="spec-line"><b>Экран:</b> Full HD, IPS</div>
                 <div class="spec-line"><b>Звук:</b> Dolby Audio</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
@@ -112,20 +109,18 @@
     </div>
 
     <div class="product-card" id="kitchen">
-        <img src="stove-black1.jpg" id="vStoveBlack" class="main-img">
+        <img src="stove-black1.jpg" id="vStoveB" class="main-img">
         <div class="thumbnails">
-            <img src="stove-black1.jpg" onclick="changeImg('vStoveBlack', this.src)">
-            <img src="stove-black2.jpg" onclick="changeImg('vStoveBlack', this.src)">
-            <img src="stove-black3.jpg" onclick="changeImg('vStoveBlack', this.src)">
+            <img src="stove-black1.jpg" onclick="changeImg('vStoveB', this.src)">
+            <img src="stove-black2.jpg" onclick="changeImg('vStoveB', this.src)">
+            <img src="stove-black3.jpg" onclick="changeImg('vStoveB', this.src)">
         </div>
         <div class="title">Газовая плита Kumtel Black Gloss</div>
         <p class="price">3200 смн</p>
-        <span class="discount-tag">💎 Сиёҳи ҷилодор</span>
         <div class="button-group">
             <button class="btn-info" onclick="toggle('sStoveB')">📋 Характеристика</button>
             <div id="sStoveB" class="specs">
                 <div class="spec-line"><b>Ранг:</b> Чёрный глянец</div>
-                <div class="spec-line"><b>Намуд:</b> Комбинированный</div>
                 <div class="spec-line"><b>Духовка:</b> Конвекция</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
@@ -144,48 +139,42 @@
         <div class="button-group">
             <button class="btn-info" onclick="toggle('sAnd')">📋 Характеристика</button>
             <div id="sAnd" class="specs">
-                <div class="spec-line"><b>ОС:</b> Android Play Market</div>
-                <div class="spec-line"><b>Хотира:</b> 1.5GB / 8GB</div>
+                <div class="spec-line"><b>ОС:</b> Android 14</div>
+                <div class="spec-line"><b>Хотира:</b> 8 GB</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
     </div>
 
     <div class="product-card">
-        <img src="wash-lg-1.jpg" id="vLGWash" class="main-img">
+        <img src="wash-lg-1.jpg" id="vLGW" class="main-img">
         <div class="thumbnails">
-            <img src="wash-lg-1.jpg" onclick="changeImg('vLGWash', this.src)">
-            <img src="wash-lg-2.jpg" onclick="changeImg('vLGWash', this.src)">
-            <img src="wash-lg-3.jpg" onclick="changeImg('vLGWash', this.src)">
-            <img src="wash-lg-4.jpg" onclick="changeImg('vLGWash', this.src)">
+            <img src="wash-lg-1.jpg" onclick="changeImg('vLGW', this.src)">
+            <img src="wash-lg-2.jpg" onclick="changeImg('vLGW', this.src)">
+            <img src="wash-lg-3.jpg" onclick="changeImg('vLGW', this.src)">
+            <img src="wash-lg-4.jpg" onclick="changeImg('vLGW', this.src)">
         </div>
         <div class="title">Стиральная машина LG Black 7кг</div>
         <p class="price">4200 смн</p>
         <div class="button-group">
-            <button class="btn-info" onclick="toggle('sLGWash')">📋 Характеристика</button>
-            <div id="sLGWash" class="specs">
+            <button class="btn-info" onclick="toggle('sLGW')">📋 Характеристика</button>
+            <div id="sLGW" class="specs">
                 <div class="spec-line"><b>Мотор:</b> Inverter Direct Drive</div>
-                <div class="spec-line"><b>Функция:</b> Steam (Пар)</div>
             </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
     </div>
 
     <div class="product-card">
-        <img src="stove-steel1.jpg" id="vStoveSteel" class="main-img">
+        <img src="stove-steel1.jpg" id="vStoveS" class="main-img">
         <div class="thumbnails">
-            <img src="stove-steel1.jpg" onclick="changeImg('vStoveSteel', this.src)">
-            <img src="stove-steel2.jpg" onclick="changeImg('vStoveSteel', this.src)">
-            <img src="stove-steel3.jpg" onclick="changeImg('vStoveSteel', this.src)">
+            <img src="stove-steel1.jpg" onclick="changeImg('vStoveS', this.src)">
+            <img src="stove-steel2.jpg" onclick="changeImg('vStoveS', this.src)">
+            <img src="stove-steel3.jpg" onclick="changeImg('vStoveS', this.src)">
         </div>
         <div class="title">Газовая плита Kumtel Steel</div>
         <p class="price">3100 смн</p>
         <div class="button-group">
-            <button class="btn-info" onclick="toggle('sStoveS')">📋 Характеристика</button>
-            <div id="sStoveS" class="specs">
-                <div class="spec-line"><b>Мавод:</b> Нержавеющая сталь</div>
-                <div class="spec-line"><b>Духовка:</b> 65 литр</div>
-            </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
     </div>
@@ -200,10 +189,16 @@
     </div>
 
     <div class="product-card">
-        <img src="vacuum1.jpg" class="main-img">
+        <img src="vacuum1.jpg" id="vRaf" class="main-img" alt="RAF 2200W">
         <div class="title">Пылесос RAF 2200W</div>
         <p class="price">850 смн</p>
         <div class="button-group">
+            <button class="btn-info" onclick="toggle('sRaf')">📋 Характеристика</button>
+            <div id="sRaf" class="specs">
+                <div class="spec-line"><b>Қувва:</b> 2200W</div>
+                <div class="spec-line"><b>Намуд:</b> Контейнерӣ</div>
+                <div class="spec-line"><b>Филтр:</b> HEPA</div>
+            </div>
             <a href="https://wa.me/992935412727" class="btn-wa">📲 WhatsApp</a>
         </div>
     </div>
