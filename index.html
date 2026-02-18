@@ -8,42 +8,34 @@
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f7f6; color: #333; scroll-behavior: smooth; padding-bottom: 100px; }
         .top-promo { background: #ff9900; color: #232f3e; text-align: center; padding: 8px; font-weight: bold; font-size: 13px; position: sticky; top: 0; z-index: 1001; }
         header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
-        .nav-menu { background: #37475a; display: flex; justify-content: center; padding: 10px; gap: 15px; position: sticky; top: 31px; z-index: 1000; overflow-x: auto; }
-        .nav-menu a { color: white; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; white-space: nowrap; }
         
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 15px; }
         .product-card { background: white; border-radius: 12px; width: 100%; max-width: 300px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; display: flex; flex-direction: column; transition: 0.3s; }
-        .product-card:hover { transform: translateY(-5px); }
 
-        .main-img { width: 100%; height: 180px; object-fit: contain; border-radius: 8px; cursor: zoom-in; }
+        /* Стиль для фото - курсор показывает, что можно увеличить */
+        .main-img { width: 100%; height: 180px; object-fit: contain; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+        .main-img:hover { opacity: 0.9; }
+        
         .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; overflow-x: auto; padding-bottom: 5px; }
         .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; }
 
-        .title { font-size: 16px; font-weight: bold; margin: 10px 0; min-height: 40px; line-height: 1.2; color: #111; }
+        .title { font-size: 16px; font-weight: bold; margin: 10px 0; min-height: 40px; }
         .price { font-size: 20px; color: #b12704; font-weight: bold; margin-bottom: 5px; }
-        
-        .button-group { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
-        .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: bold; }
-        .btn-cart { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        .btn-cart { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
 
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 12px; border-left: 4px solid #ff9900; margin-top: 10px; }
-        .spec-line { border-bottom: 1px dashed #ddd; padding: 4px 0; }
-
-        /* --- СТИЛИ ГАЛЕРЕИ --- */
-        .fullscreen-overlay {
+        /* --- ПОЛНОЭКРАННЫЙ РЕЖИМ (OVERLAY) --- */
+        .fs-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95); z-index: 3000; justify-content: center; align-items: center;
+            background: rgba(0,0,0,0.9); z-index: 5000; justify-content: center; align-items: center;
+            flex-direction: column;
         }
-        .fullscreen-overlay img { max-width: 95%; max-height: 80%; object-fit: contain; border-radius: 5px; }
-        .close-fs { position: absolute; top: 20px; right: 25px; color: white; font-size: 40px; cursor: pointer; }
-        .nav-fs { position: absolute; top: 50%; color: white; font-size: 50px; cursor: pointer; user-select: none; padding: 20px; transition: 0.3s; }
-        .nav-fs:hover { color: #ff9900; }
-        .prev-fs { left: 10px; }
-        .next-fs { right: 10px; }
+        .fs-overlay img { max-width: 95%; max-height: 85%; object-fit: contain; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .fs-close { position: absolute; top: 20px; right: 25px; color: white; font-size: 45px; cursor: pointer; font-weight: bold; }
+        .fs-nav { position: absolute; top: 50%; color: white; font-size: 60px; cursor: pointer; user-select: none; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; }
+        .fs-prev { left: 10px; }
+        .fs-next { right: 10px; }
 
-        .cart-panel { position: fixed; bottom: 85px; right: 20px; background: white; width: 280px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 2000; padding: 15px; display: none; border: 2px solid #232f3e; }
-        .cart-total { font-weight: bold; font-size: 16px; border-top: 2px solid #eee; padding-top: 10px; color: #b12704; margin-top: 10px; }
-        .btn-checkout { background: #ff9900; color: #232f3e; width: 100%; border: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 10px; cursor: pointer; }
+        .cart-panel { position: fixed; bottom: 85px; right: 20px; background: white; width: 280px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 2000; padding: 15px; display: none; }
         .call-fixed { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 2000; font-size: 24px; }
     </style>
 </head>
@@ -52,52 +44,158 @@
 <div class="top-promo">🚚 Доставкаи РОЙГОН дар дохили ноҳия! 🎁</div>
 <header>Olami Tehnika 2727</header>
 
-<div class="product-grid" id="products">
+<div class="product-grid">
 
     <div class="product-card">
-        <img src="gre1.jpg" id="vGree" class="main-img" onclick="openGallery('vGree')">
+        <img src="gre1.jpg" class="main-img" onclick="openGallery(this)">
         <div class="title">Gree Pular Inverter</div>
         <p class="price">4600 смн</p>
         <button class="btn-cart" onclick="addToCart('Gree Pular', 4600)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card">
-        <img src="wash-indesit-1.jpg" id="vInd" class="main-img" onclick="openGallery('vInd')">
+        <img src="wash-indesit-1.jpg" class="main-img" onclick="openGallery(this)">
         <div class="title">Indesit Washing Machine</div>
         <p class="price">2950 смн</p>
         <button class="btn-cart" onclick="addToCart('Indesit 7kg', 2950)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card">
-        <img src="lg1.jpg" id="vLG" class="main-img" onclick="openGallery('vLG')">
+        <img src="lg1.jpg" class="main-img" onclick="openGallery(this)">
         <div class="title">LG 43LP50 Full HD</div>
         <p class="price">1850 смн</p>
         <button class="btn-cart" onclick="addToCart('LG 43LP50', 1850)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card">
-        <img src="stove-black1.jpg" id="vKBlack" class="main-img" onclick="openGallery('vKBlack')">
+        <img src="stove-black1.jpg" class="main-img" onclick="openGallery(this)">
         <div class="title">Kumtel Black Gloss</div>
         <p class="price">3200 смн</p>
         <button class="btn-cart" onclick="addToCart('Kumtel Black', 3200)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card">
-        <img src="android46-1.jpg" id="vAnd" class="main-img" onclick="openGallery('vAnd')">
+        <img src="android46-1.jpg" class="main-img" onclick="openGallery(this)">
         <div class="title">Android TV 46" Smart</div>
         <p class="price">2800 смн</p>
         <button class="btn-cart" onclick="addToCart('Android TV 46', 2800)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card">
-        <img src="wash-lg-1.jpg" id="vLGW" class="main-img" onclick="openGallery('vLGW')">
+        <img src="wash-lg-1.jpg" class="main-img" onclick="openGallery(this)">
         <div class="title">LG Black Inverter 7кг</div>
         <p class="price">4200 смн</p>
         <button class="btn-cart" onclick="addToCart('LG Washing 7kg', 4200)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card">
-        <img src="samsung1.jpg" id="vSam" class="main-img" onclick="openGallery('vSam')">
+        <img src="samsung1.jpg" class="main-img" onclick="openGallery(this)">
         <div class="title">Samsung Smart TV 35"</div>
         <p class="price">2100 смн</p>
+        <button class="btn-cart" onclick="addToCart('Samsung TV 35', 2100)">🛒 Ба сабад</button>
+    </div>
+
+    <div class="product-card">
+        <img src="vacuum1.jpg" class="main-img" onclick="openGallery(this)">
+        <div class="title">Vacuum Cleaner RAF 2200W</div>
+        <p class="price">850 смн</p>
+        <button class="btn-cart" onclick="addToCart('Pilesos RAF', 850)">🛒 Ба сабад</button>
+    </div>
+
+    <div class="product-card">
+        <img src="./hisense1.png" id="vHisense" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="./hisense1.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense2.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense3.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense4.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense5.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense6.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense7.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense8.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense9.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense10.png" onclick="changeImg('vHisense', this.src)">
+            <img src="./hisense11.png" onclick="changeImg('vHisense', this.src)">
+        </div>
+        <div class="title">Hisense Smart Air Inverter</div>
+        <p class="price">4800 смн</p>
+        <button class="btn-cart" onclick="addToCart('Hisense Smart Air', 4800)">🛒 Ба сабад</button>
+    </div>
+
+</div>
+
+<div id="fsOverlay" class="fs-overlay">
+    <span class="fs-close" onclick="closeGallery()">&times;</span>
+    <span class="fs-nav fs-prev" id="prevBtn" onclick="changeFsImg(-1)">&#10094;</span>
+    <img id="fsImage" src="">
+    <span class="fs-nav fs-next" id="nextBtn" onclick="changeFsImg(1)">&#10095;</span>
+</div>
+
+<div id="cartPanel" class="cart-panel">
+    <b>Сабад 🛒</b>
+    <div id="cartItems" style="font-size:13px; margin:10px 0;"></div>
+    <button class="btn-cart" onclick="checkout()">📲 WhatsApp</button>
+</div>
+
+<a href="tel:+992935412727" class="call-fixed">📞</a>
+
+<script>
+    let cart = [];
+    let currentImgs = [];
+    let currentIdx = 0;
+
+    function changeImg(id, src) {
+        document.getElementById(id).src = src;
+    }
+
+    // ОТКРЫТИЕ ЛЮБОГО ФОТО
+    function openGallery(imgElement) {
+        const card = imgElement.closest('.product-card');
+        const thumbs = card.querySelectorAll('.thumbnails img');
         
+        // Если есть миниатюры - берем их, если нет - только главное фото
+        if(thumbs.length > 0) {
+            currentImgs = Array.from(thumbs).map(t => t.src);
+        } else {
+            currentImgs = [imgElement.src];
+        }
+
+        currentIdx = currentImgs.indexOf(imgElement.src);
+        if(currentIdx === -1) currentIdx = 0;
+
+        // Показываем/скрываем стрелки
+        document.getElementById('prevBtn').style.display = currentImgs.length > 1 ? 'block' : 'none';
+        document.getElementById('nextBtn').style.display = currentImgs.length > 1 ? 'block' : 'none';
+
+        document.getElementById('fsImage').src = currentImgs[currentIdx];
+        document.getElementById('fsOverlay').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeGallery() {
+        document.getElementById('fsOverlay').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    function changeFsImg(step) {
+        currentIdx += step;
+        if (currentIdx >= currentImgs.length) currentIdx = 0;
+        if (currentIdx < 0) currentIdx = currentImgs.length - 1;
+        document.getElementById('fsImage').src = currentImgs[currentIdx];
+    }
+
+    function addToCart(name, price) {
+        cart.push({name, price});
+        const itemsDiv = document.getElementById('cartItems');
+        itemsDiv.innerHTML = cart.map(i => `<div>${i.name} - ${i.price}с.</div>`).join('');
+        document.getElementById('cartPanel').style.display = 'block';
+    }
+
+    function checkout() {
+        const phone = "992935412727";
+        let msg = "Фармоиш:\n" + cart.map(i => "- " + i.name).join("\n");
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`);
+    }
+</script>
+</body>
+</html>
