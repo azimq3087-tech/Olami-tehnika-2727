@@ -8,7 +8,7 @@
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f7f6; color: #333; padding-bottom: 100px; }
         header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
         
-        /* Поиск и Категории */
+        /* Меню ва Ҷустуҷӯ */
         .sticky-top { position: sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .search-container { padding: 10px; text-align: center; }
         #searchInput { width: 85%; max-width: 500px; padding: 12px 20px; border-radius: 25px; border: 1px solid #ddd; font-size: 16px; outline: none; }
@@ -17,13 +17,13 @@
         .cat-btn { background: #fff; border: 1px solid #ddd; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; transition: 0.3s; }
         .cat-btn:hover, .cat-btn.active { background: #232f3e; color: #fff; border-color: #232f3e; }
 
-        /* Карточки */
+        /* Шабакаи маҳсулот */
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 15px; }
-        .product-card { background: white; border-radius: 12px; width: 100%; max-width: 300px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; display: block; }
+        .product-card { background: white; border-radius: 12px; width: 100%; max-width: 300px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
         
         .main-img { width: 100%; height: 200px; object-fit: contain; cursor: pointer; border-radius: 8px; }
         .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; overflow-x: auto; padding-bottom: 5px; }
-        .thumbnails img { width: 50px; height: 40px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; flex-shrink: 0; }
+        .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; flex-shrink: 0; }
         
         .title { font-weight: bold; font-size: 18px; margin: 10px 0; min-height: 44px; }
         .price { font-size: 22px; color: #b12704; font-weight: bold; margin: 10px 0; }
@@ -33,7 +33,7 @@
         
         .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 13px; border-left: 4px solid #ff9900; margin-bottom: 10px; line-height: 1.4; }
         
-        /* Галерея и Корзина */
+        /* Галерея ва Сабад */
         .fs-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 5000; justify-content: center; align-items: center; }
         .fs-overlay img { max-width: 95%; max-height: 80%; object-fit: contain; }
         .fs-close { position: absolute; top: 20px; right: 25px; color: white; font-size: 40px; cursor: pointer; }
@@ -80,8 +80,9 @@
         <button class="btn-info" onclick="toggle('sAUX')">Характеристика</button>
         <div id="sAUX" class="specs">
             • Кор дар ҳарорати шадид: аз -32°C то +55°C<br>
-            • Технологияи каммасрафи барқ<br>
-            • Сардкунии тези 30 сония
+            • Технологияи каммасрафи барқ (Inverter)<br>
+            • Сардкунии тези 30 сония<br>
+            • Филтри бисёрзинагӣ зидди бактерия
         </div>
         <button class="btn-cart" onclick="addToCart('AUX Inverter', 4850)">🛒 Ба сабад</button>
     </div>
@@ -90,15 +91,19 @@
         <img src="midea1.png" id="vMidea" class="main-img" onclick="openGallery(this)">
         <div class="thumbnails">
             <img src="midea1.png" onclick="changeImg('vMidea', this.src)">
+            <img src="midea2.png" onclick="changeImg('vMidea', this.src)">
             <img src="midea3.png" onclick="changeImg('vMidea', this.src)">
+            <img src="midea4.png" onclick="changeImg('vMidea', this.src)">
             <img src="midea5.png" onclick="changeImg('vMidea', this.src)">
         </div>
         <div class="title">Midea Blanc Inverter</div>
         <p class="price">4900 смн</p>
         <button class="btn-info" onclick="toggle('sMidea')">Характеристика</button>
         <div id="sMidea" class="specs">
-            • Rapid Heat & Cool<br>
-            • Inverter Quattro
+            • Технологияи Inverter Quattro<br>
+            • Сардкунии тез (Rapid Cool)<br>
+            • Ҳавои 3D (3D Airflow)<br>
+            • Экрани пинҳонӣ дар панел
         </div>
         <button class="btn-cart" onclick="addToCart('Midea Blanc', 4900)">🛒 Ба сабад</button>
     </div>
@@ -107,15 +112,19 @@
         <img src="tcl1.png" id="vTCL" class="main-img" onclick="openGallery(this)">
         <div class="thumbnails">
             <img src="tcl1.png" onclick="changeImg('vTCL', this.src)">
+            <img src="tcl2.png" onclick="changeImg('vTCL', this.src)">
             <img src="tcl3.png" onclick="changeImg('vTCL', this.src)">
             <img src="tcl4.png" onclick="changeImg('vTCL', this.src)">
+            <img src="tcl5.png" onclick="changeImg('vTCL', this.src)">
         </div>
         <div class="title">TCL Smart Air Flow</div>
         <p class="price">4750 смн</p>
         <button class="btn-info" onclick="toggle('sTCL')">Характеристика</button>
         <div id="sTCL" class="specs">
-            • Smart Air Flow: Shower & Blanket<br>
-            • AI Inverter & Кор то 60°C
+            • Smart Air Flow: Shower-style (сард), Blanket-style (гарм)<br>
+            • AI Inverter ва Худкор тозашавӣ<br>
+            • Кор дар ҳарорати то 60°C<br>
+            • Режими хоби бароҳат
         </div>
         <button class="btn-cart" onclick="addToCart('TCL Smart', 4750)">🛒 Ба сабад</button>
     </div>
@@ -124,94 +133,152 @@
         <img src="gre1.jpg" id="vGree" class="main-img" onclick="openGallery(this)">
         <div class="thumbnails">
             <img src="gre1.jpg" onclick="changeImg('vGree', this.src)">
+            <img src="gree2.jpg" onclick="changeImg('vGree', this.src)">
+            <img src="gree3.jpg" onclick="changeImg('vGree', this.src)">
         </div>
         <div class="title">Gree Pular Inverter</div>
         <p class="price">4600 смн</p>
         <button class="btn-info" onclick="toggle('sGree')">Характеристика</button>
-        <div id="sGree" class="specs">• Inverter 2024<br>• То 40м2</div>
+        <div id="sGree" class="specs">• Inverter 2024<br>• То 40м2 майдон<br>• Сард ва Гарм<br>• Филтри ионӣ</div>
         <button class="btn-cart" onclick="addToCart('Gree Pular', 4600)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="home">
         <img src="wash-indesit-1.jpg" id="vInd" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="wash-indesit-1.jpg" onclick="changeImg('vInd', this.src)">
+            <img src="wash-indesit-2.jpg" onclick="changeImg('vInd', this.src)">
+            <img src="wash-indesit-3.jpg" onclick="changeImg('vInd', this.src)">
+        </div>
         <div class="title">Indesit 7kg</div>
         <p class="price">2950 смн</p>
         <button class="btn-info" onclick="toggle('sInd')">Характеристика</button>
-        <div id="sInd" class="specs">• 7 кг вазн<br>• А+++ класс</div>
+        <div id="sInd" class="specs">• 7 кг вазн<br>• 1000 оборот<br>• Синфи А+++<br>• 16 барномаи шустан</div>
         <button class="btn-cart" onclick="addToCart('Indesit 7kg', 2950)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="tv">
         <img src="lg1.jpg" id="vLGTV" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="lg1.jpg" onclick="changeImg('vLGTV', this.src)">
+            <img src="lg2.jpg" onclick="changeImg('vLGTV', this.src)">
+        </div>
         <div class="title">LG 43LP50 Full HD</div>
         <p class="price">1850 смн</p>
         <button class="btn-info" onclick="toggle('sLGTV')">Характеристика</button>
-        <div id="sLGTV" class="specs">• 43 дюйм<br>• Full HD</div>
+        <div id="sLGTV" class="specs">• 43 дюйм (109 см)<br>• Full HD экран<br>• Тюнери дохилӣ</div>
         <button class="btn-cart" onclick="addToCart('LG 43LP50', 1850)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="home">
         <img src="stove-black1.jpg" id="vKBlack" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="stove-black1.jpg" onclick="changeImg('vKBlack', this.src)">
+            <img src="stove-black2.jpg" onclick="changeImg('vKBlack', this.src)">
+            <img src="stove-black3.jpg" onclick="changeImg('vKBlack', this.src)">
+        </div>
         <div class="title">Kumtel Black</div>
         <p class="price">3200 смн</p>
         <button class="btn-info" onclick="toggle('sKBlack')">Характеристика</button>
-        <div id="sKBlack" class="specs">• Газ+Барқ<br>• Сиёҳ</div>
+        <div id="sKBlack" class="specs">• Плитаи газӣ ва барқӣ<br>• Тарҳи муосири сиёҳ<br>• Духовкаи калон</div>
         <button class="btn-cart" onclick="addToCart('Kumtel Black', 3200)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="tv">
         <img src="android46-1.jpg" id="vAnd" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="android46-1.jpg" onclick="changeImg('vAnd', this.src)">
+            <img src="android46-2.jpg" onclick="changeImg('vAnd', this.src)">
+            <img src="android46-3.jpg" onclick="changeImg('vAnd', this.src)">
+        </div>
         <div class="title">Android TV 46"</div>
         <p class="price">2800 смн</p>
         <button class="btn-info" onclick="toggle('sAnd')">Характеристика</button>
-        <div id="sAnd" class="specs">• Smart Android<br>• Wi-Fi</div>
+        <div id="sAnd" class="specs">• Smart TV Android<br>• YouTube/Netflix<br>• Wi-Fi пайвастшавӣ</div>
         <button class="btn-cart" onclick="addToCart('Android TV 46', 2800)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="home">
         <img src="wash-lg-1.jpg" id="vLGW" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="wash-lg-1.jpg" onclick="changeImg('vLGW', this.src)">
+            <img src="wash-lg-2.jpg" onclick="changeImg('vLGW', this.src)">
+        </div>
         <div class="title">LG Black 7кг</div>
         <p class="price">4200 смн</p>
         <button class="btn-info" onclick="toggle('sLGW')">Характеристика</button>
-        <div id="sLGW" class="specs">• Direct Drive<br>• Steam</div>
+        <div id="sLGW" class="specs">• Direct Drive мотор<br>• Буғдиҳӣ (Steam)<br>• Тарҳи люкс</div>
         <button class="btn-cart" onclick="addToCart('LG Washing 7kg', 4200)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="home">
         <img src="stove-steel1.jpg" id="vKSteel" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="stove-steel1.jpg" onclick="changeImg('vKSteel', this.src)">
+            <img src="stove-steel2.jpg" onclick="changeImg('vKSteel', this.src)">
+        </div>
         <div class="title">Kumtel Steel</div>
         <p class="price">3100 смн</p>
         <button class="btn-info" onclick="toggle('sKSteel')">Характеристика</button>
-        <div id="sKSteel" class="specs">• Пӯлоди зангногир</div>
+        <div id="sKSteel" class="specs">• Пӯлоди зангногир<br>• Назорати ҳарорати дақиқ</div>
         <button class="btn-cart" onclick="addToCart('Kumtel Steel', 3100)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="tv">
         <img src="samsung1.jpg" id="vSam" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="samsung1.jpg" onclick="changeImg('vSam', this.src)">
+            <img src="samsung2.jpg" onclick="changeImg('vSam', this.src)">
+        </div>
         <div class="title">Samsung Smart 35"</div>
         <p class="price">2100 смн</p>
         <button class="btn-info" onclick="toggle('sSam')">Характеристика</button>
-        <div id="sSam" class="specs">• Crystal Processor<br>• Smart TV</div>
+        <div id="sSam" class="specs">• Crystal Display<br>• Smart TV<br>• Рангҳои табиӣ</div>
         <button class="btn-cart" onclick="addToCart('Samsung TV 35', 2100)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="home">
         <img src="vacuum1.jpg" id="vRaf" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="vacuum1.jpg" onclick="changeImg('vRaf', this.src)">
+            <img src="vacuum2.jpg" onclick="changeImg('vRaf', this.src)">
+            <img src="vacuum3.jpg" onclick="changeImg('vRaf', this.src)">
+        </div>
         <div class="title">RAF 2200W</div>
         <p class="price">850 смн</p>
         <button class="btn-info" onclick="toggle('sRaf')">Характеристика</button>
-        <div id="sRaf" class="specs">• 2200 Вт<br>• HEPA филтр</div>
+        <div id="sRaf" class="specs">• Қувваи 2200 Вт<br>• Контейнери чанг<br>• Филтри HEPA</div>
         <button class="btn-cart" onclick="addToCart('Pilesos RAF', 850)">🛒 Ба сабад</button>
     </div>
 
-    <div class="product-card" data-cat="ac">
-        <img src="./hisense1.png" id="vHisense" class="main-img" onclick="openGallery(this)">
+       <div class="product-card" data-cat="ac">
+        <img src="hisense1.png" id="vHisense" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="hisense1.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense2.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense3.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense4.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense5.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense6.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense7.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense8.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense9.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense10.png" onclick="changeImg('vHisense', this.src)">
+            <img src="hisense11.png" onclick="changeImg('vHisense', this.src)">
+        </div>
         <div class="title">Hisense Smart Air</div>
         <p class="price">4800 смн</p>
         <button class="btn-info" onclick="toggle('sHisense')">Характеристика</button>
-        <div id="sHisense" class="specs">• Wi-Fi Control<br>• Super Cool</div>
+        <div id="sHisense" class="specs">
+            • Wi-Fi Control (идора бо телефон)<br>
+            • Технологияи Full Inverter<br>
+            • Сардкунии тези Super Cool<br>
+            • Режими Quiet Mode (бесадо)<br>
+            • Филтри 4-дар-1 барои тозакунии ҳаво
+        </div>
         <button class="btn-cart" onclick="addToCart('Hisense Smart Air', 4800)">🛒 Ба сабад</button>
     </div>
+
 
 </div>
 
@@ -223,7 +290,7 @@
 </div>
 
 <div id="cartPanel" class="cart-panel">
-    <span onclick="document.getElementById('cartPanel').style.display='none'" style="float:right; cursor:pointer;">&times;</span>
+    <span onclick="document.getElementById('cartPanel').style.display='none'" style="float:right; cursor:pointer; font-size:24px;">&times;</span>
     <b style="display:block; margin-bottom:10px;">Сабад 🛒</b>
     <div id="cartItems"></div>
     <div id="totalSum" class="total-price"></div>
@@ -238,20 +305,13 @@
     let currentImgs = []; 
     let currentIdx = 0;
 
-    // ФИЛЬТР КАТЕГОРИЙ
     function filterCat(cat, btn) {
         let cards = document.getElementsByClassName('product-card');
         let buttons = document.getElementsByClassName('cat-btn');
-        
         for (let b of buttons) b.classList.remove('active');
         btn.classList.add('active');
-
         for (let card of cards) {
-            if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
+            card.style.display = (cat === 'all' || card.getAttribute('data-cat') === cat) ? "block" : "none";
         }
     }
 
