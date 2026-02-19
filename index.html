@@ -8,7 +8,6 @@
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f7f6; color: #333; padding-bottom: 100px; }
         header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
         
-        /* Поиск */
         .search-container { padding: 15px; text-align: center; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         #searchInput { width: 85%; max-width: 500px; padding: 12px 20px; border-radius: 25px; border: 1px solid #ddd; font-size: 16px; outline: none; }
 
@@ -25,16 +24,14 @@
         .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 10px; border-radius: 8px; cursor: pointer; width: 100%; margin-bottom: 8px; font-weight: bold; }
         .btn-cart { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
         
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 13px; border-left: 4px solid #ff9900; margin-bottom: 10px; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 13px; border-left: 4px solid #ff9900; margin-bottom: 10px; line-height: 1.4; }
         
-        /* Галерея во весь экран */
         .fs-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 5000; justify-content: center; align-items: center; }
         .fs-overlay img { max-width: 95%; max-height: 80%; object-fit: contain; }
         .fs-close { position: absolute; top: 20px; right: 25px; color: white; font-size: 40px; cursor: pointer; }
         .fs-nav { position: absolute; top: 50%; color: white; font-size: 50px; cursor: pointer; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; }
         .fs-prev { left: 10px; } .fs-next { right: 10px; }
 
-        /* Панель корзины */
         .cart-panel { position: fixed; bottom: 85px; right: 20px; background: white; width: 300px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); z-index: 2000; padding: 15px; display: none; }
         .cart-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
         .remove-btn { color: #ff4444; cursor: pointer; font-weight: bold; }
@@ -48,7 +45,7 @@
 <header>Olami Tehnika 2727</header>
 
 <div class="search-container">
-    <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Ҷустуҷӯи маҳсулот (Midea, LG, Samsung)...">
+    <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Ҷустуҷӯи маҳсулот...">
 </div>
 
 <div class="product-grid" id="productGrid">
@@ -65,8 +62,36 @@
         <div class="title">Midea Blanc Inverter</div>
         <p class="price">4900 смн</p>
         <button class="btn-info" onclick="toggle('sMidea')">Характеристика</button>
-        <div id="sMidea" class="specs">Inverter, Super Cool, Эффекти 3D Airflow, Модели нав.</div>
+        <div id="sMidea" class="specs">
+            • Технологияи Inverter Quattro<br>
+            • Сардкунии тез (Rapid Cool)<br>
+            • Ҳавои 3D (3D Airflow)<br>
+            • Экрани пинҳонӣ дар панел<br>
+            • Садои ниҳоят паст
+        </div>
         <button class="btn-cart" onclick="addToCart('Midea Blanc', 4900)">🛒 Ба сабад</button>
+    </div>
+
+    <div class="product-card">
+        <img src="tcl1.png" id="vTCL" class="main-img" onclick="openGallery(this)">
+        <div class="thumbnails">
+            <img src="tcl1.png" onclick="changeImg('vTCL', this.src)">
+            <img src="tcl2.png" onclick="changeImg('vTCL', this.src)">
+            <img src="tcl3.png" onclick="changeImg('vTCL', this.src)">
+            <img src="tcl4.png" onclick="changeImg('vTCL', this.src)">
+            <img src="tcl5.png" onclick="changeImg('vTCL', this.src)">
+        </div>
+        <div class="title">TCL Smart Air Flow</div>
+        <p class="price">4750 смн</p>
+        <button class="btn-info" onclick="toggle('sTCL')">Характеристика</button>
+        <div id="sTCL" class="specs">
+            • Smart Air Flow (Shower/Blanket style)<br>
+            • Худкор тозашавӣ (Self-cleaning)<br>
+            • AI Inverter технология<br>
+            • Режими хоби бароҳат<br>
+            • То 50°C хунуккунии устувор
+        </div>
+        <button class="btn-cart" onclick="addToCart('TCL Smart', 4750)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card">
@@ -79,7 +104,7 @@
         <div class="title">Gree Pular Inverter</div>
         <p class="price">4600 смн</p>
         <button class="btn-info" onclick="toggle('sGree')">Характеристика</button>
-        <div id="sGree" class="specs">Модели 2024, Inverter, Сард/Гарм, то 40м2.</div>
+        <div id="sGree" class="specs">• Inverter модел<br>• То 40м2 майдон<br>• Сард ва Гарм<br>• Филтри ионӣ</div>
         <button class="btn-cart" onclick="addToCart('Gree Pular', 4600)">🛒 Ба сабад</button>
     </div>
 
@@ -88,12 +113,11 @@
         <div class="thumbnails">
             <img src="wash-indesit-1.jpg" onclick="changeImg('vInd', this.src)">
             <img src="wash-indesit-2.jpg" onclick="changeImg('vInd', this.src)">
-            <img src="wash-indesit-3.jpg" onclick="changeImg('vInd', this.src)">
         </div>
         <div class="title">Indesit 7kg</div>
         <p class="price">2950 смн</p>
         <button class="btn-info" onclick="toggle('sInd')">Характеристика</button>
-        <div id="sInd" class="specs">7 кг, 1000 оборот, А+++ класс.</div>
+        <div id="sInd" class="specs">• 7 кг вазн<br>• 1000 оборот<br>• Синфи А+++<br>• 16 барномаи шустан</div>
         <button class="btn-cart" onclick="addToCart('Indesit 7kg', 2950)">🛒 Ба сабад</button>
     </div>
 
@@ -105,6 +129,8 @@
         </div>
         <div class="title">LG 43LP50 Full HD</div>
         <p class="price">1850 смн</p>
+        <button class="btn-info" onclick="toggle('sLGTV')">Характеристика</button>
+        <div id="sLGTV" class="specs">• 43 дюйм (109 см)<br>• Full HD экран<br>• USB/HDMI портҳо<br>• Тюнери дохилӣ</div>
         <button class="btn-cart" onclick="addToCart('LG 43LP50', 1850)">🛒 Ба сабад</button>
     </div>
 
@@ -113,10 +139,11 @@
         <div class="thumbnails">
             <img src="stove-black1.jpg" onclick="changeImg('vKBlack', this.src)">
             <img src="stove-black2.jpg" onclick="changeImg('vKBlack', this.src)">
-            <img src="stove-black3.jpg" onclick="changeImg('vKBlack', this.src)">
         </div>
         <div class="title">Kumtel Black</div>
         <p class="price">3200 смн</p>
+        <button class="btn-info" onclick="toggle('sKBlack')">Характеристика</button>
+        <div id="sKBlack" class="specs">• Плитаи газӣ ва барқӣ<br>• Тарҳи муосири сиёҳ<br>• Духовкаи калон</div>
         <button class="btn-cart" onclick="addToCart('Kumtel Black', 3200)">🛒 Ба сабад</button>
     </div>
 
@@ -125,10 +152,11 @@
         <div class="thumbnails">
             <img src="android46-1.jpg" onclick="changeImg('vAnd', this.src)">
             <img src="android46-2.jpg" onclick="changeImg('vAnd', this.src)">
-            <img src="android46-3.jpg" onclick="changeImg('vAnd', this.src)">
         </div>
         <div class="title">Android TV 46"</div>
         <p class="price">2800 смн</p>
+        <button class="btn-info" onclick="toggle('sAnd')">Характеристика</button>
+        <div id="sAnd" class="specs">• Smart TV Android<br>• YouTube/Netflix<br>• Wi-Fi пайвастшавӣ</div>
         <button class="btn-cart" onclick="addToCart('Android TV 46', 2800)">🛒 Ба сабад</button>
     </div>
 
@@ -140,6 +168,8 @@
         </div>
         <div class="title">LG Black 7кг</div>
         <p class="price">4200 смн</p>
+        <button class="btn-info" onclick="toggle('sLGW')">Характеристика</button>
+        <div id="sLGW" class="specs">• Direct Drive мотор<br>• Буғдиҳӣ (Steam)<br>• Тарҳи люкс</div>
         <button class="btn-cart" onclick="addToCart('LG Washing 7kg', 4200)">🛒 Ба сабад</button>
     </div>
 
@@ -151,6 +181,8 @@
         </div>
         <div class="title">Kumtel Steel</div>
         <p class="price">3100 смн</p>
+        <button class="btn-info" onclick="toggle('sKSteel')">Характеристика</button>
+        <div id="sKSteel" class="specs">• Пӯлоди зангногир<br>• Пояҳои танзимшаванда<br>• Духовка</div>
         <button class="btn-cart" onclick="addToCart('Kumtel Steel', 3100)">🛒 Ба сабад</button>
     </div>
 
@@ -162,6 +194,8 @@
         </div>
         <div class="title">Samsung Smart 35"</div>
         <p class="price">2100 смн</p>
+        <button class="btn-info" onclick="toggle('sSam')">Характеристика</button>
+        <div id="sSam" class="specs">• Crystal Display<br>• Smart Hub<br>• Рангҳои табиӣ</div>
         <button class="btn-cart" onclick="addToCart('Samsung TV 35', 2100)">🛒 Ба сабад</button>
     </div>
 
@@ -170,10 +204,11 @@
         <div class="thumbnails">
             <img src="vacuum1.jpg" onclick="changeImg('vRaf', this.src)">
             <img src="vacuum2.jpg" onclick="changeImg('vRaf', this.src)">
-            <img src="vacuum3.jpg" onclick="changeImg('vRaf', this.src)">
         </div>
         <div class="title">RAF 2200W</div>
         <p class="price">850 смн</p>
+        <button class="btn-info" onclick="toggle('sRaf')">Характеристика</button>
+        <div id="sRaf" class="specs">• Қувваи 2200 Вт<br>• Контейнери чанг<br>• Филтри HEPA</div>
         <button class="btn-cart" onclick="addToCart('Pilesos RAF', 850)">🛒 Ба сабад</button>
     </div>
 
@@ -182,12 +217,11 @@
         <div class="thumbnails">
             <img src="./hisense1.png" onclick="changeImg('vHisense', this.src)">
             <img src="./hisense2.png" onclick="changeImg('vHisense', this.src)">
-            <img src="./hisense3.png" onclick="changeImg('vHisense', this.src)">
         </div>
         <div class="title">Hisense Smart Air</div>
         <p class="price">4800 смн</p>
         <button class="btn-info" onclick="toggle('sHisense')">Характеристика</button>
-        <div id="sHisense" class="specs">Inverter, Wi-Fi, 2024 Model.</div>
+        <div id="sHisense" class="specs">• Wi-Fi Control<br>• Энергияи каммасраф<br>• Режими Super Cool</div>
         <button class="btn-cart" onclick="addToCart('Hisense Smart Air', 4800)">🛒 Ба сабад</button>
     </div>
 
@@ -243,7 +277,7 @@
         
         document.getElementById('fsImage').src = currentImgs[currentIdx];
         document.getElementById('fsOverlay').style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Запрет прокрутки при просмотре фото
+        document.body.style.overflow = 'hidden';
     }
 
     function closeGallery() { 
