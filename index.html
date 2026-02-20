@@ -16,21 +16,15 @@
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 15px; }
         .product-card { background: white; border-radius: 12px; width: 100%; max-width: 300px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
         .main-img { width: 100%; height: 200px; object-fit: contain; cursor: pointer; border-radius: 8px; }
-        .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; overflow-x: auto; padding-bottom: 5px; }
-        .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; flex-shrink: 0; }
         .title { font-weight: bold; font-size: 18px; margin: 10px 0; min-height: 44px; }
         .price { font-size: 22px; color: #b12704; font-weight: bold; margin: 10px 0; }
         .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 10px; border-radius: 8px; cursor: pointer; width: 100%; margin-bottom: 8px; font-weight: bold; }
         .btn-cart { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
-        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 13px; border-left: 4px solid #ff9900; margin-bottom: 10px; line-height: 1.4; }
-        .fs-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 5000; justify-content: center; align-items: center; }
-        .fs-overlay img { max-width: 95%; max-height: 80%; object-fit: contain; }
+        .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 13px; border-left: 4px solid #ff9900; margin-bottom: 10px; }
+        .fs-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 5000; justify-content: center; align-items: center; }
+        .fs-overlay img { max-width: 90%; max-height: 80%; object-fit: contain; }
         .fs-close { position: absolute; top: 20px; right: 25px; color: white; font-size: 40px; cursor: pointer; }
-        .cart-panel { position: fixed; bottom: 85px; right: 20px; background: white; width: 300px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); z-index: 2000; padding: 15px; display: none; }
-        .cart-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        .total-price { font-weight: bold; color: #b12704; font-size: 18px; margin-top: 10px; text-align: right; }
-        .cart-btns { display: flex; gap: 8px; margin-top: 15px; }
-        .btn-call { background: #007bff; color: white; text-decoration: none; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 60px; font-size: 20px; }
+        .cart-panel { position: fixed; bottom: 85px; right: 20px; background: white; width: 280px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); z-index: 2000; padding: 15px; display: none; }
     </style>
 </head>
 <body>
@@ -38,9 +32,7 @@
 <header>Olami Tehnika 2727</header>
 
 <div class="sticky-top">
-    <div class="search-container">
-        <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Ҷустуҷӯи маҳсулот...">
-    </div>
+    <div class="search-container"><input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Ҷустуҷӯ..."></div>
     <div class="category-menu">
         <button class="cat-btn active" onclick="filterCat('all', this)">Ҳама</button>
         <button class="cat-btn" onclick="filterCat('ac', this)">Кондиционерҳо</button>
@@ -51,136 +43,61 @@
 
 <div class="product-grid" id="productGrid">
 
-    <div class="product-card" data-cat="ac">
-        <img src="aux1.png" id="vAUX" class="main-img" onclick="openGallery(this)">
-        <div class="title">AUX Inverter Expert</div>
-        <p class="price">4850 смн</p>
-        <button class="btn-info" onclick="toggle('sAUX')">Характеристика</button>
-        <div id="sAUX" class="specs">• Кор аз -32°C то +55°C • Inverter • Сардкунии тез</div>
-        <button class="btn-cart" onclick="addToCart('AUX Inverter', 4850)">🛒 Ба сабад</button>
-    </div>
+    <div class="product-card" data-cat="ac"><img src="aux1.png" class="main-img" onclick="openGallery(this)"><div class="title">AUX Inverter Expert</div><p class="price">4850 смн</p><button class="btn-info" onclick="toggle('s1')">Характеристика</button><div id="s1" class="specs">• Inverter • -32°C то +55°C</div><button class="btn-cart" onclick="addToCart('AUX', 4850)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="ac"><img src="midea1.png" class="main-img" onclick="openGallery(this)"><div class="title">Midea Blanc Inverter</div><p class="price">4900 смн</p><button class="btn-info" onclick="toggle('s2')">Характеристика</button><div id="s2" class="specs">• 3D Airflow • Rapid Cool</div><button class="btn-cart" onclick="addToCart('Midea', 4900)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="ac"><img src="tcl1.png" class="main-img" onclick="openGallery(this)"><div class="title">TCL Smart Air</div><p class="price">4750 смн</p><button class="btn-info" onclick="toggle('s3')">Характеристика</button><div id="s3" class="specs">• AI Inverter • Auto Clean</div><button class="btn-cart" onclick="addToCart('TCL', 4750)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="ac"><img src="gre1.jpg" class="main-img" onclick="openGallery(this)"><div class="title">Gree Pular Inverter</div><p class="price">4600 смн</p><button class="btn-info" onclick="toggle('s4')">Характеристика</button><div id="s4" class="specs">• До 40м2 • Филтри ионӣ</div><button class="btn-cart" onclick="addToCart('Gree', 4600)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="ac"><img src="hisense1.png" class="main-img" onclick="openGallery(this)"><div class="title">Hisense Smart Air</div><p class="price">4800 смн</p><button class="btn-info" onclick="toggle('s5')">Характеристика</button><div id="s5" class="specs">• Wi-Fi Control • Super Cool</div><button class="btn-cart" onclick="addToCart('Hisense', 4800)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="ac"><img src="fujair1.png" class="main-img" onclick="openGallery(this)"><div class="title">FUJAIRE Inverter</div><p class="price">5200 смн</p><button class="btn-info" onclick="toggle('s6')">Характеристика</button><div id="s6" class="specs">• Malaysia • 24000 BTU</div><button class="btn-cart" onclick="addToCart('Fujaire', 5200)">🛒 Ба сабад</button></div>
 
-    <div class="product-card" data-cat="ac">
-        <img src="midea1.png" id="vMidea" class="main-img" onclick="openGallery(this)">
-        <div class="title">Midea Blanc Inverter</div>
-        <p class="price">4900 смн</p>
-        <button class="btn-info" onclick="toggle('sMidea')">Характеристика</button>
-        <div id="sMidea" class="specs">• Inverter Quattro • Ҳавои 3D • Экрани пинҳонӣ</div>
-        <button class="btn-cart" onclick="addToCart('Midea Blanc', 4900)">🛒 Ба сабад</button>
-    </div>
+    <div class="product-card" data-cat="tv"><img src="lg1.jpg" class="main-img" onclick="openGallery(this)"><div class="title">LG 43LP50 Full HD</div><p class="price">1850 смн</p><button class="btn-cart" onclick="addToCart('LG 43', 1850)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="tv"><img src="android46-1.jpg" class="main-img" onclick="openGallery(this)"><div class="title">Android TV 46"</div><p class="price">2800 смн</p><button class="btn-cart" onclick="addToCart('Android 46', 2800)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="tv"><img src="samsung1.jpg" class="main-img" onclick="openGallery(this)"><div class="title">Samsung Smart 35"</div><p class="price">2100 смн</p><button class="btn-cart" onclick="addToCart('Samsung 35', 2100)">🛒 Ба сабад</button></div>
 
-    <div class="product-card" data-cat="tv">
-        <img src="lg1.jpg" id="vLGTV" class="main-img" onclick="openGallery(this)">
-        <div class="title">LG 43LP50 Full HD</div>
-        <p class="price">1850 смн</p>
-        <button class="btn-info" onclick="toggle('sLGTV')">Характеристика</button>
-        <div id="sLGTV" class="specs">• 43 дюйм • Full HD • Тюнери дохилӣ</div>
-        <button class="btn-cart" onclick="addToCart('LG 43LP50', 1850)">🛒 Ба сабад</button>
-    </div>
+    <div class="product-card" data-cat="home"><img src="ref1.png" class="main-img" onclick="openGallery(this)"><div class="title">Холодильник Silver</div><p class="price">8500 смн</p><button class="btn-cart" onclick="addToCart('Ref Silver', 8500)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="home"><img src="wash-indesit-1.jpg" class="main-img" onclick="openGallery(this)"><div class="title">Indesit 7kg</div><p class="price">2950 смн</p><button class="btn-cart" onclick="addToCart('Indesit', 2950)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="home"><img src="wash-lg-1.jpg" class="main-img" onclick="openGallery(this)"><div class="title">LG Black 7кг</div><p class="price">4200 смн</p><button class="btn-cart" onclick="addToCart('LG Wash', 4200)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="home"><img src="stove-black1.jpg" class="main-img" onclick="openGallery(this)"><div class="title">Kumtel Black</div><p class="price">3200 смн</p><button class="btn-cart" onclick="addToCart('Kumtel B', 3200)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="home"><img src="stove-steel1.jpg" class="main-img" onclick="openGallery(this)"><div class="title">Kumtel Steel</div><p class="price">3100 смн</p><button class="btn-cart" onclick="addToCart('Kumtel S', 3100)">🛒 Ба сабад</button></div>
 
-    <div class="product-card" data-cat="home">
-        <img src="ref1.png" id="vRef1" class="main-img" onclick="openGallery(this)">
-        <div class="title">Холодильник Side-by-Side Silver</div>
-        <p class="price">8500 смн</p>
-        <button class="btn-info" onclick="toggle('sRef1')">Характеристика</button>
-        <div id="sRef1" class="specs">• No Frost • 550 литр • Компрессори инверторӣ</div>
-        <button class="btn-cart" onclick="addToCart('Холодильник Silver', 8500)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="home">
-        <img src="samsung_blue.png" id="vSamB" class="main-img" onclick="openGallery(this)">
-        <div class="title">Samsung Air Track (Синий)</div>
-        <p class="price">860 смн</p>
-        <button class="btn-info" onclick="toggle('sSamB')">Характеристика</button>
-        <div id="sSamB" class="specs">• 2000W • Twin Chamber • Филтри HEPA</div>
-        <button class="btn-cart" onclick="addToCart('Samsung Blue', 860)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="home">
-        <img src="eurolux_gold.png" id="vEuroG" class="main-img" onclick="openGallery(this)">
-        <div class="title">Eurolux VC2237DSG (Золото)</div>
-        <p class="price">800 смн</p>
-        <button class="btn-info" onclick="toggle('sEuroG')">Характеристика</button>
-        <div id="sEuroG" class="specs">• Дизайни тиллоӣ • Контейнери калон</div>
-        <button class="btn-cart" onclick="addToCart('Eurolux Gold', 800)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="home">
-        <img src="technomir_black.png" id="vTechB" class="main-img" onclick="openGallery(this)">
-        <div class="title">Техномир Cyclone 7 (Черный)</div>
-        <p class="price">900 смн</p>
-        <button class="btn-info" onclick="toggle('sTechB')">Характеристика</button>
-        <div id="sTechB" class="specs">• Cyclone 7 • Филтрацияи бисёрзинагӣ</div>
-        <button class="btn-cart" onclick="addToCart('Technomir Black', 900)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="home">
-        <img src="lg_purple.png" id="vLGP" class="main-img" onclick="openGallery(this)">
-        <div class="title">LG Vacuum Cleaner (Фиолетовый)</div>
-        <p class="price">850 смн</p>
-        <button class="btn-info" onclick="toggle('sLGP')">Характеристика</button>
-        <div id="sLGP" class="specs">• Ellipse Cyclone • Идоракунӣ дар дастак</div>
-        <button class="btn-cart" onclick="addToCart('LG Purple', 850)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="home">
-        <img src="vac_new3.png" id="vHGreen" class="main-img" onclick="openGallery(this)">
-        <div class="title">HALEY Advanced (Зеленый)</div>
-        <p class="price">750 смн</p>
-        <button class="btn-info" onclick="toggle('sHGreen')">Характеристика</button>
-        <div id="sHGreen" class="specs">• Каммасраф • Халтаи шусташаванда</div>
-        <button class="btn-cart" onclick="addToCart('Haley Green', 750)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="home">
-        <img src="vac_new4.png" id="vHBlack" class="main-img" onclick="openGallery(this)">
-        <div class="title">HALEY Cyclone (Черный/Оранж)</div>
-        <p class="price">780 смн</p>
-        <button class="btn-info" onclick="toggle('sHBlack')">Характеристика</button>
-        <div id="sHBlack" class="specs">• Системаи циклонӣ • Дизайни муосир</div>
-        <button class="btn-cart" onclick="addToCart('Haley Black', 780)">🛒 Ба сабад</button>
-    </div>
+    <div class="product-card" data-cat="home"><img src="vac_new3.png" class="main-img" onclick="openGallery(this)"><div class="title">HALEY Advanced (Зеленый)</div><p class="price">750 смн</p><button class="btn-cart" onclick="addToCart('Haley G', 750)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="home"><img src="vac_new4.png" class="main-img" onclick="openGallery(this)"><div class="title">HALEY Cyclone (Черный/Оранж)</div><p class="price">780 смн</p><button class="btn-cart" onclick="addToCart('Haley B', 780)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="home"><img src="samsung_blue.png" class="main-img" onclick="openGallery(this)"><div class="title">Samsung Air Track</div><p class="price">860 смн</p><button class="btn-cart" onclick="addToCart('Sam Blue', 860)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="home"><img src="lg_purple.png" class="main-img" onclick="openGallery(this)"><div class="title">LG Vacuum (Бунафш)</div><p class="price">850 смн</p><button class="btn-cart" onclick="addToCart('LG Purp', 850)">🛒 Ба сабад</button></div>
+    <div class="product-card" data-cat="home"><img src="eurolux_gold.png" class="main-img" onclick="openGallery(this)"><div class="title">Eurolux VC2237</div><p class="price">800 смн</p><button class="btn-cart" onclick="addToCart('Euro', 800)">🛒 Ба сабад</button></div>
 
 </div>
 
-<div id="fsOverlay" class="fs-overlay">
-    <span class="fs-close" onclick="closeGallery()">&times;</span>
+<div id="fsOverlay" class="fs-overlay" onclick="closeGallery()">
+    <span class="fs-close">&times;</span>
     <img id="fsImage" src="">
 </div>
 
 <div id="cartPanel" class="cart-panel">
-    <span onclick="document.getElementById('cartPanel').style.display='none'" style="float:right; cursor:pointer;">&times;</span>
-    <b>Сабад 🛒</b>
-    <div id="cartItems"></div>
-    <div id="totalSum" class="total-price"></div>
-    <div class="cart-btns">
-        <button class="btn-cart" onclick="checkout()">📲 WhatsApp</button>
-        <a href="tel:+992935412727" class="btn-call">📞</a>
-    </div>
+    <b>Сабад 🛒</b><div id="cartItems"></div>
+    <button class="btn-cart" onclick="checkout()">WhatsApp</button>
 </div>
 
 <script>
     let cart = [];
     function filterCat(cat, btn) {
         let cards = document.getElementsByClassName('product-card');
-        let buttons = document.getElementsByClassName('cat-btn');
-        for (let b of buttons) b.classList.remove('active');
+        let btns = document.getElementsByClassName('cat-btn');
+        for (let b of btns) b.classList.remove('active');
         btn.classList.add('active');
-        for (let card of cards) {
-            card.style.display = (cat === 'all' || card.getAttribute('data-cat') === cat) ? "block" : "none";
-        }
+        for (let c of cards) c.style.display = (cat==='all' || c.dataset.cat===cat) ? "block" : "none";
     }
     function searchProduct() {
         let input = document.getElementById('searchInput').value.toLowerCase();
         let cards = document.getElementsByClassName('product-card');
-        for (let card of cards) {
-            let title = card.querySelector('.title').innerText.toLowerCase();
-            card.style.display = title.includes(input) ? "block" : "none";
+        for (let c of cards) {
+            let t = c.querySelector('.title').innerText.toLowerCase();
+            c.style.display = t.includes(input) ? "block" : "none";
         }
     }
     function toggle(id) {
-        let el = document.getElementById(id);
-        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+        let e = document.getElementById(id);
+        e.style.display = (e.style.display === 'block') ? 'none' : 'block';
     }
     function openGallery(img) {
         document.getElementById('fsImage').src = img.src;
@@ -189,22 +106,13 @@
     function closeGallery() { document.getElementById('fsOverlay').style.display = 'none'; }
     function addToCart(name, price) {
         cart.push({name, price});
-        updateCartUI();
-    }
-    function updateCartUI() {
-        const cartItems = document.getElementById('cartItems');
-        const totalSum = document.getElementById('totalSum');
-        if (cart.length === 0) { document.getElementById('cartPanel').style.display = 'none'; return; }
-        cartItems.innerHTML = cart.map((item, index) => `<div>${item.name} - ${item.price}с.</div>`).join('');
-        let total = cart.reduce((sum, item) => sum + item.price, 0);
-        totalSum.innerText = `Ҷамъ: ${total} смн`;
         document.getElementById('cartPanel').style.display = 'block';
+        document.getElementById('cartItems').innerHTML = cart.map(i => `<div>${i.name}</div>`).join('');
     }
     function checkout() {
         let msg = "Салом! Фармоиш:\n" + cart.map(i => "- " + i.name).join("\n");
         window.open(`https://wa.me/992935412727?text=${encodeURIComponent(msg)}`);
     }
 </script>
-
 </body>
 </html>
