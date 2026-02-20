@@ -7,39 +7,25 @@
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f7f6; color: #333; padding-bottom: 100px; }
         header { background: #232f3e; color: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; }
-        
-        /* Меню ва Ҷустуҷӯ */
         .sticky-top { position: sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .search-container { padding: 10px; text-align: center; }
         #searchInput { width: 85%; max-width: 500px; padding: 12px 20px; border-radius: 25px; border: 1px solid #ddd; font-size: 16px; outline: none; }
-        
         .category-menu { display: flex; justify-content: center; gap: 10px; padding: 10px; overflow-x: auto; white-space: nowrap; background: #f9f9f9; }
         .cat-btn { background: #fff; border: 1px solid #ddd; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; transition: 0.3s; }
         .cat-btn:hover, .cat-btn.active { background: #232f3e; color: #fff; border-color: #232f3e; }
-
-        /* Шабакаи маҳсулот */
         .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 15px; }
         .product-card { background: white; border-radius: 12px; width: 100%; max-width: 300px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
-        
         .main-img { width: 100%; height: 200px; object-fit: contain; cursor: pointer; border-radius: 8px; }
         .thumbnails { display: flex; justify-content: center; gap: 5px; margin: 10px 0; overflow-x: auto; padding-bottom: 5px; }
         .thumbnails img { width: 45px; height: 35px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; flex-shrink: 0; }
-        
         .title { font-weight: bold; font-size: 18px; margin: 10px 0; min-height: 44px; }
         .price { font-size: 22px; color: #b12704; font-weight: bold; margin: 10px 0; }
-        
         .btn-info { background: #f0f2f2; border: 1px solid #adb1b8; padding: 10px; border-radius: 8px; cursor: pointer; width: 100%; margin-bottom: 8px; font-weight: bold; }
         .btn-cart { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
-        
         .specs { display: none; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 13px; border-left: 4px solid #ff9900; margin-bottom: 10px; line-height: 1.4; }
-        
-        /* Галерея ва Сабад */
         .fs-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 5000; justify-content: center; align-items: center; }
         .fs-overlay img { max-width: 95%; max-height: 80%; object-fit: contain; }
         .fs-close { position: absolute; top: 20px; right: 25px; color: white; font-size: 40px; cursor: pointer; }
-        .fs-nav { position: absolute; top: 50%; color: white; font-size: 40px; cursor: pointer; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; }
-        .fs-prev { left: 10px; } .fs-next { right: 10px; }
-
         .cart-panel { position: fixed; bottom: 85px; right: 20px; background: white; width: 300px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); z-index: 2000; padding: 15px; display: none; }
         .cart-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
         .total-price { font-weight: bold; color: #b12704; font-size: 18px; margin-top: 10px; text-align: right; }
@@ -67,447 +53,114 @@
 
     <div class="product-card" data-cat="ac">
         <img src="aux1.png" id="vAUX" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="aux1.png" onclick="changeImg('vAUX', this.src)">
-            <img src="aux2.png" onclick="changeImg('vAUX', this.src)">
-            <img src="aux3.png" onclick="changeImg('vAUX', this.src)">
-            <img src="aux4.png" onclick="changeImg('vAUX', this.src)">
-            <img src="aux5.png" onclick="changeImg('vAUX', this.src)">
-            <img src="aux6.png" onclick="changeImg('vAUX', this.src)">
-        </div>
         <div class="title">AUX Inverter Expert</div>
         <p class="price">4850 смн</p>
         <button class="btn-info" onclick="toggle('sAUX')">Характеристика</button>
-        <div id="sAUX" class="specs">
-            • Кор дар ҳарорати шадид: аз -32°C то +55°C<br>
-            • Технологияи каммасрафи барқ (Inverter)<br>
-            • Сардкунии тези 30 сония<br>
-            • Филтри бисёрзинагӣ зидди бактерия
-        </div>
+        <div id="sAUX" class="specs">• Кор аз -32°C то +55°C • Inverter • Сардкунии тез</div>
         <button class="btn-cart" onclick="addToCart('AUX Inverter', 4850)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="ac">
         <img src="midea1.png" id="vMidea" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="midea1.png" onclick="changeImg('vMidea', this.src)">
-            <img src="midea2.png" onclick="changeImg('vMidea', this.src)">
-            <img src="midea3.png" onclick="changeImg('vMidea', this.src)">
-            <img src="midea4.png" onclick="changeImg('vMidea', this.src)">
-            <img src="midea5.png" onclick="changeImg('vMidea', this.src)">
-        </div>
         <div class="title">Midea Blanc Inverter</div>
         <p class="price">4900 смн</p>
         <button class="btn-info" onclick="toggle('sMidea')">Характеристика</button>
-        <div id="sMidea" class="specs">
-            • Технологияи Inverter Quattro<br>
-            • Сардкунии тез (Rapid Cool)<br>
-            • Ҳавои 3D (3D Airflow)<br>
-            • Экрани пинҳонӣ дар панел
-        </div>
+        <div id="sMidea" class="specs">• Inverter Quattro • Ҳавои 3D • Экрани пинҳонӣ</div>
         <button class="btn-cart" onclick="addToCart('Midea Blanc', 4900)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="ac">
-        <img src="tcl1.png" id="vTCL" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="tcl1.png" onclick="changeImg('vTCL', this.src)">
-            <img src="tcl2.png" onclick="changeImg('vTCL', this.src)">
-            <img src="tcl3.png" onclick="changeImg('vTCL', this.src)">
-            <img src="tcl4.png" onclick="changeImg('vTCL', this.src)">
-            <img src="tcl5.png" onclick="changeImg('vTCL', this.src)">
-        </div>
-        <div class="title">TCL Smart Air Flow</div>
-        <p class="price">4750 смн</p>
-        <button class="btn-info" onclick="toggle('sTCL')">Характеристика</button>
-        <div id="sTCL" class="specs">
-            • Smart Air Flow: Shower-style (сард), Blanket-style (гарм)<br>
-            • AI Inverter ва Худкор тозашавӣ<br>
-            • Кор дар ҳарорати то 60°C<br>
-            • Режими хоби бароҳат
-        </div>
-        <button class="btn-cart" onclick="addToCart('TCL Smart', 4750)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="ac">
-        <img src="gre1.jpg" id="vGree" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="gre1.jpg" onclick="changeImg('vGree', this.src)">
-            <img src="gree2.jpg" onclick="changeImg('vGree', this.src)">
-            <img src="gree3.jpg" onclick="changeImg('vGree', this.src)">
-        </div>
-        <div class="title">Gree Pular Inverter</div>
-        <p class="price">4600 смн</p>
-        <button class="btn-info" onclick="toggle('sGree')">Характеристика</button>
-        <div id="sGree" class="specs">• Inverter 2024<br>• То 40м2 майдон<br>• Сард ва Гарм<br>• Филтри ионӣ</div>
-        <button class="btn-cart" onclick="addToCart('Gree Pular', 4600)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="home">
-        <img src="wash-indesit-1.jpg" id="vInd" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="wash-indesit-1.jpg" onclick="changeImg('vInd', this.src)">
-            <img src="wash-indesit-2.jpg" onclick="changeImg('vInd', this.src)">
-            <img src="wash-indesit-3.jpg" onclick="changeImg('vInd', this.src)">
-        </div>
-        <div class="title">Indesit 7kg</div>
-        <p class="price">2950 смн</p>
-        <button class="btn-info" onclick="toggle('sInd')">Характеристика</button>
-        <div id="sInd" class="specs">• 7 кг вазн<br>• 1000 оборот<br>• Синфи А+++<br>• 16 барномаи шустан</div>
-        <button class="btn-cart" onclick="addToCart('Indesit 7kg', 2950)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="tv">
         <img src="lg1.jpg" id="vLGTV" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="lg1.jpg" onclick="changeImg('vLGTV', this.src)">
-            <img src="lg2.jpg" onclick="changeImg('vLGTV', this.src)">
-        </div>
         <div class="title">LG 43LP50 Full HD</div>
         <p class="price">1850 смн</p>
         <button class="btn-info" onclick="toggle('sLGTV')">Характеристика</button>
-        <div id="sLGTV" class="specs">• 43 дюйм (109 см)<br>• Full HD экран<br>• Тюнери дохилӣ</div>
+        <div id="sLGTV" class="specs">• 43 дюйм • Full HD • Тюнери дохилӣ</div>
         <button class="btn-cart" onclick="addToCart('LG 43LP50', 1850)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="home">
-        <img src="stove-black1.jpg" id="vKBlack" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="stove-black1.jpg" onclick="changeImg('vKBlack', this.src)">
-            <img src="stove-black2.jpg" onclick="changeImg('vKBlack', this.src)">
-            <img src="stove-black3.jpg" onclick="changeImg('vKBlack', this.src)">
-        </div>
-        <div class="title">Kumtel Black</div>
-        <p class="price">3200 смн</p>
-        <button class="btn-info" onclick="toggle('sKBlack')">Характеристика</button>
-        <div id="sKBlack" class="specs">• Плитаи газӣ ва барқӣ<br>• Тарҳи муосири сиёҳ<br>• Духовкаи калон</div>
-        <button class="btn-cart" onclick="addToCart('Kumtel Black', 3200)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="tv">
-        <img src="android46-1.jpg" id="vAnd" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="android46-1.jpg" onclick="changeImg('vAnd', this.src)">
-            <img src="android46-2.jpg" onclick="changeImg('vAnd', this.src)">
-            <img src="android46-3.jpg" onclick="changeImg('vAnd', this.src)">
-        </div>
-        <div class="title">Android TV 46"</div>
-        <p class="price">2800 смн</p>
-        <button class="btn-info" onclick="toggle('sAnd')">Характеристика</button>
-        <div id="sAnd" class="specs">• Smart TV Android<br>• YouTube/Netflix<br>• Wi-Fi пайвастшавӣ</div>
-        <button class="btn-cart" onclick="addToCart('Android TV 46', 2800)">🛒 Ба сабад</button>
+        <img src="ref1.png" id="vRef1" class="main-img" onclick="openGallery(this)">
+        <div class="title">Холодильник Side-by-Side Silver</div>
+        <p class="price">8500 смн</p>
+        <button class="btn-info" onclick="toggle('sRef1')">Характеристика</button>
+        <div id="sRef1" class="specs">• No Frost • 550 литр • Компрессори инверторӣ</div>
+        <button class="btn-cart" onclick="addToCart('Холодильник Silver', 8500)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="home">
-        <img src="wash-lg-1.jpg" id="vLGW" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="wash-lg-1.jpg" onclick="changeImg('vLGW', this.src)">
-            <img src="wash-lg-2.jpg" onclick="changeImg('vLGW', this.src)">
-        </div>
-        <div class="title">LG Black 7кг</div>
-        <p class="price">4200 смн</p>
-        <button class="btn-info" onclick="toggle('sLGW')">Характеристика</button>
-        <div id="sLGW" class="specs">• Direct Drive мотор<br>• Буғдиҳӣ (Steam)<br>• Тарҳи люкс</div>
-        <button class="btn-cart" onclick="addToCart('LG Washing 7kg', 4200)">🛒 Ба сабад</button>
+        <img src="samsung_blue.png" id="vSamB" class="main-img" onclick="openGallery(this)">
+        <div class="title">Samsung Air Track (Синий)</div>
+        <p class="price">860 смн</p>
+        <button class="btn-info" onclick="toggle('sSamB')">Характеристика</button>
+        <div id="sSamB" class="specs">• 2000W • Twin Chamber • Филтри HEPA</div>
+        <button class="btn-cart" onclick="addToCart('Samsung Blue', 860)">🛒 Ба сабад</button>
     </div>
 
     <div class="product-card" data-cat="home">
-        <img src="stove-steel1.jpg" id="vKSteel" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="stove-steel1.jpg" onclick="changeImg('vKSteel', this.src)">
-            <img src="stove-steel2.jpg" onclick="changeImg('vKSteel', this.src)">
-        </div>
-        <div class="title">Kumtel Steel</div>
-        <p class="price">3100 смн</p>
-        <button class="btn-info" onclick="toggle('sKSteel')">Характеристика</button>
-        <div id="sKSteel" class="specs">• Пӯлоди зангногир<br>• Назорати ҳарорати дақиқ</div>
-        <button class="btn-cart" onclick="addToCart('Kumtel Steel', 3100)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="tv">
-        <img src="samsung1.jpg" id="vSam" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="samsung1.jpg" onclick="changeImg('vSam', this.src)">
-            <img src="samsung2.jpg" onclick="changeImg('vSam', this.src)">
-        </div>
-        <div class="title">Samsung Smart 35"</div>
-        <p class="price">2100 смн</p>
-        <button class="btn-info" onclick="toggle('sSam')">Характеристика</button>
-        <div id="sSam" class="specs">• Crystal Display<br>• Smart TV<br>• Рангҳои табиӣ</div>
-        <button class="btn-cart" onclick="addToCart('Samsung TV 35', 2100)">🛒 Ба сабад</button>
-    </div>
-
-    <div class="product-card" data-cat="home">
-        <img src="vacuum1.jpg" id="vRaf" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="vacuum1.jpg" onclick="changeImg('vRaf', this.src)">
-            <img src="vacuum2.jpg" onclick="changeImg('vRaf', this.src)">
-            <img src="vacuum3.jpg" onclick="changeImg('vRaf', this.src)">
-        </div>
-        <div class="title">RAF 2200W</div>
-        <p class="price">850 смн</p>
-        <button class="btn-info" onclick="toggle('sRaf')">Характеристика</button>
-        <div id="sRaf" class="specs">• Қувваи 2200 Вт<br>• Контейнери чанг<br>• Филтри HEPA</div>
-        <button class="btn-cart" onclick="addToCart('Pilesos RAF', 850)">🛒 Ба сабад</button>
-    </div>
-
-       <div class="product-card" data-cat="ac">
-        <img src="hisense1.png" id="vHisense" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="hisense1.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense2.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense3.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense4.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense5.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense6.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense7.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense8.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense9.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense10.png" onclick="changeImg('vHisense', this.src)">
-            <img src="hisense11.png" onclick="changeImg('vHisense', this.src)">
-        </div>
-        <div class="title">Hisense Smart Air</div>
-        <p class="price">4800 смн</p>
-        <button class="btn-info" onclick="toggle('sHisense')">Характеристика</button>
-        <div id="sHisense" class="specs">
-            • Wi-Fi Control (идора бо телефон)<br>
-            • Технологияи Full Inverter<br>
-            • Сардкунии тези Super Cool<br>
-            • Режими Quiet Mode (бесадо)<br>
-            • Филтри 4-дар-1 барои тозакунии ҳаво
-        </div>
-        <button class="btn-cart" onclick="addToCart('Hisense Smart Air', 4800)">🛒 Ба сабад</button>
-    </div>
-    <div class="product-card" data-cat="ac">
-        <img src="fujair1.png" id="vFujaire" class="main-img" onclick="openGallery(this)">
-        <div class="thumbnails">
-            <img src="fujair1.png" onclick="changeImg('vFujaire', this.src)">
-            <img src="fujair2.png" onclick="changeImg('vFujaire', this.src)">
-            <img src="fujair3.png" onclick="changeImg('vFujaire', this.src)">
-            <img src="fujair4.png" onclick="changeImg('vFujaire', this.src)">
-            <img src="fujair5.png" onclick="changeImg('vFujaire', this.src)">
-        </div>
-        <div class="title">FUJAIRE (Malaysia) Inverter</div>
-        <p class="price">5200 смн</p> <button class="btn-info" onclick="toggle('sFujaire')">Характеристика</button>
-        <div id="sFujaire" class="specs">
-            • Истеҳсоли Fujaire (Malaysia) SDN BHD<br>
-            • Навъи фреон: R410A / 1350g<br>
-            • Қудрати хунуккунӣ: 7100W (24000 BTU)<br>
-            • Қудрати гармкунӣ: 7310W<br>
-            • Шиддати барқ: 220-240V / 50Hz<br>
-            • Вазни блоки берунӣ: 46 кг
-        </div>
-        <button class="btn-cart" onclick="addToCart('FUJAIRE Inverter', 5200)">🛒 Ба сабад</button>
-    </div>
-<div class="product-card" data-cat="home">
-    <img src="ref1.png" id="vRef1" class="main-img" onclick="openGallery(this)">
-    <div class="title">Холодильник Side-by-Side Silver</div>
-    <p class="price">8500 смн</p>
-    <button class="btn-info" onclick="toggle('sRef1')">Характеристика</button>
-    <div id="sRef1" class="specs">
-        • Системаи Total No Frost (бе яхкунӣ)<br>
-        • Ҳаҷми умумӣ: 550 литр<br>
-        • Компрессори инверторӣ (каммасраф)<br>
-        • Назорати электронии ҳарорат<br>
-        • Рафҳои шишагини зарбатоб
-    </div>
-    <button class="btn-cart" onclick="addToCart('Холодильник Side-by-Side', 8500)">🛒 Ба сабад</button>
-</div>
-
-<div class="product-card" data-cat="home">
-    <img src="ref2.png" id="vRef2" class="main-img" onclick="openGallery(this)">
-    <div class="title">Холодильник Multi-Door Premium</div>
-    <p class="price">9200 смн</p>
-    <button class="btn-info" onclick="toggle('sRef2')">Характеристика</button>
-    <div id="sRef2" class="specs">
-        • Тарҳи 4-дарага (Premium Design)<br>
-        • Зонаи тару тозагӣ (Fresh Zone)<br>
-        • Системаи сардкунии бисёрҷараёна<br>
-        • Экрани сенсорӣ дар берун<br>
-        • Синфи сарфаи барқ: A++
-    </div>
-    <button class="btn-cart" onclick="addToCart('Холодильник Multi-Door', 9200)">🛒 Ба сабад</button>
-</div>
-
-<div class="product-card" data-cat="home">
-    <img src="vac_blue.png" id="vVacB" class="main-img" onclick="openGallery(this)">
-    <div class="title">Пылесос LUXNEW 3200W</div>
-    <p class="price">1100 смн</p>
-    <button class="btn-info" onclick="toggle('sVacB')">Характеристика</button>
-    <div id="sVacB" class="specs">
-        • Қувваи ҷаббиш: 3200 Вт<br>
-        • Барои тозакунии хушк ва тар<br>
-        • Зарфи зангногир (Steel Tank)<br>
-        • Филтри HEPA-и шусташаванда<br>
-        • Шланги дарози чандир
-    </div>
-    <button class="btn-cart" onclick="addToCart('Пылесос LUXNEW', 1100)">🛒 Ба сабад</button>
-</div>
-
-<div class="product-card" data-cat="home">
-    <img src="vac_red.png" id="vVacR" class="main-img" onclick="openGallery(this)">
-    <div class="title">Пылесос PANIZ Red Turbo</div>
-    <p class="price">950 смн</p>
-    <button class="btn-info" onclick="toggle('sVacR')">Характеристика</button>
-    <div id="sVacR" class="specs">
-        • Қувваи баланди ҷаббиш<br>
-        • Халтаи матоии бисёркарата<br>
-        • Танзими қувва дар корпус<br>
-        • Насадкаҳои гуногун барои гилем ва мебел<br>
-        • Тарҳи паймон ва сабук
-    </div>
-    <button class="btn-cart" onclick="addToCart('Пылесос PANIZ', 950)">🛒 Ба сабад</button>
-</div>
-
-<div class="product-card" data-cat="home">
-    <img src="vac_steel.png" id="vVacS" class="main-img" onclick="openGallery(this)">
-    <div class="title">Пылесос STARLUX Industrial</div>
-    <p class="price">1250 смн</p>
-    <button class="btn-info" onclick="toggle('sVacS')">Характеристика</button>
-    <div id="sVacS" class="specs">
-        • Силсилаи касбӣ (Professional)<br>
-        • Корпуси пурраи пӯлоди зангногир<br>
-        • Функсияи вазидани ҳаво (Blower function)<br>
-        • Чархҳои устувор барои ҳаракат<br>
-        • Муҳофизат аз аз ҳад зиёд гармшавӣ
-    </div>
-    <button class="btn-cart" onclick="addToCart('Пылесос STARLUX', 1250)">🛒 Ба сабад</button>
-</div>
-
-<div class="product-card" data-cat="home">
-    <img src="vac_haley.png" id="vVacH" class="main-img" onclick="openGallery(this)">
-    <div class="title">Пылесос HALEY Compact</div>
-    <p class="price">750 смн</p>
-    <button class="btn-info" onclick="toggle('sVacH')">Характеристика</button>
-    <div id="sVacH" class="specs">
-        • Андозаи хурд (Compact size)<br>
-        • Сатҳи пасти садо (Low noise)<br>
-        • Халтаи чангкашаки ивазшаванда<br>
-        • Барои хонаҳои хурд беҳтарин аст<br>
-        • Ранги дурахшони сурх
-    </div>
-    <button class="btn-cart" onclick="addToCart('Пылесос HALEY', 750)">🛒 Ба сабад</button>
-</div>
-<div class="product-card" data-cat="home">
-    <img src="ref1.png" class="main-img" onclick="openGallery(this)">
-    <div class="title">Холодильник Side-by-Side Silver</div>
-    <p class="price">8500 смн</p>
-    <button class="btn-info" onclick="toggle('sR1')">Характеристика</button>
-    <div id="sR1" class="specs">• No Frost • 550л • Инвертор</div>
-    <button class="btn-cart" onclick="addToCart('Ref Silver', 8500)">🛒 Ба сабад</button>
-</div>
-
-<div class="product-card" data-cat="home">
-    <img src="ref_closed.png" class="main-img" onclick="openGallery(this)">
-    <div class="title">Холодильник Multi-Door Premium</div>
-    <p class="price">9200 смн</p>
-    <button class="btn-info" onclick="toggle('sR2')">Характеристика</button>
-    <div id="sR2" class="specs">• 4-дарага • Fresh Zone • A++</div>
-    <button class="btn-cart" onclick="addToCart('Ref Premium', 9200)">🛒 Ба сабад</button>
-</div>
-
-<div class="product-card" data-cat="home">
-    <img src="vac_blue.png" class="main-img" onclick="openGallery(this)">
-    <div class="title">Пылесос Cyclone Blue</div>
-    <p class="price">1100 смн</p>
-    <button class="btn-info" onclick="toggle('v1')">Характеристика</button>
-    <div id="v1" class="specs">• 3200W • Системаи циклонӣ</div>
-    <button class="btn-cart" onclick="addToCart('Vac Blue', 1100)">🛒 Ба сабад</button>
-</div>
-<div <div class="product-card" data-cat="home">
-    <img src="vac_new1.png" id="vVacN1" class="main-img" onclick="openGallery(this)">
-    <div class="title">Пылесос Cyclone Pro Blue</div>
-    <p class="price">1350 смн</p>
-    <button class="btn-info" onclick="toggle('sVacN1')">Характеристика</button>
-    <div id="sVacN1" class="specs">
-        • Технология "Циклон"<br>
-        • Мощность: 2400 Вт<br>
-        • Без мешка для сбора пыли<br>
-        • Насадка для паркета в комплекте
-    </div>
-    <button class="btn-cart" onclick="addToCart('Cyclone Pro Blue', 1350)">🛒 Ба сабад</button>
-</div>
-
-<div class="product-card" data-cat="home">
-    <img src="vac_new2.png" id="vVacN2" class="main-img" onclick="openGallery(this)">
-    <div class="title">Пылесос Eco Green Line</div>
-    <p class="price">1150 смн</p>
-    <button class="btn-info" onclick="toggle('sVacN2')">Характеристика</button>
-    <div id="sVacN2" class="specs">
-        • Энергосберегающий мотор<br>
-        • Уровень шума: 68 дБ<br>
-        • Фильтр тонкой очистки HEPA 13
-    </div>
-    <button class="btn-cart" onclick="addToCart('Eco Green Line', 1150)">🛒 Ба сабад</button>
-</div>
-="addToCart('Orange Turbo', 1150)">🛒 Ба сабад</button>
-</div>
-<div class="container">
-    <div class="item">
-        <img src="samsung_blue.png" alt="Samsung Blue">
-        <div class="title">Samsung Air Track SC4570 (Синий)</div>
-        <div class="price">860.00</div>
-    </div>
-
-    <div class="item">
-        <img src="eurolux_gold.png" alt="Eurolux Gold">
+        <img src="eurolux_gold.png" id="vEuroG" class="main-img" onclick="openGallery(this)">
         <div class="title">Eurolux VC2237DSG (Золото)</div>
-        <div class="price">800.00</div>
+        <p class="price">800 смн</p>
+        <button class="btn-info" onclick="toggle('sEuroG')">Характеристика</button>
+        <div id="sEuroG" class="specs">• Дизайни тиллоӣ • Контейнери калон</div>
+        <button class="btn-cart" onclick="addToCart('Eurolux Gold', 800)">🛒 Ба сабад</button>
     </div>
 
-    <div class="item">
-        <img src="technomir_black.png" alt="Техномир">
+    <div class="product-card" data-cat="home">
+        <img src="technomir_black.png" id="vTechB" class="main-img" onclick="openGallery(this)">
         <div class="title">Техномир Cyclone 7 (Черный)</div>
-        <div class="price">900.00</div>
+        <p class="price">900 смн</p>
+        <button class="btn-info" onclick="toggle('sTechB')">Характеристика</button>
+        <div id="sTechB" class="specs">• Cyclone 7 • Филтрацияи бисёрзинагӣ</div>
+        <button class="btn-cart" onclick="addToCart('Technomir Black', 900)">🛒 Ба сабад</button>
     </div>
 
-    <div class="item">
-        <img src="lg_purple.png" alt="LG Purple">
+    <div class="product-card" data-cat="home">
+        <img src="lg_purple.png" id="vLGP" class="main-img" onclick="openGallery(this)">
         <div class="title">LG Vacuum Cleaner (Фиолетовый)</div>
-        <div class="price">850.00</div>
+        <p class="price">850 смн</p>
+        <button class="btn-info" onclick="toggle('sLGP')">Характеристика</button>
+        <div id="sLGP" class="specs">• Ellipse Cyclone • Идоракунӣ дар дастак</div>
+        <button class="btn-cart" onclick="addToCart('LG Purple', 850)">🛒 Ба сабад</button>
     </div>
 
-    <div class="item">
-        <img src="vac_new3.png" alt="Haley Green">
+    <div class="product-card" data-cat="home">
+        <img src="vac_new3.png" id="vHGreen" class="main-img" onclick="openGallery(this)">
         <div class="title">HALEY Advanced (Зеленый)</div>
-        <div class="price">750.00</div>
+        <p class="price">750 смн</p>
+        <button class="btn-info" onclick="toggle('sHGreen')">Характеристика</button>
+        <div id="sHGreen" class="specs">• Каммасраф • Халтаи шусташаванда</div>
+        <button class="btn-cart" onclick="addToCart('Haley Green', 750)">🛒 Ба сабад</button>
     </div>
 
-    <div class="item">
-        <img src="vac_new4.png" alt="Haley Black">
+    <div class="product-card" data-cat="home">
+        <img src="vac_new4.png" id="vHBlack" class="main-img" onclick="openGallery(this)">
         <div class="title">HALEY Cyclone (Черный/Оранж)</div>
-        <div class="price">780.00</div>
+        <p class="price">780 смн</p>
+        <button class="btn-info" onclick="toggle('sHBlack')">Характеристика</button>
+        <div id="sHBlack" class="specs">• Системаи циклонӣ • Дизайни муосир</div>
+        <button class="btn-cart" onclick="addToCart('Haley Black', 780)">🛒 Ба сабад</button>
     </div>
-</div>
-
-
-
 
 </div>
 
 <div id="fsOverlay" class="fs-overlay">
     <span class="fs-close" onclick="closeGallery()">&times;</span>
-    <span class="fs-nav fs-prev" onclick="changeFsImg(-1)">&#10094;</span>
     <img id="fsImage" src="">
-    <span class="fs-nav fs-next" onclick="changeFsImg(1)">&#10095;</span>
 </div>
 
 <div id="cartPanel" class="cart-panel">
-    <span onclick="document.getElementById('cartPanel').style.display='none'" style="float:right; cursor:pointer; font-size:24px;">&times;</span>
-    <b style="display:block; margin-bottom:10px;">Сабад 🛒</b>
+    <span onclick="document.getElementById('cartPanel').style.display='none'" style="float:right; cursor:pointer;">&times;</span>
+    <b>Сабад 🛒</b>
     <div id="cartItems"></div>
     <div id="totalSum" class="total-price"></div>
     <div class="cart-btns">
-        <button class="btn-cart" onclick="checkout()" style="flex:1">📲 WhatsApp</button>
+        <button class="btn-cart" onclick="checkout()">📲 WhatsApp</button>
         <a href="tel:+992935412727" class="btn-call">📞</a>
     </div>
 </div>
 
 <script>
-    let cart = []; 
-    let currentImgs = []; 
-    let currentIdx = 0;
-
+    let cart = [];
     function filterCat(cat, btn) {
         let cards = document.getElementsByClassName('product-card');
         let buttons = document.getElementsByClassName('cat-btn');
@@ -517,7 +170,6 @@
             card.style.display = (cat === 'all' || card.getAttribute('data-cat') === cat) ? "block" : "none";
         }
     }
-
     function searchProduct() {
         let input = document.getElementById('searchInput').value.toLowerCase();
         let cards = document.getElementsByClassName('product-card');
@@ -526,64 +178,30 @@
             card.style.display = title.includes(input) ? "block" : "none";
         }
     }
-
-    function toggle(id) { 
-        let el = document.getElementById(id); 
-        if(el) el.style.display = (el.style.display === 'block') ? 'none' : 'block'; 
+    function toggle(id) {
+        let el = document.getElementById(id);
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
     }
-
-    function changeImg(id, src) { document.getElementById(id).src = src; }
-    
-    function openGallery(imgElement) {
-        const card = imgElement.closest('.product-card');
-        const thumbs = card.querySelectorAll('.thumbnails img');
-        currentImgs = thumbs.length > 0 ? Array.from(thumbs).map(t => t.src) : [imgElement.src];
-        currentIdx = currentImgs.indexOf(imgElement.src);
-        document.getElementById('fsImage').src = currentImgs[currentIdx];
+    function openGallery(img) {
+        document.getElementById('fsImage').src = img.src;
         document.getElementById('fsOverlay').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
     }
-
-    function closeGallery() { 
-        document.getElementById('fsOverlay').style.display = 'none'; 
-        document.body.style.overflow = 'auto';
-    }
-    
-    function changeFsImg(step) {
-        currentIdx = (currentIdx + step + currentImgs.length) % currentImgs.length;
-        document.getElementById('fsImage').src = currentImgs[currentIdx];
-    }
-
+    function closeGallery() { document.getElementById('fsOverlay').style.display = 'none'; }
     function addToCart(name, price) {
         cart.push({name, price});
         updateCartUI();
     }
-
-    function removeFromCart(index) {
-        cart.splice(index, 1);
-        updateCartUI();
-    }
-
     function updateCartUI() {
         const cartItems = document.getElementById('cartItems');
-        const cartPanel = document.getElementById('cartPanel');
         const totalSum = document.getElementById('totalSum');
-        if (cart.length === 0) { cartPanel.style.display = 'none'; return; }
-        cartItems.innerHTML = cart.map((item, index) => `
-            <div class="cart-item">
-                <span>${item.name}</span>
-                <span>${item.price} с. <span onclick="removeFromCart(${index})" style="color:red; cursor:pointer;">&times;</span></span>
-            </div>
-        `).join('');
+        if (cart.length === 0) { document.getElementById('cartPanel').style.display = 'none'; return; }
+        cartItems.innerHTML = cart.map((item, index) => `<div>${item.name} - ${item.price}с.</div>`).join('');
         let total = cart.reduce((sum, item) => sum + item.price, 0);
         totalSum.innerText = `Ҷамъ: ${total} смн`;
-        cartPanel.style.display = 'block';
+        document.getElementById('cartPanel').style.display = 'block';
     }
-
     function checkout() {
-        let total = cart.reduce((sum, item) => sum + item.price, 0);
-        let msg = "Салом! Фармоиш аз Olami Tehnika:\n" + cart.map(i => "- " + i.name + " (" + i.price + "с)").join("\n");
-        msg += "\n\nҶамъ: " + total + " смн";
+        let msg = "Салом! Фармоиш:\n" + cart.map(i => "- " + i.name).join("\n");
         window.open(`https://wa.me/992935412727?text=${encodeURIComponent(msg)}`);
     }
 </script>
